@@ -149,7 +149,7 @@
         top:100%;
         right:0;
         width:min(440px,calc(100vw - 32px));
-        max-height:min(560px,calc(100dvh - var(--sticky-tabs-height) - 144px));
+        max-height:min(300px,calc(100dvh - var(--sticky-tabs-height) - 144px));
         overflow-y:auto;
         overscroll-behavior:contain;
         margin:0;
@@ -4210,7 +4210,7 @@
           <a href="#top" aria-current="location">교육 소개</a>
           <a href="#courses">교육 과정</a>
           <a href="#kit">지원 및 혜택</a>
-          <a href="#apply">신청 안내</a>
+          <a href="#reviews">수강 후기</a>
           <a href="#faq">자주 묻는 질문</a>
         </div>
         <div class="subnav-course-menu">
@@ -4603,6 +4603,38 @@
             </div>
           </div>
         </div>
+      </section>
+      <section class="section reviews-section" id="reviews" aria-labelledby="reviews-title">
+        <div class="wrap reviews-heading">
+          <p class="kicker">LEARNER STORIES</p>
+          <h2 id="reviews-title">먼저 배운 사람들의<br><span class="highlight">이야기를 들어보세요.</span></h2>
+          <p class="desc">수강을 고민하고 있다면, 학습 경험을 살펴보세요.</p>
+        </div>
+        <div class="review-window" id="review-window" tabindex="0" aria-label="수강 후기 카드 슬라이더. 마우스를 올리거나 선택하면 이동이 멈춥니다.">
+          <div class="review-track" id="review-track">
+            <article class="review-card">
+              <span class="review-label">업무 활용</span>
+              <p>“반복하던 업무를 자동화하는 방법을 익히는 과정이 인상 깊었어요.”</p>
+              <span class="review-person">AI 업무자동화 과정 · 후기 예시</span>
+            </article>
+            <article class="review-card">
+              <span class="review-label">실습 경험</span>
+              <p>“이론을 본 뒤 직접 작동시켜 보니까 훨씬 쉽게 이해할 수 있었어요.”</p>
+              <span class="review-person">자율주행 과정 · 후기 예시</span>
+            </article>
+            <article class="review-card">
+              <span class="review-label">온라인 학습</span>
+              <p>“시간에 맞춰 온라인으로 공부하고 배운 내용을 다시 확인할 수 있었어요.”</p>
+              <span class="review-person">디지털 기초 과정 · 후기 예시</span>
+            </article>
+            <article class="review-card">
+              <span class="review-label">새로운 도전</span>
+              <p>“어렵게만 느꼈던 AI를 조금 더 친숙하게 접할 수 있었어요.”</p>
+              <span class="review-person">AI 기초 과정 · 후기 예시</span>
+            </article>
+          </div>
+        </div>
+        <p class="review-note">※ 위 문장은 레이아웃 검토용 <strong>가상 후기 예시</strong>입니다. 실제 수강생의 검증된 후기·동의받은 내용으로 교체한 후 게시해야 합니다.</p>
       </section>
       <section class="section end">
         <div class="wrap">
