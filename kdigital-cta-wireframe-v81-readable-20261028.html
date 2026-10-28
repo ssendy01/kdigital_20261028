@@ -1,0 +1,4972 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>미라클 평생교육원 K-디지털</title>
+    <meta content="국가가 지원하는 K-디지털 기초역량훈련. 온라인으로 배우고 직접 해보세요." name="description"/>
+    <link
+      href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy:#09182b;
+        --blue:#2563f2;
+        --ink:#10233f;
+        --muted:#65748b;
+        --bg:#f5f7fb;
+        --line:#dfe6f0
+      }
+      * {
+        box-sizing:border-box
+      }
+      html {
+        scroll-behavior:smooth;
+        scroll-padding-top:72px
+      }
+      body {
+        margin:0;
+        color:var(--ink);
+        font-family:Pretendard,'Noto Sans KR',system-ui,sans-serif;
+        word-break:keep-all;
+        -webkit-font-smoothing:antialiased
+      }
+      a {
+        color:inherit;
+        text-decoration:none
+      }
+      button {
+        font:inherit;
+        cursor:pointer
+      }
+      button:focus-visible,a:focus-visible,summary:focus-visible {
+        outline:3px solid #86afff;
+        outline-offset:3px
+      }
+      .wrap {
+        width:min(1040px,calc(100% - 44px));
+        margin:auto
+      }
+      .nav {
+        height:66px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:18px
+      }
+      .logo {
+        font-size:17px;
+        font-weight:850;
+        letter-spacing:-.7px
+      }
+      .logo b {
+        color:var(--blue)
+      }
+      header {
+        position:sticky;
+        top:0;
+        background:#fff;
+        z-index:50;
+        border-bottom:1px solid #e4eaf3
+      }
+      .navlinks {
+        display:flex;
+        align-items:center;
+        gap:23px;
+        font-size:12px;
+        font-weight:750
+      }
+      .btn {
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        gap:9px;
+        border:0;
+        border-radius:999px;
+        background:var(--blue);
+        color:#fff;
+        padding:15px 25px;
+        font-size:14px;
+        font-weight:800;
+        transition:transform .2s,background .2s
+      }
+      .btn:hover {
+        background:#164bd4;
+        transform:translateY(-2px)
+      }
+      .nav .btn {
+        padding:10px 17px;
+        font-size:12px
+      }
+      .section {
+        padding:100px 0;
+        text-align:center
+      }
+      .kicker {
+        font-size:12px;
+        font-weight:850;
+        letter-spacing:1.3px;
+        color:var(--blue);
+        margin:0 0 18px
+      }
+      .section h2 {
+        font-size:clamp(34px,4.9vw,58px);
+        line-height:1.22;
+        letter-spacing:-2px;
+        margin:0 auto 20px;
+        max-width:790px
+      }
+      .highlight {
+        color:var(--blue)
+      }
+      .desc {
+        font-size:clamp(15px,1.7vw,18px);
+        line-height:1.7;
+        color:var(--muted);
+        margin:0 auto;
+        max-width:660px
+      }
+      .hero {
+        background:radial-gradient(circle at 50% 100%,#173d70 0,transparent 48%),#071527;
+        color:#fff;
+        min-height:630px;
+        display:flex;
+        align-items:center;
+        text-align:center;
+        padding:100px 0 95px;
+        overflow:hidden
+      }
+      .hero .kicker {
+        color:#a6c8ff
+      }
+      .hero h1 {
+        font-size:clamp(47px,7.2vw,92px);
+        letter-spacing:-4.2px;
+        line-height:1.13;
+        margin:0 auto 22px
+      }
+      .hero h1 em {
+        font-style:normal;
+        color:#8ab5ff
+      }
+      .hero .sub {
+        font-size:clamp(16px,2vw,21px);
+        color:#d8e7f9;
+        font-weight:600;
+        margin:0 auto 28px;
+        line-height:1.5
+      }
+      .hero .mini {
+        display:flex;
+        justify-content:center;
+        gap:15px;
+        flex-wrap:wrap;
+        margin-top:22px;
+        color:#b7cde8;
+        font-size:12px
+      }
+      .hero .mini span:before {
+        content:'✓ ';
+        color:#8cb9ff
+      }
+      .hero .spark {
+        position:absolute;
+        pointer-events:none;
+        font-size:42px;
+        opacity:.23
+      }
+      .hero .wrap {
+        position:relative
+      }
+      .hero .spark.a {
+        left:1%;
+        top:20%
+      }
+      .hero .spark.b {
+        right:3%;
+        bottom:5%
+      }
+      .what {
+        background:#fff
+      }
+      .what .lead {
+        font-size:clamp(22px,3vw,32px);
+        font-weight:850;
+        margin:0 auto 30px;
+        letter-spacing:-.7px
+      }
+      .skill-chips {
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:12px;
+        max-width:850px;
+        margin:auto
+      }
+      .skill-chips a {
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        padding:17px 23px;
+        background:#f2f6ff;
+        border:1px solid #e1e9ff;
+        border-radius:16px;
+        font-weight:800;
+        font-size:16px;
+        transition:transform .2s,background .2s
+      }
+      .skill-chips a:hover {
+        background:#e4edff;
+        transform:translateY(-3px)
+      }
+      .policy {
+        background:#ebf2ff
+      }
+      .policy h2 {
+        max-width:760px
+      }
+      .policy .headline-tag {
+        display:inline-block;
+        border-radius:999px;
+        padding:9px 17px;
+        background:#dbe8ff;
+        color:#1254c8;
+        font-size:13px;
+        font-weight:800;
+        margin:25px 0 29px
+      }
+      .policy .disclaimer {
+        font-size:12px;
+        color:#77859b;
+        line-height:1.55;
+        margin:19px auto 0;
+        max-width:590px
+      }
+      .kit {
+        background:var(--navy);
+        color:#fff
+      }
+      .kit .kicker {
+        color:#ffd18b
+      }
+      .kit h2 {
+        max-width:790px
+      }
+      .kit h2 span {
+        color:#ffd28a
+      }
+      .kit .desc {
+        color:#d2ddee
+      }
+      .kit .benefits {
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px;
+        margin:29px 0 30px
+      }
+      .kit .benefits span {
+        border:1px solid #38516f;
+        padding:12px 18px;
+        border-radius:999px;
+        font-weight:750;
+        font-size:13px;
+        background:#132841
+      }
+      .kit .btn {
+        background:#fff;
+        color:#092545
+      }
+      .kit .note {
+        color:#9fb3cc;
+        margin:20px auto 0;
+        font-size:12px
+      }
+      .price {
+        background:#fff
+      }
+      .price .price-banner {
+        max-width:710px;
+        margin:32px auto 0;
+        padding:26px;
+        border:1px solid #dbe7fc;
+        border-radius:18px;
+        background:#f7faff
+      }
+      .price .price-banner strong {
+        display:block;
+        font-size:clamp(19px,2.8vw,26px);
+        margin-bottom:10px
+      }
+      .price .price-banner p {
+        font-size:13px;
+        color:var(--muted);
+        margin:0
+      }
+      .price .btn {
+        margin-top:25px
+      }
+      .courses-section {
+        background:#f3f6fb
+      }
+      .course-tabs {
+        display:grid;
+        grid-template-columns:repeat(4,1fr);
+        gap:9px;
+        margin:30px 0 25px
+      }
+      .course-tab {
+        border:1px solid #dbe4f0;
+        border-radius:13px;
+        background:#fff;
+        color:var(--ink);
+        font-size:14px;
+        font-weight:800;
+        padding:17px 8px
+      }
+      .course-tab[aria-pressed=true] {
+        background:#e5edff;
+        color:#1458d8;
+        border-color:#3980ff;
+        box-shadow:inset 0 0 0 1px #3980ff
+      }
+      .course-status {
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        margin-bottom:16px;
+        text-align:left;
+        gap:10px;
+        font-size:14px
+      }
+      .course-status span {
+        color:var(--muted)
+      }
+      .course-grid {
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:14px;
+        text-align:left
+      }
+      .course-card {
+        padding:23px;
+        border:1px solid #e0e8f4;
+        border-radius:18px;
+        background:#fff;
+        min-height:228px;
+        display:flex;
+        flex-direction:column;
+        box-shadow:0 8px 24px #12304d05
+      }
+      .course-card .eyebrow {
+        font-size:11px;
+        color:#2264d5;
+        font-weight:850
+      }
+      .course-card h3 {
+        font-size:18px;
+        line-height:1.4;
+        letter-spacing:-.45px;
+        margin:13px 0 9px
+      }
+      .course-card p {
+        font-size:13px;
+        line-height:1.55;
+        color:#52627a;
+        margin:0 0 17px
+      }
+      .course-card .foot {
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:8px;
+        margin-top:auto;
+        border-top:1px solid #edf0f6;
+        padding-top:14px;
+        font-size:12px;
+        color:#7b899d
+      }
+      .course-card .foot strong {
+        color:#175ddb
+      }
+      .course-card .kitmark {
+        display:inline-block;
+        margin-top:10px;
+        font-size:11px;
+        font-weight:800;
+        color:#956518;
+        background:#fff4d8;
+        padding:5px 8px;
+        border-radius:5px;
+        align-self:flex-start
+      }
+      .nothing {
+        background:#fff;
+        border-radius:12px;
+        padding:30px
+      }
+      .apply {
+        background:#fff
+      }
+      .steps {
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px;
+        margin:31px auto 26px;
+        max-width:790px
+      }
+      .steps span {
+        padding:15px 18px;
+        border-radius:999px;
+        background:#f2f6ff;
+        font-size:14px;
+        font-weight:800
+      }
+      .steps span+span:before {
+        content:'→';
+        padding-right:15px;
+        color:var(--blue)
+      }
+      .faq {
+        margin:35px auto 0;
+        max-width:700px;
+        text-align:left
+      }
+      .faq details {
+        padding:18px 4px;
+        border-bottom:1px solid var(--line)
+      }
+      .faq summary {
+        cursor:pointer;
+        font-weight:760;
+        font-size:15px
+      }
+      .faq details p {
+        font-size:13px;
+        line-height:1.7;
+        color:var(--muted);
+        margin:13px 0 3px
+      }
+      .end {
+        background:#e8f0ff
+      }
+      .end .btn {
+        margin-top:12px
+      }
+      footer {
+        background:#08182b;
+        color:#a1b2c8;
+        font-size:12px;
+        padding:26px 0
+      }
+      .footer-wrap {
+        display:flex;
+        justify-content:space-between;
+        flex-wrap:wrap;
+        gap:12px
+      }
+      .mobile-cta {
+        display:none
+      }
+      @media(max-width:800px) {
+        .section {
+          padding:77px 0
+        }
+        .course-grid {
+          grid-template-columns:repeat(2,1fr)
+        }
+        .hero {
+          min-height:540px
+        }
+        .hero h1 {
+          letter-spacing:-2.3px
+        }
+        .navlinks {
+          display:none
+        }
+      }
+      @media(max-width:560px) {
+        .wrap {
+          width:calc(100% - 32px)
+        }
+        .section {
+          padding:65px 0
+        }
+        .section h2 {
+          font-size:clamp(31px,8.4vw,43px);
+          letter-spacing:-1.4px
+        }
+        .hero {
+          padding:90px 0;
+          min-height:510px
+        }
+        .hero h1 {
+          font-size:clamp(43px,11vw,57px);
+          letter-spacing:-2px
+        }
+        .skill-chips a {
+          font-size:14px;
+          padding:14px 16px
+        }
+        .course-tabs {
+          grid-template-columns:repeat(2,1fr)
+        }
+        .course-grid {
+          grid-template-columns:1fr
+        }
+        .course-card {
+          min-height:198px
+        }
+        .steps {
+          display:grid;
+          grid-template-columns:1fr;
+          width:min(340px,100%)
+        }
+        .steps span+span:before {
+          content:none
+        }
+        .mobile-cta {
+          display:block;
+          position:fixed;
+          bottom:0;
+          left:0;
+          right:0;
+          padding:9px 16px calc(9px + env(safe-area-inset-bottom));
+          background:#fff;
+          box-shadow:0 -4px 20px #0b254225;
+          z-index:60
+        }
+        .mobile-cta a {
+          display:block;
+          background:var(--blue);
+          color:#fff;
+          border-radius:10px;
+          padding:14px;
+          text-align:center;
+          font-weight:850;
+          font-size:14px
+        }
+        body {
+          padding-bottom:70px
+        }
+      }
+      @media(prefers-reduced-motion:reduce) {
+        html {
+          scroll-behavior:auto
+        }
+        .btn,.skill-chips a {
+          transition:none
+        }
+      }
+      /* V6.2: 뉴스 무드 + 원페이지 추천 설문 */
+      .policy-news {
+        background:linear-gradient(180deg,#eef4ff,#e9f1ff)
+      }
+      .policy-news .wrap {
+        max-width:1000px
+      }
+      .newsline {
+        display:flex;
+        align-items:center;
+        margin:0 auto 7px;
+        max-width:800px;
+        text-align:left;
+        border-radius:15px;
+        overflow:hidden;
+        background:#10233f;
+        color:white;
+        box-shadow:0 10px 30px #183b6c17
+      }
+      .onair {
+        display:inline-flex;
+        align-items:center;
+        gap:8px;
+        padding:15px 19px;
+        background:#0c1830;
+        flex-shrink:0;
+        font-size:11px;
+        font-weight:900;
+        letter-spacing:1px;
+        color:#a8c9ff
+      }
+      .pulse {
+        width:8px;
+        height:8px;
+        background:#ff715b;
+        border-radius:50%;
+        box-shadow:0 0 0 5px #ff715b20;
+        animation:pulse 1.8s infinite
+      }
+      .newswindow {
+        overflow:hidden;
+        flex:1
+      }
+      .newsrail {
+        display:flex;
+        align-items:center;
+        gap:45px;
+        width:max-content;
+        white-space:nowrap;
+        animation:newsMove 19s linear infinite;
+        padding-left:25px;
+        font-size:13px;
+        font-weight:750
+      }
+      .news-caution {
+        font-size:11px;
+        color:#7c8ba3;
+        margin:0 auto 33px;
+        max-width:780px;
+        text-align:right
+      }
+      .policy-news h2 {
+        max-width:890px;
+        margin-bottom:19px
+      }
+      .policy-news .desc {
+        margin-bottom:29px
+      }
+      .policy-news .disclaimer {
+        margin-top:20px
+      }
+      .quiz-teaser {
+        margin:32px 0 10px;
+        padding:22px 25px;
+        border:1px solid #c8d9fb;
+        background:#e9f0ff;
+        border-radius:20px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:20px;
+        text-align:left
+      }
+      .quiz-teaser>div {
+        display:flex;
+        align-items:center;
+        flex-wrap:wrap;
+        gap:9px
+      }
+      .quiz-teaser strong {
+        font-size:17px
+      }
+      .quiz-teaser span:not(.quiz-emoji) {
+        font-size:13px;
+        color:#617492
+      }
+      .quiz-emoji {
+        font-size:24px
+      }
+      .quiz-launch {
+        background:var(--navy);
+        border:0;
+        color:white;
+        font-size:13px;
+        font-weight:850;
+        padding:14px 18px;
+        border-radius:12px;
+        flex-shrink:0
+      }
+      .quiz-launch:hover {
+        background:#254b87
+      }
+      .quiz-panel {
+        margin:15px auto 24px;
+        padding:25px;
+        border:1px solid #b7cef8;
+        background:#fff;
+        border-radius:22px;
+        box-shadow:0 12px 35px #123e7e0b;
+        text-align:left;
+        max-width:800px
+      }
+      .quiz-panel[hidden],.quiz-result[hidden] {
+        display:none
+      }
+      .quiz-head {
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        color:#336bde;
+        font-size:12px;
+        font-weight:900
+      }
+      .quiz-close {
+        border:0;
+        background:#f1f5fb;
+        color:#314865;
+        width:30px;
+        height:30px;
+        border-radius:50%;
+        font-size:15px
+      }
+      .quiz-meter {
+        height:5px;
+        background:#e8eef8;
+        border-radius:20px;
+        overflow:hidden;
+        margin:14px 0 25px
+      }
+      .quiz-meter div {
+        height:100%;
+        width:33.333%;
+        background:var(--blue);
+        transition:width .3s
+      }
+      .quiz-step h3,.quiz-result h3 {
+        font-size:clamp(22px,3vw,29px);
+        margin:0 0 18px;
+        line-height:1.4;
+        letter-spacing:-.7px
+      }
+      .quiz-answers {
+        display:grid;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px
+      }
+      .quiz-answer {
+        background:#f7faff;
+        border:1px solid #dbe5f7;
+        border-radius:13px;
+        padding:17px 16px;
+        font-size:14px;
+        text-align:left;
+        color:#152b4b;
+        font-weight:750;
+        min-height:62px
+      }
+      .quiz-answer:hover,.quiz-answer:focus-visible {
+        background:#eaf1ff;
+        border-color:#3274f3
+      }
+      .quiz-result {
+        animation:quizIn .32s ease
+      }
+      .quiz-result h3 {
+        margin-bottom:8px
+      }
+      .quiz-result p {
+        color:#65748b;
+        font-size:14px;
+        line-height:1.6
+      }
+      .quiz-suggestions {
+        display:grid;
+        gap:9px;
+        margin:18px 0
+      }
+      .quiz-suggestions>div {
+        padding:14px 16px;
+        border:1px solid #e0e9f7;
+        border-radius:12px;
+        font-weight:750;
+        font-size:14px
+      }
+      .quiz-actions {
+        display:flex;
+        gap:9px;
+        flex-wrap:wrap
+      }
+      .quiz-actions button {
+        padding:13px 17px;
+        border-radius:10px;
+        border:1px solid #d1def2;
+        background:#fff;
+        font-weight:800;
+        color:#163253
+      }
+      .quiz-actions button.primary {
+        background:var(--blue);
+        border-color:var(--blue);
+        color:white
+      }
+      .quiz-appear {
+        animation:quizIn .25s ease
+      }
+      @keyframes quizIn {
+        from {
+          opacity:0;
+          transform:translateY(9px)
+        }
+        to {
+          opacity:1;
+          transform:translateY(0)
+        }
+      }
+      @keyframes pulse {
+        50% {
+          opacity:.42;
+          box-shadow:0 0 0 9px #ff715b0c
+        }
+      }
+      @keyframes newsMove {
+        0% {
+          transform:translateX(0)
+        }
+        100% {
+          transform:translateX(-68%)
+        }
+      }
+      @media(max-width:700px) {
+        .quiz-teaser {
+          flex-direction:column;
+          align-items:stretch;
+          padding:19px
+        }
+        .quiz-teaser>div {
+          display:block
+        }
+        .quiz-teaser .quiz-emoji {
+          margin-right:7px
+        }
+        .quiz-teaser span:not(.quiz-emoji) {
+          display:block;
+          margin-top:5px
+        }
+        .quiz-launch {
+          width:100%
+        }
+        .quiz-answers {
+          grid-template-columns:1fr
+        }
+        .news-caution {
+          text-align:center
+        }
+        .onair {
+          padding:14px 11px
+        }
+        .newsrail {
+          font-size:11px
+        }
+        .quiz-panel {
+          padding:19px
+        }
+        .policy-news h2 {
+          font-size:clamp(32px,7.7vw,52px)
+        }
+      }
+      @media(prefers-reduced-motion:reduce) {
+        .pulse,.newsrail,.quiz-result,.quiz-appear {
+          animation:none
+        }
+        .quiz-meter div {
+          transition:none
+        }
+      }
+      /* V6.3 — scroll-story policy section; isolated styles keep previous sections intact */
+      .policy-cinematic {
+        background:radial-gradient(ellipse at 50% 10%,#1c3760 0%,#0b1b31 56%,#071422 100%);
+        color:#fff;
+        overflow:hidden;
+        padding:105px 0 95px
+      }
+      .policy-cinematic .kicker {
+        color:#88bbff;
+        margin-bottom:44px
+      }
+      .news-stack {
+        max-width:820px;
+        margin:0 auto 62px;
+        position:relative;
+        display:grid;
+        gap:13px;
+        perspective:900px
+      }
+      .news-strip {
+        min-height:83px;
+        display:flex;
+        align-items:center;
+        gap:20px;
+        text-align:left;
+        padding:21px 24px;
+        border:1px solid #46678f88;
+        border-radius:13px;
+        background:linear-gradient(110deg,#ffffff17,#ffffff0a);
+        box-shadow:0 22px 50px #00000019;
+        opacity:0;
+        transform:translateY(48px) scale(.95);
+        filter:blur(6px);
+        transition:opacity .65s ease,transform .8s cubic-bezier(.2,.75,.15,1),filter .7s ease;
+        will-change:transform,opacity,filter
+      }
+      .news-strip.is-visible {
+        opacity:1;
+        transform:translateY(0) scale(1);
+        filter:blur(0)
+      }
+      .news-strip-one {
+        margin-right:70px
+      }
+      .news-strip-two {
+        margin-left:45px;
+        margin-right:25px
+      }
+      .news-strip-three {
+        margin-left:15px;
+        margin-right:85px
+      }
+      .news-label {
+        flex:0 0 108px;
+        font-size:10px;
+        letter-spacing:1px;
+        font-weight:850;
+        color:#a9c6ef;
+        display:flex;
+        align-items:center;
+        gap:8px
+      }
+      .news-label i {
+        width:6px;
+        height:6px;
+        background:#ff806c;
+        border-radius:50%;
+        box-shadow:0 0 0 4px #ff806c24
+      }
+      .news-strip strong {
+        font-size:clamp(15px,2vw,20px);
+        line-height:1.45;
+        font-weight:760;
+        letter-spacing:-.5px;
+        flex:1
+      }
+      .news-arrow {
+        color:#8bbaff;
+        font-size:21px
+      }
+      .news-message {
+        opacity:0;
+        transform:translateY(35px);
+        transition:opacity .8s,transform .8s;
+        max-width:820px;
+        margin:0 auto 54px
+      }
+      .news-message.is-visible,.news-solution.is-visible {
+        opacity:1;
+        transform:translateY(0)
+      }
+      .news-overline {
+        display:block;
+        color:#b5cce9;
+        font-size:clamp(20px,3vw,31px);
+        font-weight:800;
+        letter-spacing:-.9px;
+        margin-bottom:4px
+      }
+      .policy-cinematic .news-message h2 {
+        font-size:clamp(73px,11vw,144px);
+        line-height:1.08;
+        max-width:none;
+        letter-spacing:-5px;
+        margin:0 auto 19px
+      }
+      .policy-cinematic .highlight {
+        color:#88b7ff
+      }
+      .policy-cinematic .news-message .desc {
+        color:#dfebfb;
+        font-size:clamp(16px,2vw,22px)
+      }
+      .news-message .desc strong {
+        color:white;
+        font-weight:850
+      }
+      .news-solution {
+        display:flex;
+        align-items:center;
+        flex-direction:column;
+        gap:16px;
+        opacity:0;
+        transform:translateY(25px);
+        transition:opacity .7s,transform .7s
+      }
+      .news-solution-label {
+        font-size:12px;
+        color:#a6bfdf;
+        letter-spacing:.5px;
+        margin:0
+      }
+      .news-solution>strong {
+        font-size:clamp(23px,3vw,36px);
+        letter-spacing:-1.2px
+      }
+      .news-solution .btn {
+        margin-top:5px
+      }
+      .news-legal {
+        max-width:720px;
+        margin:35px auto 0;
+        font-size:11px;
+        line-height:1.7;
+        color:#90a6c2
+      }
+      @media(max-width:650px) {
+        .policy-cinematic {
+          padding:78px 0 73px
+        }
+        .policy-cinematic .kicker {
+          margin-bottom:32px
+        }
+        .news-stack {
+          gap:9px;
+          margin-bottom:53px
+        }
+        .news-strip {
+          min-height:74px;
+          padding:15px;
+          gap:9px
+        }
+        .news-strip-one {
+          margin-right:12px
+        }
+        .news-strip-two {
+          margin-left:12px;
+          margin-right:0
+        }
+        .news-strip-three {
+          margin-left:2px;
+          margin-right:10px
+        }
+        .news-label {
+          flex-basis:63px;
+          font-size:8px;
+          letter-spacing:0
+        }
+        .news-strip strong {
+          font-size:14px
+        }
+        .news-arrow {
+          font-size:15px
+        }
+        .policy-cinematic .news-message h2 {
+          letter-spacing:-3px
+        }
+        .news-overline {
+          font-size:21px
+        }
+        .news-message {
+          margin-bottom:42px
+        }
+        .news-solution>strong {
+          font-size:25px
+        }
+      }
+      @media(prefers-reduced-motion:reduce) {
+        .news-strip,.news-message,.news-solution {
+          opacity:1!important;
+          transform:none!important;
+          filter:none!important;
+          transition:none!important
+        }
+      }
+      /* V6.4: verified publisher/date news ticker — isolated to policy section */
+      .policy-cinematic .verified-news {
+        margin:56px auto 0;
+        max-width:1040px;
+        text-align:left
+      }
+      .policy-cinematic .verified-news-heading {
+        display:flex;
+        gap:10px;
+        align-items:center;
+        margin:0 0 13px;
+        color:#a9c7ee;
+        font-size:11px;
+        font-weight:850;
+        letter-spacing:.7px
+      }
+      .policy-cinematic .verified-news-heading::before {
+        content:"";
+        width:7px;
+        height:7px;
+        border-radius:50%;
+        background:#ff857a
+      }
+      .policy-cinematic .verified-news-window {
+        overflow:hidden;
+        border-block:1px solid #4a6586;
+        background:#071529;
+        border-radius:10px;
+        mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)
+      }
+      .policy-cinematic .verified-news-track {
+        display:flex;
+        gap:32px;
+        align-items:center;
+        width:max-content;
+        animation:verifiedScroll 48s linear infinite;
+        padding:17px 10px
+      }
+      .policy-cinematic .verified-news-window:hover .verified-news-track,.policy-cinematic .verified-news-window:focus-within .verified-news-track {
+        animation-play-state:paused
+      }
+      .policy-cinematic .verified-news-item {
+        display:inline-flex;
+        gap:12px;
+        align-items:center;
+        white-space:nowrap;
+        color:#dce8fa;
+        font-size:13px;
+        font-weight:650
+      }
+      .policy-cinematic .verified-news-item .publisher {
+        font-weight:900;
+        color:#8cbcff
+      }
+      .policy-cinematic .verified-news-item time {
+        color:#a8bad2;
+        font-size:12px
+      }
+      .policy-cinematic .verified-news-item a:hover,.policy-cinematic .verified-news-item a:focus-visible {
+        color:#fff;
+        text-decoration:underline;
+        text-underline-offset:4px
+      }
+      .policy-cinematic .verified-news-item::after {
+        content:'·';
+        color:#567194;
+        margin-left:17px;
+        font-size:18px
+      }
+      .policy-cinematic .verified-news-source {
+        color:#8fa7c6;
+        font-size:11px;
+        margin:11px 0 0;
+        text-align:center
+      }
+      @keyframes verifiedScroll {
+        from {
+          transform:translateX(0)
+        }
+        to {
+          transform:translateX(-50%)
+        }
+      }
+      @media(max-width:560px) {
+        .policy-cinematic .verified-news {
+          margin-top:42px
+        }
+        .policy-cinematic .verified-news-track {
+          padding:14px 8px;
+          gap:22px
+        }
+        .policy-cinematic .verified-news-item {
+          font-size:12px;
+          gap:9px
+        }
+      }
+      @media(prefers-reduced-motion:reduce) {
+        .policy-cinematic .verified-news-track {
+          animation:none;
+          flex-wrap:wrap;
+          width:auto
+        }
+        .policy-cinematic .verified-news-window {
+          mask-image:none
+        }
+        .policy-cinematic .verified-news-item {
+          white-space:normal
+        }
+      }
+      /* V6.5 interactive learning showcase */
+      .skill-switch {
+        max-width:1000px
+      }
+      .skill-switch .skill-option {
+        appearance:none;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        flex:1 1 205px;
+        background:#f2f6ff;
+        border:1px solid #e1e9ff;
+        border-radius:16px;
+        color:#10233f;
+        padding:17px 12px;
+        font-size:15px;
+        font-weight:800;
+        transition:background .2s,border .2s,transform .2s
+      }
+      .skill-switch .skill-option:hover {
+        transform:translateY(-2px);
+        background:#e9f0ff
+      }
+      .skill-switch .skill-option.is-active {
+        background:#e6efff;
+        border-color:#2563f2;
+        box-shadow:0 0 0 1px #2563f2 inset;
+        color:#1953cf
+      }
+      .demo-showcase {
+        max-width:900px;
+        margin:24px auto 0;
+        text-align:left;
+        background:#0c1d35;
+        color:#eef5ff;
+        border:1px solid #273f60;
+        border-radius:23px;
+        box-shadow:0 24px 55px #09182b20;
+        overflow:hidden
+      }
+      .demo-top,.demo-bottom {
+        display:flex;
+        align-items:center;
+        gap:15px;
+        justify-content:space-between;
+        padding:15px 22px
+      }
+      .demo-top {
+        border-bottom:1px solid #233b5b;
+        font-size:11px;
+        letter-spacing:.7px;
+        color:#aac5e9
+      }
+      .demo-live {
+        font-weight:900
+      }
+      .demo-live i {
+        display:inline-block;
+        width:7px;
+        height:7px;
+        border-radius:50%;
+        background:#4fe0a8;
+        margin-right:8px;
+        box-shadow:0 0 10px #4fe0a8
+      }
+      .demo-replay {
+        background:#1a3454;
+        color:#d7e9ff;
+        border:1px solid #304968;
+        padding:8px 12px;
+        border-radius:8px;
+        font-size:12px;
+        font-weight:750
+      }
+      .demo-stage {
+        height:350px;
+        position:relative;
+        overflow:hidden;
+        background:radial-gradient(ellipse at 50% 78%,#1a4167 0%,#0d213e 48%,#09192d 85%)
+      }
+      .demo-stage:before {
+        content:"";
+        position:absolute;
+        inset:0;
+        background-image:linear-gradient(#54749913 1px,transparent 1px),linear-gradient(90deg,#54749913 1px,transparent 1px);
+        background-size:38px 38px;
+        mask-image:linear-gradient(to bottom,transparent,#000)
+      }
+      .demo-panel {
+        position:absolute;
+        inset:0;
+        display:grid;
+        place-items:center
+      }
+      .demo-panel[hidden] {
+        display:none
+      }
+      .demo-panel.is-visible {
+        animation:stageAppear .55s ease both
+      }
+      .demo-bottom {
+        border-top:1px solid #233b5b;
+        font-size:14px;
+        font-weight:850
+      }
+      .demo-hint {
+        font-size:12px;
+        font-weight:500;
+        color:#94b0d2
+      }
+      .browser-visual {
+        width:min(73%,540px);
+        height:270px;
+        position:relative;
+        background:#f6f9ff;
+        box-shadow:0 26px 60px #01091570;
+        border:1px solid #95add0;
+        border-radius:12px;
+        overflow:hidden;
+        transform:perspective(900px) rotateX(5deg)
+      }
+      .browser-top {
+        background:#dce8f8;
+        height:32px;
+        display:flex;
+        align-items:center;
+        padding:0 12px;
+        gap:6px
+      }
+      .browser-top span {
+        width:7px;
+        height:7px;
+        border-radius:50%;
+        background:#8ca2be
+      }
+      .browser-top span:first-child {
+        background:#fa927f
+      }
+      .browser-top div {
+        margin:auto;
+        color:#6d839e;
+        font-size:10px
+      }
+      .browser-content {
+        height:238px;
+        display:flex
+      }
+      .web-sidebar {
+        width:90px;
+        background:#eaf0fb;
+        padding:20px 12px;
+        display:grid;
+        align-content:start;
+        gap:14px
+      }
+      .web-sidebar i {
+        height:8px;
+        border-radius:4px;
+        background:#c2d3ed
+      }
+      .web-main {
+        flex:1;
+        padding:25px 32px
+      }
+      .web-overline,.web-title,.web-copy,.web-btn,.web-gallery {
+        opacity:0;
+        animation:webBuild 7s infinite
+      }
+      .web-overline {
+        height:8px;
+        width:85px;
+        background:#4e94ee;
+        border-radius:4px;
+        animation-delay:.35s
+      }
+      .web-title {
+        height:18px;
+        width:78%;
+        background:#193b67;
+        margin-top:15px;
+        border-radius:4px;
+        animation-delay:.85s
+      }
+      .web-title.short {
+        width:52%;
+        margin-top:6px;
+        animation-delay:1.2s
+      }
+      .web-copy {
+        height:7px;
+        width:75%;
+        background:#abbfd9;
+        border-radius:3px;
+        margin-top:14px;
+        animation-delay:1.6s
+      }
+      .web-copy.short {
+        width:61%;
+        margin-top:5px;
+        animation-delay:1.85s
+      }
+      .web-btn {
+        height:24px;
+        width:98px;
+        background:#2563f2;
+        border-radius:6px;
+        margin-top:13px;
+        animation-delay:2.2s
+      }
+      .web-gallery {
+        display:flex;
+        gap:8px;
+        margin-top:14px;
+        animation-delay:2.6s
+      }
+      .web-gallery b {
+        height:45px;
+        flex:1;
+        background:linear-gradient(130deg,#94c6ff,#9cb8f0);
+        border-radius:5px
+      }
+      .web-gallery b:nth-child(2) {
+        background:linear-gradient(130deg,#a7a1fd,#5677d9)
+      }
+      .web-gallery b:nth-child(3) {
+        background:linear-gradient(130deg,#9bdfc7,#3f97b9)
+      }
+      .web-cursor {
+        position:absolute;
+        color:#f9fcff;
+        font-size:32px;
+        left:72%;
+        top:77%;
+        text-shadow:0 3px 10px #0a2858;
+        animation:cursorMove 7s infinite
+      }
+      .show-svg {
+        width:min(92%,800px);
+        height:100%;
+        overflow:visible
+      }
+      .car-road {
+        stroke:#274766;
+        stroke-width:45;
+        fill:none;
+        stroke-linecap:round
+      }
+      .car-guide {
+        stroke:url(#trackGradient);
+        stroke-width:3;
+        stroke-dasharray:9 11;
+        fill:none;
+        stroke-linecap:round
+      }
+      .sensor {
+        fill:#56c4fa12;
+        stroke:#57bafd60;
+        stroke-width:1.8;
+        transform-box:fill-box;
+        transform-origin:center;
+        animation:sensorPing 1.5s infinite
+      }
+      .s2 {
+        animation-delay:.5s
+      }
+      .printer-frame path {
+        stroke:#6585ac;
+        stroke-width:10;
+        fill:none;
+        stroke-linejoin:round
+      }
+      .printer-platform {
+        fill:#94b8df
+      }
+      .print-layer {
+        fill:#65c8f3;
+        opacity:0;
+        animation:layerBuild 7s infinite;
+        animation-delay:calc(var(--i) * .4s)
+      }
+      .printer-head {
+        fill:#d4e8fc;
+        animation:headMove 1.15s ease-in-out infinite alternate;
+        transform:translate(395px,78px)
+      }
+      .print-rail {
+        stroke:#9ebde2;
+        stroke-width:9;
+        stroke-linecap:round
+      }
+      .robot-arm {
+        transform-box:view-box;
+        transform-origin:241px 236px;
+        animation:robotSwing 5s ease-in-out infinite
+      }
+      .robot-cube {
+        animation:boxTravel 5s ease-in-out infinite;
+        transform-box:fill-box;
+        transform-origin:center
+      }
+      .robot-pivot {
+        transform-box:view-box
+      }
+      @keyframes stageAppear {
+        from {
+          opacity:.15;
+          transform:translateY(10px)
+        }
+        to {
+          opacity:1;
+          transform:none
+        }
+      }
+      @keyframes webBuild {
+        0%,4% {
+          opacity:0;
+          transform:translateY(9px)
+        }
+        12%,79% {
+          opacity:1;
+          transform:none
+        }
+        90%,100% {
+          opacity:0
+        }
+      }
+      @keyframes cursorMove {
+        0% {
+          transform:translate(32px,25px);
+          opacity:0
+        }
+        25%,76% {
+          transform:translate(-70px,-65px);
+          opacity:1
+        }
+        90%,100% {
+          opacity:0
+        }
+      }
+      @keyframes sensorPing {
+        0% {
+          opacity:.3;
+          transform:scale(.5)
+        }
+        75% {
+          opacity:1;
+          transform:scale(1.5)
+        }
+        100% {
+          opacity:0;
+          transform:scale(1.8)
+        }
+      }
+      @keyframes layerBuild {
+        0%,3% {
+          opacity:0
+        }
+        13%,75% {
+          opacity:1
+        }
+        94%,100% {
+          opacity:0
+        }
+      }
+      @keyframes headMove {
+        from {
+          transform:translate(320px,78px)
+        }
+        to {
+          transform:translate(465px,78px)
+        }
+      }
+      @keyframes robotSwing {
+        0%,17% {
+          transform:rotate(0deg)
+        }
+        42%,60% {
+          transform:rotate(-28deg)
+        }
+        80%,100% {
+          transform:rotate(0deg)
+        }
+      }
+      @keyframes boxTravel {
+        0%,22% {
+          transform:translate(0,0)
+        }
+        44%,59% {
+          transform:translate(-5px,-40px)
+        }
+        79%,100% {
+          transform:translate(190px,0)
+        }
+      }
+      @media(max-width:560px) {
+        .skill-switch {
+          display:grid;
+          grid-template-columns:repeat(2,minmax(0,1fr))
+        }
+        .skill-switch .skill-option {
+          font-size:12px;
+          padding:13px 7px;
+          min-width:0
+        }
+        .demo-stage {
+          height:250px
+        }
+        .demo-top,.demo-bottom {
+          padding:12px 14px
+        }
+        .demo-bottom {
+          display:grid;
+          gap:5px
+        }
+        .browser-visual {
+          width:84%;
+          height:190px
+        }
+        .browser-content {
+          height:158px
+        }
+        .web-sidebar {
+          width:55px
+        }
+        .web-main {
+          padding:16px
+        }
+        .web-gallery b {
+          height:25px
+        }
+        .demo-hint {
+          font-size:11px
+        }
+      }
+      @media(prefers-reduced-motion:reduce) {
+        .demo-panel,.web-overline,.web-title,.web-copy,.web-btn,.web-gallery,.web-cursor,.sensor,.print-layer,.printer-head,.robot-arm,.robot-cube {
+          animation:none!important
+        }
+        .web-overline,.web-title,.web-copy,.web-btn,.web-gallery,.print-layer {
+          opacity:1
+        }
+        .web-cursor {
+          display:none
+        }
+      }
+      /* V6.7: device-realism pass; keep other sections unchanged */
+      .demo-stage {
+        height:380px;
+        background:radial-gradient(ellipse at 50% 82%,#214264 0%,#0a1c33 57%,#051020 100%)
+      }
+      .demo-stage:after {
+        content:"";
+        position:absolute;
+        inset:0;
+        pointer-events:none;
+        box-shadow:inset 0 0 66px #020c20ad
+      }
+      .show-svg {
+        width:min(100%,880px);
+        height:100%;
+        filter:drop-shadow(0 18px 20px #020a176c)
+      }
+      .browser-visual {
+        width:min(80%,600px);
+        height:284px;
+        transform:perspective(950px) rotateX(4deg) rotateY(-5deg);
+        box-shadow:0 30px 75px #0009
+      }
+      .browser-content {
+        height:252px
+      }
+      .web-sidebar {
+        width:105px
+      }
+      .web-main {
+        padding:32px 30px;
+        background:linear-gradient(115deg,#fcfdff,#e8f2ff)
+      }
+      .web-overline,.web-title,.web-copy,.web-btn,.web-gallery {
+        height:auto;
+        opacity:0;
+        animation:webBuild 7s infinite;
+        transform-origin:left center
+      }
+      .web-overline {
+        width:auto;
+        font:700 10px/1.5 sans-serif;
+        background:none;
+        color:#2474e3;
+        letter-spacing:1px;
+        animation-delay:.35s
+      }
+      .web-title {
+        width:auto;
+        margin-top:10px;
+        font:900 clamp(17px,2.9vw,29px)/1.3 sans-serif;
+        color:#162f53;
+        background:none;
+        animation-delay:.85s
+      }
+      .web-copy {
+        width:auto;
+        margin-top:12px;
+        font:500 12px/1.4 sans-serif;
+        color:#657992;
+        background:none;
+        animation-delay:1.5s
+      }
+      .web-btn {
+        width:max-content;
+        padding:9px 13px;
+        margin-top:18px;
+        background:#2563f2;
+        color:white;
+        font:750 11px/1 sans-serif;
+        animation-delay:2s
+      }
+      .web-gallery {
+        gap:10px;
+        margin-top:17px;
+        animation-delay:2.5s
+      }
+      .web-gallery b {
+        display:grid;
+        place-items:center;
+        color:#fff;
+        font:900 12px/1 sans-serif;
+        height:57px
+      }
+      .real-print-head {
+        animation:realPrintMove 2s cubic-bezier(.42,0,.58,1) infinite alternate;
+        transform:translate(400px,92px)
+      }
+      .print-layer {
+        animation:layerBuild 8s linear infinite;
+        animation-delay:calc(var(--i) * .28s)
+      }
+      .robot-arm {
+        transform-origin:232px 220px;
+        animation:robotSwing 6s cubic-bezier(.45,0,.4,1) infinite
+      }
+      .robot-cube {
+        animation:boxTravel 6s ease-in-out infinite
+      }
+      .claw-left,.claw-right {
+        animation:gripMotion 6s ease-in-out infinite
+      }
+      @keyframes realPrintMove {
+        from {
+          transform:translate(350px,92px)
+        }
+        to {
+          transform:translate(449px,92px)
+        }
+      }
+      @keyframes gripMotion {
+        0%,20%,90%,100% {
+          stroke:#bbd7e9
+        }
+        30%,65% {
+          stroke:#55e2fa
+        }
+      }
+      @media(max-width:560px) {
+        .demo-stage {
+          height:270px
+        }
+        .browser-visual {
+          height:214px;
+          width:90%
+        }
+        .browser-content {
+          height:182px
+        }
+        .web-sidebar {
+          width:53px;
+          padding:15px 8px
+        }
+        .web-main {
+          padding:17px
+        }
+        .web-title {
+          font-size:17px
+        }
+        .web-copy {
+          font-size:9px
+        }
+        .web-gallery b {
+          height:31px;
+          font-size:9px
+        }
+      }
+      @media(prefers-reduced-motion:reduce) {
+        .real-print-head,.claw-left,.claw-right {
+          animation:none!important
+        }
+      }
+      /* V6.7 | Mind cloud: no duplicate course showcase */
+      .mind-section {
+        background:linear-gradient(180deg,#f6f9ff 0%,#eaf2ff 58%,#f8fbff 100%);
+        overflow:hidden;
+        padding-bottom:92px
+      }
+      .mind-section .desc {
+        max-width:680px
+      }
+      .mind-wrap {
+        max-width:1080px
+      }
+      .mind-scene {
+        height:570px;
+        margin:8px auto 0;
+        position:relative;
+        isolation:isolate
+      }
+      .mind-halo {
+        position:absolute;
+        left:50%;
+        top:49%;
+        width:620px;
+        height:480px;
+        transform:translate(-50%,-50%);
+        border-radius:50%;
+        background:radial-gradient(ellipse,#a8c6ff65 0%,#d8e5ff42 38%,transparent 73%);
+        z-index:-1
+      }
+      .mind-person {
+        position:absolute;
+        width:330px;
+        height:352px;
+        left:50%;
+        top:50%;
+        transform:translate(-50%,-44%);
+        filter:drop-shadow(0 27px 35px #3b67bb33);
+        opacity:.85
+      }
+      .mind-cloud {
+        position:absolute;
+        border:none;
+        background:#fff;
+        color:#244674;
+        border-radius:60px;
+        padding:17px 23px;
+        font-size:14px;
+        font-weight:800;
+        white-space:nowrap;
+        box-shadow:0 12px 32px #4068a72b, inset 0 0 0 1px #fff;
+        transition:background .25s,color .25s,box-shadow .25s,scale .25s;
+        animation:mindFloat var(--dur,6s) ease-in-out infinite alternate;
+        animation-delay:var(--delay,0s);
+        z-index:2
+      }
+      .mind-cloud::after {
+        content:"";
+        position:absolute;
+        bottom:-7px;
+        left:23%;
+        width:17px;
+        height:17px;
+        border-radius:50%;
+        background:inherit;
+        opacity:.87
+      }
+      .mind-cloud:hover {
+        scale:1.055;
+        box-shadow:0 17px 42px #2556a84a
+      }
+      .mind-cloud[aria-pressed="true"] {
+        background:#2563f2;
+        color:#fff;
+        box-shadow:0 16px 40px #2563f255
+      }
+      .mind-cloud.is-solved:not([aria-pressed="true"]) {
+        background:#e1f4ed;
+        color:#176c55;
+        box-shadow:0 8px 24px #247c6430
+      }
+      .mind-cloud.is-solved:not([aria-pressed="true"])::before {
+        content:"✓ ";
+        font-weight:900
+      }
+      .mind-cloud.c1 {
+        left:3%;
+        top:13%;
+        --dur:5s
+      }
+      .mind-cloud.c2 {
+        left:34%;
+        top:5%;
+        --dur:6.2s;
+        --delay:-3s
+      }
+      .mind-cloud.c3 {
+        right:1%;
+        top:15%;
+        --dur:5.5s;
+        --delay:-1s
+      }
+      .mind-cloud.c4 {
+        left:1%;
+        top:44%;
+        --dur:6.4s;
+        --delay:-2.7s
+      }
+      .mind-cloud.c5 {
+        right:0;
+        top:42%;
+        --dur:5.3s;
+        --delay:-1.5s
+      }
+      .mind-cloud.c6 {
+        left:8%;
+        bottom:16%;
+        --dur:6.3s;
+        --delay:-1.1s
+      }
+      .mind-cloud.c7 {
+        right:3%;
+        bottom:17%;
+        --dur:5.8s;
+        --delay:-3.4s
+      }
+      .mind-cloud.c8 {
+        left:36%;
+        bottom:4%;
+        --dur:6.6s;
+        --delay:-2.2s
+      }
+      .mind-hint {
+        position:absolute;
+        bottom:-28px;
+        left:0;
+        right:0;
+        margin:0;
+        font-size:12px;
+        color:#5c76a0
+      }
+      .mind-answer {
+        margin:58px auto 0;
+        width:min(690px,100%);
+        min-height:190px;
+        padding:28px 32px;
+        background:#fff;
+        border:1px solid #dce8f9;
+        box-shadow:0 16px 55px #4b76bb1c;
+        border-radius:23px;
+        transition:opacity .22s,transform .22s
+      }
+      .mind-answer.is-flash {
+        animation:mindReveal .43s cubic-bezier(.22,1,.36,1)
+      }
+      .mind-answer-icon {
+        display:inline-grid;
+        place-items:center;
+        width:33px;
+        height:33px;
+        background:#eaf1ff;
+        color:#2563f2;
+        border-radius:50%;
+        font-size:18px
+      }
+      .mind-answer-label {
+        margin:12px 0 7px;
+        font-size:11px;
+        font-weight:800;
+        letter-spacing:1px;
+        color:#4972b4
+      }
+      .mind-answer h3 {
+        font-size:clamp(19px,2.9vw,27px);
+        letter-spacing:-.8px;
+        margin:0 0 10px;
+        line-height:1.4
+      }
+      .mind-answer p:not(.mind-answer-label) {
+        font-size:15px;
+        line-height:1.65;
+        color:#60718b;
+        margin:0 auto;
+        max-width:580px
+      }
+      .mind-answer-link {
+        display:inline-flex;
+        margin-top:17px;
+        color:#2463e8;
+        font-weight:850;
+        font-size:13px;
+        border-bottom:1px solid #91b0f3;
+        padding-bottom:3px
+      }
+      .mind-ending {
+        font-size:15px;
+        line-height:1.85;
+        color:#60738e;
+        margin:43px 0 0
+      }
+      .mind-ending strong {
+        color:#162d52
+      }
+      @keyframes mindFloat {
+        from {
+          transform:translateY(-7px) rotate(-1.5deg)
+        }
+        to {
+          transform:translateY(8px) rotate(1.5deg)
+        }
+      }
+      @keyframes mindReveal {
+        from {
+          opacity:.3;
+          transform:translateY(12px) scale(.98)
+        }
+        to {
+          opacity:1;
+          transform:none
+        }
+      }
+      @media(max-width:720px) {
+        .mind-section {
+          padding-top:72px
+        }
+        .mind-scene {
+          height:auto;
+          min-height:560px;
+          padding-top:260px
+        }
+        .mind-person {
+          top:8px;
+          transform:translateX(-50%);
+          width:230px;
+          height:250px
+        }
+        .mind-halo {
+          top:140px;
+          width:340px;
+          height:270px
+        }
+        .mind-clouds {
+          position:relative;
+          display:grid;
+          grid-template-columns:1fr 1fr;
+          gap:11px;
+          padding:0 1px
+        }
+        .mind-cloud,.mind-cloud.c1,.mind-cloud.c2,.mind-cloud.c3,.mind-cloud.c4,.mind-cloud.c5,.mind-cloud.c6,.mind-cloud.c7,.mind-cloud.c8 {
+          position:relative;
+          inset:auto;
+          white-space:normal;
+          font-size:12px;
+          line-height:1.4;
+          min-height:62px;
+          padding:10px 12px;
+          border-radius:18px;
+          animation:none
+        }
+        .mind-cloud::after {
+          display:none
+        }
+        .mind-hint {
+          bottom:-28px
+        }
+        .mind-answer {
+          margin-top:55px;
+          padding:24px 18px
+        }
+        .mind-ending {
+          margin-top:34px;
+          font-size:13px
+        }
+      }
+      @media(prefers-reduced-motion:reduce) {
+        .mind-cloud {
+          animation:none!important
+        }
+        .mind-answer.is-flash {
+          animation:none!important
+        }
+      }
+      /* V8.0: four-card benefits layout only */
+      .kit-v76 .v80-benefits {
+        display:grid;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:18px;
+        max-width:1010px;
+        margin:43px auto 30px;
+        text-align:left
+      }
+      .kit-v76 .v80-card {
+        min-width:0;
+        overflow:hidden;
+        display:grid;
+        grid-template-columns:42% 58%;
+        min-height:288px;
+        border:1px solid #375779;
+        border-radius:22px;
+        background:linear-gradient(125deg,#1d3c5d,#142b47)
+      }
+      .kit-v76 .v80-visual {
+        min-width:0;
+        min-height:235px;
+        display:grid;
+        place-items:center;
+        position:relative;
+        overflow:hidden;
+        background:radial-gradient(circle at center,#3c6188,#173552 78%)
+      }
+      .kit-v76 .v80-visual .v76-art,.kit-v76 .v80-visual .v76-small-art {
+        width:100%;
+        height:100%;
+        min-height:235px;
+        display:grid;
+        place-items:center;
+        background:transparent
+      }
+      .kit-v76 .v80-visual .v76-kit-art svg,.kit-v76 .v80-visual .v76-cert-art svg {
+        width:115%;
+        max-width:none
+      }
+      .kit-v76 .v80-info {
+        padding:26px 23px;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:flex-start;
+        gap:9px
+      }
+      .kit-v76 .v80-index {
+        color:#a9c9ed;
+        letter-spacing:.8px;
+        font-size:10px;
+        font-weight:800
+      }
+      .kit-v76 .v80-info h3 {
+        color:#fff;
+        font-size:clamp(20px,2vw,28px);
+        line-height:1.35;
+        letter-spacing:-1px;
+        margin:6px 0 0
+      }
+      .kit-v76 .v80-info h3 em {
+        color:#ffd18c;
+        font-style:normal
+      }
+      .kit-v76 .v80-promise {
+        color:#fff;
+        font-weight:800;
+        font-size:14px!important;
+        margin:0!important
+      }
+      .kit-v76 .v80-info p:not(.v80-promise) {
+        font-size:12px;
+        line-height:1.6;
+        color:#d2e0f2;
+        margin:0
+      }
+      .kit-v76 .v80-info small {
+        font-size:10px;
+        line-height:1.55;
+        color:#9eb7d2
+      }
+      .kit-v76 .v80-ai {
+        background:linear-gradient(130deg,#333767,#242e57);
+        border-color:#595d92
+      }
+      .kit-v76 .v80-ai .v80-visual {
+        background:radial-gradient(circle,#5b55a5,#2d326d 80%)
+      }
+      .kit-v76 .v80-ai h3 em {
+        color:#c9bfff
+      }
+      .kit-v76 .v80-cert {
+        background:linear-gradient(125deg,#34465e,#22364c)
+      }
+      .kit-v76 .v80-cert .v80-visual {
+        background:radial-gradient(circle,#607c94,#2d4359 77%)
+      }
+      .kit-v76 .v80-online {
+        background:linear-gradient(125deg,#174c61,#123244);
+        border-color:#306c77
+      }
+      .kit-v76 .v80-online .v80-visual {
+        background:radial-gradient(circle,#367e92,#164759 80%)
+      }
+      .kit-v76 .v80-online .v80-visual svg {
+        width:100%;
+        max-width:280px;
+        padding:8px
+      }
+      .kit-v76 .v80-online h3 em {
+        color:#8fe6dd
+      }
+      @media(max-width:820px) {
+        .kit-v76 .v80-benefits {
+          grid-template-columns:1fr
+        }
+        .kit-v76 .v80-card {
+          min-height:240px
+        }
+      }
+      @media(max-width:520px) {
+        .kit-v76 .v80-benefits {
+          gap:12px;
+          margin-top:30px
+        }
+        .kit-v76 .v80-card {
+          grid-template-columns:37% 63%;
+          min-height:210px;
+          border-radius:18px
+        }
+        .kit-v76 .v80-info {
+          padding:16px 12px;
+          gap:7px
+        }
+        .kit-v76 .v80-info h3 {
+          font-size:19px
+        }
+        .kit-v76 .v80-promise {
+          font-size:12px!important
+        }
+        .kit-v76 .v80-info p:not(.v80-promise) {
+          font-size:11px
+        }
+        .kit-v76 .v80-visual,.kit-v76 .v80-visual .v76-art,.kit-v76 .v80-visual .v76-small-art {
+          min-height:210px
+        }
+        .kit-v76 .v80-visual .v76-kit-art svg {
+          width:165%
+        }
+      }
+    </style>
+    <style>
+      /* V6.8 — isolated 2nd section scroll narrative and end-of-page worry FAQ */
+      .story-section {
+        padding:0!important;
+        background:#f5f8fd;
+        overflow:clip
+      }
+      .story-scroll {
+        height:255vh;
+        position:relative
+      }
+      .story-sticky {
+        position:sticky;
+        top:66px;
+        height:calc(100vh - 66px);
+        min-height:570px;
+        display:flex;
+        align-items:center;
+        justify-content:center
+      }
+      .story-inner {
+        position:relative;
+        height:100%;
+        display:flex;
+        align-items:center;
+        flex-direction:column;
+        justify-content:center;
+        padding:37px 0 50px
+      }
+      .story-intro {
+        font-size:clamp(28px,3.5vw,43px)!important;
+        letter-spacing:-1.8px!important;
+        line-height:1.35!important;
+        margin:0!important
+      }
+      .story-scenes {
+        position:relative;
+        width:100%;
+        height:245px;
+        margin:22px auto 12px
+      }
+      .story-line {
+        position:absolute;
+        inset:0;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        opacity:0;
+        transform:translateY(24px);
+        filter:blur(7px);
+        visibility:hidden;
+        transition:opacity .5s ease,transform .6s cubic-bezier(.2,.7,.2,1),filter .5s ease,visibility .5s
+      }
+      .story-line.is-current {
+        opacity:1;
+        transform:translateY(0);
+        filter:none;
+        visibility:visible
+      }
+      .story-index {
+        font-size:12px;
+        font-weight:850;
+        color:#2969e9;
+        letter-spacing:1px
+      }
+      .story-line p {
+        font-size:clamp(30px,4.2vw,54px);
+        font-weight:900;
+        letter-spacing:-2px;
+        line-height:1.35;
+        margin:22px auto 15px;
+        max-width:950px
+      }
+      .story-line em {
+        font-style:normal;
+        color:#2866e8
+      }
+      .story-line small {
+        font-size:clamp(14px,1.6vw,18px);
+        color:#63758d;
+        line-height:1.6
+      }
+      .story-footer {
+        position:absolute;
+        bottom:28px;
+        left:0;
+        right:0;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:18px;
+        color:#7f90aa;
+        font-size:11px;
+        font-weight:800;
+        letter-spacing:.7px
+      }
+      .story-progress {
+        height:3px;
+        background:#d6e0f2;
+        width:115px;
+        border-radius:5px;
+        overflow:hidden
+      }
+      .story-progress i {
+        display:block;
+        height:100%;
+        background:#2867f2;
+        width:25%;
+        transition:width .4s ease
+      }
+      .policy-cinematic .news-message {
+        padding-top:25px
+      }
+      .policy-cinematic .news-message h2 {
+        font-size:clamp(34px,5vw,59px);
+        line-height:1.22;
+        max-width:950px
+      }
+      .policy-cinematic .news-overline {
+        display:none
+      }
+      .mind-faq {
+        max-width:none;
+        text-align:center;
+        margin:70px auto 0;
+        border-top:1px solid #e4eaf5;
+        padding-top:75px
+      }
+      .mind-faq .faq-title {
+        font-size:clamp(30px,4.1vw,48px);
+        letter-spacing:-1.6px;
+        line-height:1.3;
+        margin:0 0 17px
+      }
+      .mind-faq .mind-scene {
+        height:560px;
+        margin:35px auto 0
+      }
+      .mind-faq .mind-cloud {
+        max-width:270px;
+        min-height:60px;
+        white-space:normal;
+        line-height:1.4;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+        overflow:visible
+      }
+      .mind-faq .mind-cloud.is-open {
+        z-index:10;
+        animation:none;
+        min-width:215px;
+        min-height:134px;
+        max-width:255px;
+        border-radius:24px;
+        background:#2563f2;
+        color:white;
+        padding:16px;
+        box-shadow:0 15px 50px #1f5bd05a;
+        transform:translateY(-5px);
+        font-size:12px;
+        display:flex;
+        flex-direction:column;
+        gap:8px;
+        cursor:pointer;
+        white-space:normal
+      }
+      .mind-faq .mind-cloud.is-open .cloud-solution {
+        font-size:13px;
+        line-height:1.45;
+        font-weight:850
+      }
+      .mind-faq .mind-cloud.is-open .cloud-more {
+        font-size:10px;
+        color:#deecff;
+        font-weight:650;
+        line-height:1.35
+      }
+      .mind-faq .mind-cloud.is-open::after {
+        display:none
+      }
+      .mind-faq .mind-cloud .cloud-original {
+        display:block
+      }
+      .mind-faq .mind-cloud.is-open .cloud-original {
+        font-size:10px;
+        opacity:.78
+      }
+      .mind-faq .mind-hint {
+        bottom:-16px
+      }
+      .faq-outro {
+        font-size:15px;
+        color:#5d708c;
+        margin:40px auto 0
+      }
+      .faq-outro strong {
+        color:#173456
+      }
+      .mind-faq .mind-cloud.is-solved:not(.is-open) {
+        background:#e6f2f5;
+        color:#216778
+      }
+      .mind-faq .mind-cloud.is-solved:not(.is-open)::before {
+        content:'✓';
+        padding-right:5px
+      }
+      @media(max-width:720px) {
+        .story-scroll {
+          height:220vh
+        }
+        .story-sticky {
+          min-height:530px
+        }
+        .story-inner {
+          padding-top:25px
+        }
+        .story-intro {
+          font-size:clamp(26px,7vw,36px)!important
+        }
+        .story-scenes {
+          height:260px
+        }
+        .story-line p {
+          font-size:clamp(27px,7.2vw,37px);
+          letter-spacing:-1.5px
+        }
+        .story-footer {
+          bottom:15px
+        }
+        .mind-faq {
+          padding-top:65px
+        }
+        .mind-faq .mind-scene {
+          height:auto;
+          min-height:560px;
+          padding-top:260px
+        }
+        .mind-faq .mind-cloud {
+          max-width:none
+        }
+        .mind-faq .mind-cloud.is-open {
+          max-width:none;
+          min-width:0;
+          min-height:134px;
+          transform:none;
+          font-size:11px;
+          grid-column:span 1
+        }
+        .mind-faq .mind-cloud.is-open .cloud-solution {
+          font-size:12px
+        }
+        .mind-faq .mind-cloud.is-open .cloud-more {
+          display:none
+        }
+      }
+      @media(max-width:420px) {
+        .mind-faq .mind-cloud.is-open .cloud-original {
+          font-size:9px
+        }
+        .mind-faq .mind-cloud.is-open .cloud-solution {
+          font-size:11px
+        }
+        .story-scroll {
+          height:205vh
+        }
+      }
+      @media(prefers-reduced-motion:reduce) {
+        .story-line,.story-progress i {
+          transition:none!important
+        }
+        .mind-faq .mind-cloud {
+          animation:none!important
+        }
+      }
+    </style>
+    <style>
+      /* V6.9 — only the second section's narrative and presentation are updated. */
+      .story-scroll {
+        height:205vh
+      }
+      .story-access-title {
+        position:absolute;
+        width:1px;
+        height:1px;
+        overflow:hidden;
+        clip-path:inset(50%);
+        white-space:nowrap
+      }
+      .story-kicker {
+        position:absolute;
+        top:clamp(45px,10vh,100px);
+        left:0;
+        right:0;
+        margin:0
+      }
+      .story-inner {
+        justify-content:center
+      }
+      .story-scenes {
+        height:300px;
+        margin:0 auto;
+        max-width:960px
+      }
+      .story-line p {
+        font-size:clamp(34px,5.15vw,66px);
+        line-height:1.3;
+        letter-spacing:-2.3px;
+        margin:16px auto 17px
+      }
+      .story-line small {
+        font-size:clamp(15px,1.9vw,20px)
+      }
+      .story-line em {
+        color:#2563f2
+      }
+      .story-footer {
+        bottom:clamp(22px,5vh,46px)
+      }
+      @media(max-width:720px) {
+        .story-scroll {
+          height:195vh
+        }
+        .story-sticky {
+          min-height:480px
+        }
+        .story-scenes {
+          height:275px
+        }
+        .story-line p {
+          font-size:clamp(31px,8vw,46px);
+          letter-spacing:-1.4px
+        }
+        .story-kicker {
+          top:54px
+        }
+      }
+      @media(max-width:420px) {
+        .story-scroll {
+          height:185vh
+        }
+        .story-line p {
+          font-size:clamp(28px,7.7vw,35px)
+        }
+        .story-scenes {
+          height:260px
+        }
+      }
+    </style>
+    <style>
+      /* V7.0 | conversion-oriented scroll-first wireframe; existing visual sections preserved */
+      .apply-extra {
+        max-width:690px;
+        margin:0 auto 12px;
+        font-size:13px;
+        line-height:1.7;
+        color:#66758e
+      }
+      .course-card[role=button] {
+        cursor:pointer;
+        transition:transform .2s,border-color .2s,box-shadow .2s
+      }
+      .course-card[role=button]:hover {
+        transform:translateY(-3px);
+        border-color:#8dafef;
+        box-shadow:0 12px 30px #225cad14
+      }
+      .course-card[role=button]:focus-visible {
+        outline:3px solid #8badf9;
+        outline-offset:2px
+      }
+      .detail-dialog {
+        border:0;
+        border-radius:22px;
+        padding:0;
+        width:min(630px,calc(100vw - 28px));
+        max-height:min(85vh,810px);
+        box-shadow:0 30px 100px #071a35a6;
+        color:#172946;
+        font-family:inherit
+      }
+      .detail-dialog::backdrop {
+        background:#07172baf;
+        backdrop-filter:blur(4px)
+      }
+      .detail-dialog .dialog-shell {
+        display:flex;
+        flex-direction:column;
+        max-height:min(85vh,810px);
+        overflow:hidden
+      }
+      .dialog-head {
+        padding:17px 24px;
+        background:#f4f7fc;
+        border-bottom:1px solid #dce5f3;
+        display:flex;
+        align-items:center;
+        justify-content:space-between
+      }
+      #dialog-label {
+        font-size:12px;
+        letter-spacing:.7px;
+        font-weight:850;
+        color:#2d66c6
+      }
+      .dialog-close {
+        background:white;
+        border:1px solid #d8e3f1;
+        border-radius:50%;
+        width:34px;
+        height:34px;
+        color:#344967
+      }
+      .dialog-content {
+        padding:30px 30px 26px;
+        overflow:auto;
+        overscroll-behavior:contain;
+        text-align:left
+      }
+      .dialog-content h2 {
+        font-size:clamp(24px,4.4vw,34px);
+        line-height:1.28;
+        letter-spacing:-1px;
+        margin:0 0 20px
+      }
+      .dialog-content h3 {
+        font-size:15px;
+        margin:18px 0 8px
+      }
+      .dialog-content p,.dialog-content li {
+        color:#586b86;
+        font-size:14px;
+        line-height:1.8
+      }
+      .dialog-content ul {
+        padding-left:20px
+      }
+      .dialog-fact {
+        border:1px solid #dce7f8;
+        padding:15px 17px;
+        background:#f6f9ff;
+        border-radius:12px;
+        margin:16px 0
+      }
+      .dialog-note {
+        font-size:12px!important;
+        color:#73839b!important
+      }
+      .dialog-actions {
+        border-top:1px solid #e3eaf3;
+        padding:14px 24px;
+        text-align:right;
+        background:white
+      }
+      .dialog-done {
+        border:0;
+        border-radius:11px;
+        background:#2563f2;
+        color:white;
+        font-weight:850;
+        padding:12px 20px
+      }
+      @media(max-width:560px) {
+        .dialog-content {
+          padding:23px 20px
+        }
+        .dialog-head,.dialog-actions {
+          padding-inline:19px
+        }
+      }
+    </style>
+    <style>
+      /* V7.1 — section 03 only: concise copy + in-page broadcast news viewer */
+      .policy-cinematic {
+        padding:82px 0 72px
+      }
+      .policy-cinematic .wrap {
+        max-width:1160px
+      }
+      .policy-cinematic>.wrap>.kicker {
+        margin-bottom:20px
+      }
+      .policy-focus-layout {
+        display:grid;
+        grid-template-columns:minmax(0,1fr) 300px;
+        gap:34px;
+        align-items:center;
+        min-height:400px
+      }
+      .policy-focus-copy {
+        min-width:0;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+        gap:0
+      }
+      .policy-cinematic .policy-focus-copy .news-message {
+        padding-top:0;
+        margin:0 auto 27px;
+        max-width:760px
+      }
+      .policy-cinematic .policy-focus-copy .news-message h2 {
+        font-size:clamp(35px,4.3vw,57px);
+        line-height:1.24;
+        letter-spacing:-2.3px;
+        margin:0
+      }
+      .policy-cinematic .policy-focus-copy .news-solution {
+        margin:0;
+        gap:0
+      }
+      .policy-cinematic .policy-focus-copy .news-solution .btn {
+        margin:0
+      }
+      .policy-cinematic .policy-focus-copy .news-legal {
+        margin:27px auto 0;
+        font-size:10px;
+        max-width:670px
+      }
+      .policy-cinematic .verified-news {
+        margin:22px auto 0;
+        max-width:1060px
+      }
+      .news-tv {
+        align-self:stretch;
+        min-height:320px;
+        border:1px solid #496b9a;
+        border-radius:17px;
+        background:linear-gradient(155deg,#203f68,#091a2e 75%);
+        box-shadow:0 24px 50px #02091460;
+        overflow:hidden;
+        display:flex;
+        flex-direction:column;
+        text-align:left;
+        position:relative
+      }
+      .news-tv:before {
+        content:"";
+        position:absolute;
+        inset:42px 0 30px;
+        background:repeating-linear-gradient(0deg,transparent 0px,transparent 3px,#ffffff04 4px);
+        pointer-events:none
+      }
+      .news-tv-top,.news-tv-bottom {
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:12px;
+        padding:13px 17px;
+        background:#061326b8;
+        color:#a9c3e6;
+        font-size:10px;
+        font-weight:800;
+        letter-spacing:1px
+      }
+      .news-tv-live {
+        display:flex;
+        align-items:center;
+        gap:8px
+      }
+      .news-tv-live i {
+        width:7px;
+        height:7px;
+        border-radius:50%;
+        background:#ff675d;
+        box-shadow:0 0 0 4px #ff675d21
+      }
+      .news-tv-channel {
+        color:#e8f3ff;
+        font-size:11px
+      }
+      .news-tv-display {
+        flex:1;
+        min-height:220px;
+        padding:29px 23px;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        gap:14px;
+        position:relative
+      }
+      .news-tv-date {
+        color:#94bbfc;
+        font-size:11px;
+        font-weight:800;
+        letter-spacing:.5px
+      }
+      .news-tv-display h3 {
+        font-size:clamp(20px,2vw,26px);
+        line-height:1.44;
+        letter-spacing:-.9px;
+        color:#fff;
+        margin:0
+      }
+      .news-tv-display p {
+        color:#ccdbef;
+        font-size:13px;
+        line-height:1.75;
+        margin:0
+      }
+      .news-tv-bottom {
+        background:#0a2445;
+        border-top:1px solid #385778
+      }
+      .news-tv.is-updating .news-tv-display {
+        animation:newsCardSwap .32s ease both
+      }
+      @keyframes newsCardSwap {
+        from {
+          opacity:.15;
+          transform:translateY(8px)
+        }
+        to {
+          opacity:1;
+          transform:none
+        }
+      }
+      .policy-cinematic .verified-news-item a {
+        cursor:pointer;
+        text-decoration:none
+      }
+      .policy-cinematic .verified-news-item a:hover,.policy-cinematic .verified-news-item a:focus-visible {
+        color:#fff;
+        text-decoration:underline
+      }
+      .policy-cinematic .verified-news-item.is-selected .publisher {
+        color:#fff
+      }
+      .policy-cinematic .verified-news-item.is-selected a {
+        color:#c7ddff
+      }
+      @media(max-width:850px) {
+        .policy-focus-layout {
+          grid-template-columns:minmax(0,1fr);
+          gap:25px;
+          min-height:0
+        }
+        .news-tv {
+          width:min(520px,100%);
+          margin:0 auto;
+          min-height:230px
+        }
+        .news-tv-display {
+          min-height:180px
+        }
+        .policy-cinematic .verified-news {
+          margin-top:27px
+        }
+      }
+      @media(max-width:560px) {
+        .policy-cinematic {
+          padding:70px 0
+        }
+        .policy-cinematic .policy-focus-copy .news-message h2 {
+          font-size:clamp(30px,8vw,40px);
+          letter-spacing:-1.3px
+        }
+        .news-tv-display {
+          padding:23px
+        }
+        .news-tv-display h3 {
+          font-size:23px
+        }
+      }
+      @media(prefers-reduced-motion:reduce) {
+        .news-tv.is-updating .news-tv-display {
+          animation:none
+        }
+      }
+    </style>
+    <style>
+      /* V7.4: unboxed text hint and source-backed policy metrics */
+      .policy-cinematic .verified-news-heading {
+        display:flex;
+        align-items:center;
+        flex-wrap:wrap;
+        gap:7px
+      }
+      .news-click-message {
+        display:inline-flex;
+        align-items:center;
+        gap:5px;
+        padding:0;
+        margin-left:9px;
+        background:none!important;
+        border:0!important;
+        box-shadow:none!important;
+        border-radius:0!important;
+        color:#b9d2f8;
+        font-size:11px;
+        font-weight:650;
+        letter-spacing:0
+      }
+      .news-blink-gif {
+        width:15px;
+        height:15px;
+        flex:0 0 15px;
+        object-fit:contain
+      }
+      .policy-metric-lead {
+        font-size:15px;
+        line-height:1.75;
+        color:#465876;
+        margin:0 0 18px
+      }
+      .policy-stat {
+        border:1px solid #dae6f8;
+        background:#f6f9ff;
+        border-radius:16px;
+        padding:20px 21px;
+        margin:15px 0
+      }
+      .policy-stat-eyebrow {
+        font-size:11px;
+        font-weight:850;
+        color:#235cc7;
+        letter-spacing:.4px;
+        margin:0 0 8px
+      }
+      .policy-stat-number {
+        font-size:35px;
+        line-height:1.13;
+        color:#0f2c53;
+        font-weight:900;
+        letter-spacing:-1.5px
+      }
+      .policy-stat-number small {
+        font-size:14px;
+        font-weight:700;
+        color:#4c6690;
+        letter-spacing:0
+      }
+      .policy-stat-desc {
+        margin:9px 0;
+        color:#506280;
+        font-size:13px;
+        line-height:1.65
+      }
+      .policy-bars {
+        display:grid;
+        gap:9px;
+        margin:17px 0 0
+      }
+      .policy-bar-row {
+        display:grid;
+        grid-template-columns:65px 1fr 65px;
+        align-items:center;
+        gap:8px;
+        font-size:12px;
+        color:#4a5e7b
+      }
+      .policy-bar-track {
+        height:12px;
+        background:#e1e9f5;
+        border-radius:10px;
+        overflow:hidden
+      }
+      .policy-bar-fill {
+        height:100%;
+        background:linear-gradient(90deg,#83a8eb,#2764e9);
+        border-radius:10px
+      }
+      .policy-bar-row strong {
+        text-align:right;
+        color:#243b5d;
+        font-size:12px
+      }
+      .policy-stat-source {
+        font-size:10px!important;
+        line-height:1.6!important;
+        color:#6a7f9c!important;
+        margin:12px 0 0!important
+      }
+      .policy-stat-source a {
+        text-decoration:underline;
+        text-underline-offset:2px
+      }
+      .policy-endline {
+        font-size:18px;
+        font-weight:850;
+        line-height:1.55;
+        color:#143767;
+        margin:20px 0 0
+      }
+      @media(max-width:520px) {
+        .news-click-message {
+          margin-left:0
+        }
+        .policy-stat {
+          padding:16px
+        }
+        .policy-stat-number {
+          font-size:29px
+        }
+      }
+      @media(prefers-reduced-motion:reduce) {
+        .news-blink-gif {
+          visibility:hidden
+        }
+        .news-click-message::before {
+          content:'●';
+          font-size:10px;
+          color:#84b3ff
+        }
+      }
+    </style>
+    <style>
+      /* V7.5: news article viewport and 2-card benefit feature */
+      .news-tv-display {
+        justify-content:flex-start;
+        min-height:275px;
+        max-height:340px;
+        overflow:hidden;
+        gap:10px;
+        padding:20px 19px
+      }
+      .news-tv-display h3 {
+        font-size:clamp(18px,1.9vw,23px);
+        line-height:1.3;
+        flex:none
+      }
+      .news-tv-article {
+        min-height:0;
+        flex:1;
+        overflow-y:auto;
+        overscroll-behavior:contain;
+        scrollbar-width:thin;
+        scrollbar-color:#7596be #132c4c;
+        padding:2px 7px 5px 0;
+        outline-offset:-2px
+      }
+      .news-tv-article p {
+        font-size:12px;
+        line-height:1.7;
+        margin:0 0 12px;
+        color:#d0e0f3
+      }
+      .news-tv-article p:last-child {
+        margin-bottom:0
+      }
+      .news-tv-article::-webkit-scrollbar {
+        width:5px
+      }
+      .news-tv-article::-webkit-scrollbar-thumb {
+        background:#7496c1;
+        border-radius:6px
+      }
+      .news-tv-display:after {
+        content:'아래로 스크롤해 자세히 보기 ↓';
+        font-size:10px;
+        color:#a6c5ed;
+        flex:none;
+        padding-top:3px
+      }
+      .benefit-showcase {
+        display:grid;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:18px;
+        max-width:940px;
+        margin:42px auto 32px;
+        text-align:left
+      }
+      .benefit-feature {
+        display:grid;
+        grid-template-columns:44% 56%;
+        align-items:center;
+        min-height:265px;
+        border:1px solid #3b526e;
+        border-radius:23px;
+        overflow:hidden;
+        background:linear-gradient(135deg,#1e3857,#10243f)
+      }
+      .benefit-ai {
+        background:linear-gradient(135deg,#282c62,#101e43);
+        border-color:#4d508a
+      }
+      .benefit-illustration {
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        position:relative;
+        overflow:hidden;
+        height:100%;
+        min-height:245px;
+        background:radial-gradient(circle at 50% 56%,#35608c 0%,#1b3351 56%,#11263e 100%)
+      }
+      .benefit-illustration svg {
+        width:115%;
+        max-width:none;
+        filter:drop-shadow(0 14px 18px #0003)
+      }
+      .ai-illustration {
+        background:radial-gradient(circle at center,#5648a7,#242c64 50%,#131f42)
+      }
+      .ai-symbol {
+        font-size:94px;
+        font-weight:300;
+        color:#fff1ba;
+        text-shadow:0 0 35px #a6b8ff;
+        position:relative;
+        z-index:2
+      }
+      .ai-orbit {
+        position:absolute;
+        border:1px solid #c4bfff66;
+        width:165px;
+        height:165px;
+        border-radius:50%;
+        transform:rotate(-22deg) scaleY(.47)
+      }
+      .orbit-two {
+        transform:rotate(66deg) scaleY(.48)
+      }
+      .ai-mini {
+        position:absolute;
+        bottom:27px;
+        left:0;
+        right:0;
+        font-size:10px;
+        font-weight:850;
+        letter-spacing:2px;
+        color:#d6d0ff;
+        text-align:center
+      }
+      .benefit-feature-content {
+        padding:26px 24px
+      }
+      .benefit-tag {
+        font-size:10px;
+        letter-spacing:1.2px;
+        color:#b4cbeb;
+        font-weight:850
+      }
+      .benefit-feature h3 {
+        font-size:clamp(22px,2.5vw,31px);
+        line-height:1.25;
+        letter-spacing:-1.1px;
+        margin:13px 0 17px;
+        color:#fff
+      }
+      .benefit-feature h3 em {
+        font-style:normal;
+        color:#ffcf83
+      }
+      .benefit-ai h3 em {
+        color:#c7baff
+      }
+      .benefit-feature p {
+        font-size:12px;
+        line-height:1.7;
+        color:#cbd8e9;
+        margin:0 0 18px
+      }
+      .benefit-keyline {
+        font-size:11px;
+        letter-spacing:.5px;
+        color:#fbe0b8
+      }
+      .benefit-ai .benefit-keyline {
+        color:#e0d4ff
+      }
+      .kit .note {
+        max-width:760px;
+        line-height:1.7
+      }
+      @media(max-width:800px) {
+        .benefit-showcase {
+          grid-template-columns:1fr;
+          max-width:650px
+        }
+        .benefit-feature {
+          min-height:205px
+        }
+        .benefit-illustration {
+          min-height:205px
+        }
+      }
+      @media(max-width:480px) {
+        .benefit-feature {
+          grid-template-columns:39% 61%
+        }
+        .benefit-feature-content {
+          padding:16px 14px
+        }
+        .benefit-feature h3 {
+          font-size:21px
+        }
+        .benefit-feature p {
+          font-size:11px
+        }
+        .benefit-illustration {
+          min-height:220px
+        }
+        .ai-symbol {
+          font-size:65px
+        }
+        .ai-orbit {
+          width:120px;
+          height:120px
+        }
+        .news-tv-display {
+          max-height:340px
+        }
+      }
+    </style>
+    <style>
+      /* V7.6: scoped visual benefits redesign; other sections unchanged */
+      .kit-v76 .wrap {
+        max-width:1070px
+      }
+      .kit-v76 h2 {
+        max-width:950px
+      }
+      .v76-benefits {
+        display:grid;
+        gap:16px;
+        max-width:1010px;
+        margin:42px auto 0;
+        text-align:left
+      }
+      .v76-feature {
+        border-radius:24px;
+        overflow:hidden;
+        border:1px solid #365271;
+        background:#142c48
+      }
+      .v76-kit {
+        display:grid;
+        grid-template-columns:48% 52%;
+        min-height:315px;
+        background:linear-gradient(120deg,#244365,#132d4c)
+      }
+      .v76-art {
+        min-height:305px;
+        display:grid;
+        place-items:center;
+        background:radial-gradient(ellipse at 50% 65%,#43688d,#142e4b 75%)
+      }
+      .v76-kit-art svg {
+        width:100%;
+        max-width:550px;
+        filter:drop-shadow(0 20px 22px #07172a66)
+      }
+      .v76-content {
+        padding:28px 30px;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:flex-start
+      }
+      .v76-label {
+        font-size:11px;
+        letter-spacing:1.4px;
+        color:#a9c9ed;
+        font-weight:850
+      }
+      .v76-content h3 {
+        margin:14px 0;
+        font-size:clamp(24px,3.1vw,37px);
+        letter-spacing:-1.5px;
+        line-height:1.3;
+        color:white
+      }
+      .v76-content h3 em {
+        font-style:normal;
+        color:#ffcf80
+      }
+      .v76-content p {
+        font-size:14px;
+        line-height:1.75;
+        color:#d1dfef;
+        margin:0 0 17px
+      }
+      .v76-content small {
+        font-size:11px;
+        color:#abc0d9;
+        line-height:1.6;
+        margin-top:12px
+      }
+      .v76-keywords {
+        display:flex;
+        flex-wrap:wrap;
+        gap:7px
+      }
+      .v76-keywords span {
+        border:1px solid #6482a5;
+        background:#ffffff0d;
+        border-radius:99px;
+        padding:7px 12px;
+        color:#f8dfb5;
+        font-size:12px;
+        font-weight:750
+      }
+      .v76-secondary {
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:16px
+      }
+      .v76-secondary .v76-feature {
+        display:grid;
+        grid-template-columns:37% 63%;
+        min-height:280px
+      }
+      .v76-small-art {
+        min-height:255px;
+        display:grid;
+        place-items:center;
+        overflow:hidden;
+        position:relative
+      }
+      .v76-ai {
+        background:linear-gradient(135deg,#2f3465,#1b2850);
+        border-color:#565c91
+      }
+      .v76-ai-art {
+        background:radial-gradient(circle,#554ca2,#262f66 70%)
+      }
+      .v76-ai-disc {
+        width:120px;
+        height:120px;
+        display:grid;
+        place-items:center;
+        border-radius:50%;
+        border:1px solid #a9b7ff9e;
+        box-shadow:0 0 0 18px #b3a4ff12,0 0 40px #b1a7ff44
+      }
+      .v76-ai-disc span {
+        font-size:95px;
+        color:#e1dcff;
+        text-shadow:0 0 22px #d5c7ff
+      }
+      .v76-ai-window {
+        position:absolute;
+        bottom:35px;
+        left:13%;
+        right:13%;
+        display:flex;
+        gap:7px
+      }
+      .v76-ai-window i {
+        width:32%;
+        height:7px;
+        border-radius:4px;
+        background:#a69dea8f
+      }
+      .v76-cert {
+        background:linear-gradient(125deg,#34435e,#1b324e)
+      }
+      .v76-cert-art {
+        background:radial-gradient(circle,#637891,#243852 72%)
+      }
+      .v76-cert-art svg {
+        width:98%;
+        filter:drop-shadow(0 15px 16px #08172b66)
+      }
+      .v76-secondary .v76-content {
+        padding:22px 20px
+      }
+      .v76-secondary .v76-content h3 {
+        font-size:clamp(20px,2.1vw,27px)
+      }
+      .v76-secondary .v76-content p {
+        font-size:12px
+      }
+      .v76-ai .v76-content h3 em {
+        color:#c9bfff
+      }
+      .v76-extras {
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:9px;
+        max-width:980px;
+        margin:25px auto 29px
+      }
+      .v76-extras span {
+        font-size:12px;
+        font-weight:750;
+        color:#cbdaf0;
+        padding:9px 15px;
+        border:1px solid #355171;
+        border-radius:99px;
+        background:#152c47
+      }
+      .v76-cta {
+        background:#fff!important;
+        color:#10233f!important
+      }
+      .kit-v76 .note {
+        max-width:870px;
+        margin-top:16px
+      }
+      @media(max-width:850px) {
+        .v76-kit {
+          grid-template-columns:1fr
+        }
+        .v76-art {
+          min-height:240px
+        }
+        .v76-kit-art svg {
+          max-width:470px
+        }
+        .v76-secondary {
+          grid-template-columns:1fr
+        }
+        .v76-secondary .v76-feature {
+          min-height:220px
+        }
+        .v76-small-art {
+          min-height:215px
+        }
+      }
+      @media(max-width:520px) {
+        .v76-benefits {
+          margin-top:27px
+        }
+        .v76-content {
+          padding:23px
+        }
+        .v76-kit-art svg {
+          width:92%
+        }
+        .v76-secondary .v76-feature {
+          grid-template-columns:36% 64%
+        }
+        .v76-secondary .v76-content {
+          padding:17px 12px
+        }
+        .v76-secondary .v76-content h3 {
+          font-size:20px;
+          letter-spacing:-.8px
+        }
+        .v76-secondary .v76-content p {
+          font-size:11px
+        }
+        .v76-secondary .v76-content small {
+          font-size:10px
+        }
+        .v76-ai-disc {
+          width:80px;
+          height:80px
+        }
+        .v76-ai-disc span {
+          font-size:64px
+        }
+        .v76-extras span {
+          font-size:11px
+        }
+      }
+    </style>
+    <style>
+      /* V7.7: fifth section only — lead with verified 90% government support */
+      .price-support-highlight {
+        background:#fff;
+        padding:104px 0 112px
+      }
+      .price-support-highlight h2 {
+        max-width:900px;
+        margin-bottom:35px
+      }
+      .price-support-highlight .support-hero {
+        width:min(740px,100%);
+        margin:0 auto;
+        padding:36px 45px 29px;
+        background:linear-gradient(145deg,#edf4ff 0%,#f8fbff 78%);
+        border:1px solid #d8e5ff;
+        border-radius:27px
+      }
+      .price-support-highlight .support-label {
+        display:inline-block;
+        background:#dceaff;
+        color:#1c57c4;
+        font-weight:850;
+        font-size:13px;
+        border-radius:99px;
+        padding:8px 16px
+      }
+      .price-support-highlight .support-number {
+        font-variant-numeric:tabular-nums;
+        font-size:clamp(110px,17vw,196px);
+        font-weight:950;
+        letter-spacing:-.1em;
+        line-height:1.05;
+        color:#2563f2;
+        margin:9px 24px 0 0
+      }
+      .price-support-highlight .support-number sup {
+        font-size:.36em;
+        vertical-align:top;
+        position:relative;
+        top:.27em;
+        margin-left:.12em;
+        letter-spacing:-.03em
+      }
+      .price-support-highlight .support-amount>strong {
+        display:block;
+        font-size:clamp(24px,3.7vw,40px);
+        letter-spacing:-1.7px;
+        color:#10233f;
+        margin-top:-4px
+      }
+      .price-support-highlight .support-amount>p {
+        font-size:15px;
+        color:#526884;
+        margin:11px 0 27px
+      }
+      .price-support-highlight .support-meter {
+        height:19px;
+        width:100%;
+        display:flex;
+        border-radius:99px;
+        overflow:hidden;
+        background:#d5dfed
+      }
+      .price-support-highlight .support-meter-funded {
+        width:90%;
+        height:100%;
+        background:linear-gradient(90deg,#2563f2,#5894ff)
+      }
+      .price-support-highlight .support-meter-other {
+        width:10%;
+        height:100%;
+        background:#c9d7ea
+      }
+      .price-support-highlight .support-meter-note {
+        display:flex;
+        justify-content:space-between;
+        margin-top:11px;
+        font-size:12px;
+        color:#61748d;
+        font-weight:700
+      }
+      .price-support-highlight .support-meter-note span:first-child {
+        color:#2462d2
+      }
+      .price-support-highlight .support-meter-note i {
+        display:inline-block;
+        background:#2563f2;
+        width:7px;
+        height:7px;
+        border-radius:50%;
+        margin-right:5px
+      }
+      .price-support-highlight .support-fineprint {
+        color:#718198;
+        font-size:12px;
+        line-height:1.65;
+        max-width:730px;
+        margin:19px auto 24px
+      }
+      .price-support-highlight .btn {
+        margin-top:0
+      }
+      @media(max-width:560px) {
+        .price-support-highlight .support-hero {
+          padding:28px 23px 24px;
+          border-radius:20px
+        }
+        .price-support-highlight .support-number {
+          font-size:clamp(105px,27vw,145px)
+        }
+        .price-support-highlight h2 {
+          font-size:clamp(30px,8.2vw,43px)
+        }
+      }
+    </style>
+    <style>
+      /* V7.9: only application guide and learner reviews */
+      .apply-guide {
+        margin:36px auto 0;
+        max-width:820px;
+        padding:28px;
+        background:#fff;
+        border:1px solid #d9e4f6;
+        border-radius:23px;
+        text-align:center;
+        box-shadow:0 12px 28px #122b4908
+      }
+      .apply-guide h3 {
+        font-size:18px;
+        margin:0 0 18px
+      }
+      .apply-choice {
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:8px;
+        padding:5px;
+        background:#f1f5fb;
+        border-radius:13px;
+        margin:0 0 18px
+      }
+      .apply-choice button {
+        border:0;
+        background:transparent;
+        border-radius:10px;
+        padding:13px;
+        font-size:14px;
+        font-weight:800;
+        color:#62728a
+      }
+      .apply-choice button[aria-pressed=true] {
+        background:#2563f2;
+        color:#fff;
+        box-shadow:0 4px 12px #235cf22d
+      }
+      .apply-stage-tabs {
+        display:grid;
+        grid-template-columns:repeat(3,minmax(0,1fr));
+        gap:7px
+      }
+      .apply-stage-tabs button {
+        min-height:76px;
+        padding:12px 8px;
+        border:1px solid #e1e8f5;
+        background:#ecf2fa;
+        border-radius:12px;
+        color:#415a7b;
+        font-weight:780;
+        font-size:13px;
+        line-height:1.35
+      }
+      .apply-stage-tabs button.is-active {
+        background:#2563f2;
+        color:white;
+        border-color:#2563f2
+      }
+      .apply-stage-tabs button small {
+        display:block;
+        font-size:10px;
+        opacity:.8;
+        margin-bottom:5px
+      }
+      .apply-stage-detail {
+        background:#eef4ff;
+        text-align:left;
+        border-radius:15px;
+        margin-top:12px;
+        padding:25px 26px;
+        min-height:188px
+      }
+      .apply-stage-index {
+        font-size:11px;
+        letter-spacing:1px;
+        font-weight:900;
+        color:#2563f2
+      }
+      .apply-stage-detail h4 {
+        font-size:21px;
+        margin:9px 0
+      }
+      .apply-stage-detail p {
+        font-size:14px;
+        color:#526986;
+        line-height:1.7;
+        margin:0
+      }
+      .apply-stage-actions {
+        display:flex;
+        justify-content:flex-end;
+        margin-top:12px
+      }
+      .apply-stage-actions button {
+        border:0;
+        background:#12223a;
+        color:white;
+        border-radius:999px;
+        padding:11px 19px;
+        font-weight:750;
+        font-size:13px
+      }
+      .apply-help {
+        max-width:820px;
+        margin:19px auto 0;
+        background:#e9f2ff;
+        border:1px solid #c7dcff;
+        border-radius:18px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        gap:19px;
+        padding:24px;
+        text-align:left
+      }
+      .apply-help-icon {
+        display:grid;
+        place-items:center;
+        width:45px;
+        height:45px;
+        border-radius:14px;
+        background:white;
+        color:#2867e9;
+        font-size:24px
+      }
+      .apply-help strong {
+        display:block;
+        font-size:14px;
+        line-height:1.5
+      }
+      .apply-help a {
+        display:inline-block;
+        color:#2463e7;
+        font-size:27px;
+        font-weight:900;
+        margin-top:3px
+      }
+      .apply-footnote {
+        font-size:11px;
+        color:#72829b;
+        margin:15px 0 0
+      }
+      .reviews-section {
+        background:#f6f8fc;
+        overflow:hidden
+      }
+      .reviews-heading {
+        margin-bottom:34px
+      }
+      .review-window {
+        overflow:hidden;
+        width:100%;
+        outline-offset:5px
+      }
+      .review-track {
+        width:max-content;
+        display:flex;
+        gap:16px;
+        animation:reviewMarquee 44s linear infinite;
+        will-change:transform
+      }
+      .review-window:hover .review-track,.review-window:focus-within .review-track {
+        animation-play-state:paused
+      }
+      .review-card {
+        width:clamp(270px,28vw,370px);
+        min-height:215px;
+        flex:none;
+        background:white;
+        border:1px solid #e1e8f3;
+        border-radius:20px;
+        padding:27px;
+        box-shadow:0 10px 25px #1023400a;
+        text-align:left;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        gap:12px
+      }
+      .review-label {
+        align-self:start;
+        background:#eaf1ff;
+        color:#245acc;
+        font-size:11px;
+        font-weight:850;
+        padding:7px 10px;
+        border-radius:40px
+      }
+      .review-card p {
+        font-size:18px;
+        letter-spacing:-.4px;
+        line-height:1.55;
+        margin:0;
+        font-weight:740;
+        white-space:normal;
+        word-break:keep-all
+      }
+      .review-person {
+        font-size:12px;
+        color:#70819a
+      }
+      .review-note {
+        text-align:center;
+        font-size:11px;
+        line-height:1.6;
+        color:#73839c;
+        padding:0 18px;
+        margin:26px auto 0;
+        max-width:700px
+      }
+      @keyframes reviewMarquee {
+        from {
+          transform:translateX(0)
+        }
+        to {
+          transform:translateX(-50%)
+        }
+      }
+      @media(max-width:600px) {
+        .apply-guide {
+          padding:17px
+        }
+        .apply-guide h3 {
+          font-size:16px
+        }
+        .apply-stage-tabs button {
+          font-size:11px;
+          padding:10px 4px;
+          min-height:74px
+        }
+        .apply-stage-detail {
+          padding:20px
+        }
+        .apply-help {
+          padding:18px 14px;
+          gap:12px
+        }
+        .apply-help strong {
+          font-size:12px
+        }
+        .apply-help a {
+          font-size:24px
+        }
+        .review-card {
+          width:285px
+        }
+      }
+      @media(prefers-reduced-motion:reduce) {
+        .review-track {
+          animation:none;
+          overflow:visible
+        }
+        .review-window {
+          overflow-x:auto
+        }
+        .review-window:hover .review-track {
+          animation:none
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap nav">
+        <a class="logo" href="#top">미라클 <b>K-디지털</b></a>
+        <nav aria-label="메인 메뉴" class="navlinks"><a href="#policy">국비지원</a><a href="#kit">실습 혜택</a><a href="#courses">교육과정</a><a href="#apply">신청 안내</a></nav>
+        <a class="btn" href="#courses">과정 보기 →</a>
+      </div>
+    </header>
+    <main>
+      <section class="hero" id="top">
+        <div class="wrap">
+          <span aria-hidden="true" class="spark a">✦</span><span aria-hidden="true" class="spark b">✳</span>
+          <p class="kicker">국가 지원 K-디지털 기초역량훈련</p>
+          <h1>AI 시대,<br/><em>구경만 할 건가요?</em></h1>
+          <p class="sub">처음이라도 괜찮아요. 내 속도대로, 직접 시작해보세요.</p>
+          <a class="btn" href="#what">왜 지금 시작할까요? ↓</a>
+          <div class="mini"><span>100% 온라인</span><span>국비지원 교육</span><span>대상 과정 교구 제공</span></div>
+        </div>
+      </section>
+      <section aria-labelledby="story-title" class="section what story-section" id="what">
+        <div class="story-scroll" id="story-scroll">
+          <div class="story-sticky">
+            <div class="wrap story-inner">
+              <h2 class="story-access-title" id="story-title">AI 시대, 나도 직접 시작해볼 차례</h2>
+              <p class="kicker story-kicker">IT'S YOUR TURN</p>
+              <div aria-label="관심에서 직접 경험으로 이어지는 네 장면" class="story-scenes">
+                <div class="story-line is-current" data-story-line="0">
+                  <span class="story-index">01 / 공감</span>
+                  <p>남들은 AI로<br/><em>이것저것 만든다는데.</em></p>
+                  <small>뉴스에서도, SNS에서도 자꾸 보이죠.</small>
+                </div>
+                <div class="story-line" data-story-line="1">
+                  <span class="story-index">02 / 호기심</span>
+                  <p>나도 한번<br/><em>해보고 싶어집니다.</em></p>
+                  <small>어떤 결과가 나올지 궁금하니까요.</small>
+                </div>
+                <div class="story-line" data-story-line="2">
+                  <span class="story-index">03 / 망설임</span>
+                  <p>그런데 막상 시작하려면,<br/><em>어디서부터 해야 할지.</em></p>
+                  <small>관심은 있는데 첫걸음이 쉽지 않죠.</small>
+                </div>
+                <div class="story-line" data-story-line="3">
+                  <span class="story-index">04 / 첫걸음</span>
+                  <p>시작은 거창할 필요 없어요.<br/><em>직접 한번 해보는 것부터.</em></p>
+                  <small>이제 관심을 경험으로 바꿔볼 차례입니다.</small>
+                </div>
+              </div>
+              <div aria-hidden="true" class="story-footer"><span class="story-progress"><i id="story-meter"></i></span><span id="story-count">01 / 04</span><span>SCROLL TO EXPLORE ↓</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section aria-labelledby="policy-title" class="section policy-cinematic" id="policy">
+        <div class="wrap">
+          <p class="kicker">GOVERNMENT SUPPORT</p>
+          <div class="policy-focus-layout">
+            <div class="policy-focus-copy">
+              <div class="news-message" data-news-reveal="">
+                <h2 id="policy-title">디지털 역량을 키우는 배움,<br/><span class="highlight">국가가 지원합니다.</span></h2>
+              </div>
+              <div class="news-solution" data-news-reveal=""><a class="btn" data-modal="support" href="#policy-details">국가 지원 자세히 보기 ↗</a></div>
+              <p class="news-legal">※ 국가의 훈련비 지원 제도 안내이며, 개별 교육기관·과정에 대한 정부의 추천을 의미하지 않습니다. 지원 자격과 본인부담금은 과정별 확인이 필요합니다.</p>
+            </div>
+            <aside aria-label="선택한 뉴스 내용 미리보기" class="news-tv" id="news-preview">
+              <div class="news-tv-top"><span class="news-tv-live"><i></i> NEWS VIEW</span><span class="news-tv-channel" id="news-screen-publisher">KBS</span></div>
+              <div aria-atomic="true" aria-live="polite" class="news-tv-display">
+                <span class="news-tv-date" id="news-screen-date">2026.09.10</span>
+                <h3 id="news-screen-title">AI가 연구실을 넘어 산업 현장으로</h3>
+                <div
+                  aria-label="선택한 뉴스의 상세 요약, 내부 스크롤 가능"
+                  class="news-tv-article"
+                  id="news-screen-summary"
+                  role="region"
+                  tabindex="0"
+                >
+                  <p>헤드라인을 선택하면 주요 내용을 이곳에서 읽을 수 있습니다.</p>
+                </div>
+              </div>
+              <div class="news-tv-bottom"><span>AI NEWS DIGEST</span><span id="news-screen-counter">01 / 04</span></div>
+            </aside>
+          </div>
+          <div aria-label="실제 AI 관련 언론 보도" class="verified-news">
+            <p class="verified-news-heading">언론이 전하는 AI 변화 <span class="news-click-message"><img alt="" aria-hidden="true" class="news-blink-gif" src="data:image/gif;base64,R0lGODlhGAAYAIEAAAAAAHmt/////wAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQJGwAAACwAAAAAGAAYAAAIZgABCBxIsKDBgwgTKlzIcGCAhxAbOoRI8WHDihgDLMyYMSFHjggxChgpAONBkSRHmixYMWXKigZbulRJMSbFmTQjsryJE+ZOni99/oQYtObJjyuPIrWocKlGhkglCkwqtarVqwwDAgAh+QQJFwAAACwHAAcACgAKAIEAAAB5rf8AAAAAAAAIIAABCAxAMIDAgwULIkyokKHDhxAjMgQAcWHCgwMVCgwIACH5BAkbAAAALAMAAwASABIAgQAAAHmt/////wAAAAhLAAEIHBigoMGBCAkaXFgwoUCGEAMkjBhRIUWIDxkK2CgAI0SOHC8WBAlSJMmQF09uNKlSZICTHjWiXJjR5cGaLifmdCjSIUKMCQMCACH5BAkXAAAALAcABwAKAAoAgQAAAHmt/wAAAAAAAAggAAEIDEAwgMCDBQsiTKiQocOHECMyBABxYcKDAxUKDAgAIfkECRsAAAAsAwADABIAEgCBAAAAea3/////AAAACEsAAQgcGKCgwYEICRpcWDChQIYQAySMGFEhRYgPGQrYKAAjRI4cLxYECVIkyZAXT240qVJkgJMeNaJcmNHlwZouJ+Z0KNIhQowJAwIAIfkECRcAAAAsBwAHAAoACgCBAAAAea3/AAAAAAAACCAAAQgMQDCAwIMFCyJMqJChw4cQIzIEAHFhwoMDFQoMCAA7"/><span>뉴스 제목을 클릭해 내용을 확인해 보세요</span></span></p>
+            <div class="verified-news-window">
+              <div class="verified-news-track"><span class="verified-news-item" data-news-index="0"><span class="publisher">KBS</span><time datetime="2026-09-10">2026.09.10</time><a data-news-index="0" data-source-url="https://mylovekbs.kbs.co.kr/index.html?contents_id=70000000403945&amp;sname=mylovekbs&amp;source=mylovekbs&amp;stype=blog" href="#news-preview">AI가 연구실을 넘어 산업 현장으로</a></span><span class="verified-news-item" data-news-index="1"><span class="publisher">MBC</span><time datetime="2026-08-18">2026.08.18</time><a data-news-index="1" data-source-url="https://imnews.imbc.com/news/2026/econo/article/6845543_36933.html" href="#news-preview">AI 영향 큰 업종, 청년 일자리 변화</a></span><span class="verified-news-item" data-news-index="2"><span class="publisher">연합뉴스</span><time datetime="2026-10-26">2026.10.26</time><a data-news-index="2" data-source-url="https://www.yna.co.kr/view/AKR20261026078600002" href="#news-preview">한국은행, AI 확산과 청년 고용 변화 진단</a></span><span class="verified-news-item" data-news-index="3"><span class="publisher">KBS</span><time datetime="2026-08-03">2026.08.03</time><a data-news-index="3" data-source-url="https://mylovekbs.kbs.co.kr/index.html?contents_id=70000000403846&amp;sname=mylovekbs&amp;source=mylovekbs&amp;stype=magazine" href="#news-preview">방송 제작 현장에도 생성형 AI 도입</a></span><span aria-hidden="true" style="display:flex;gap:32px"><span class="verified-news-item" data-news-index="0"><span class="publisher">KBS</span><time datetime="2026-09-10">2026.09.10</time><a data-news-index="0" data-source-url="https://mylovekbs.kbs.co.kr/index.html?contents_id=70000000403945&amp;sname=mylovekbs&amp;source=mylovekbs&amp;stype=blog" href="#news-preview">AI가 연구실을 넘어 산업 현장으로</a></span><span class="verified-news-item" data-news-index="1"><span class="publisher">MBC</span><time datetime="2026-08-18">2026.08.18</time><a data-news-index="1" data-source-url="https://imnews.imbc.com/news/2026/econo/article/6845543_36933.html" href="#news-preview">AI 영향 큰 업종, 청년 일자리 변화</a></span><span class="verified-news-item" data-news-index="2"><span class="publisher">연합뉴스</span><time datetime="2026-10-26">2026.10.26</time><a data-news-index="2" data-source-url="https://www.yna.co.kr/view/AKR20261026078600002" href="#news-preview">한국은행, AI 확산과 청년 고용 변화 진단</a></span><span class="verified-news-item" data-news-index="3"><span class="publisher">KBS</span><time datetime="2026-08-03">2026.08.03</time><a data-news-index="3" data-source-url="https://mylovekbs.kbs.co.kr/index.html?contents_id=70000000403846&amp;sname=mylovekbs&amp;source=mylovekbs&amp;stype=magazine" href="#news-preview">방송 제작 현장에도 생성형 AI 도입</a></span></span></div>
+            </div>
+            <p class="verified-news-source">뉴스 헤드라인을 누르면 오른쪽 화면에서 핵심 내용을 확인할 수 있습니다 · 원문으로 이동하지 않습니다</p>
+          </div>
+        </div>
+      </section>
+      <section class="section kit kit-v76" id="kit">
+        <div class="wrap">
+          <p class="kicker">MORE THAN LEARNING · 미라클 K-디지털 학습 혜택</p>
+          <h2>배우는 것으로 끝나지 않도록.<br/><span>경험도, 도구도, 가능성도.</span></h2>
+          <p class="desc">수업에서 시작한 배움이 내 역량으로 남도록 준비했습니다.</p>
+          <div class="v80-benefits" aria-label="미라클 K-디지털 교육 주요 혜택 4가지">
+            <article class="v80-card v80-kit">
+              <div class="v80-visual">
+                <div aria-hidden="true" class="v76-art v76-kit-art">
+                  <svg viewbox="0 0 520 285" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <lineargradient id="v76box" x1="0" x2="1" y1="0" y2="1">
+                        <stop stop-color="#ffd892"></stop>
+                        <stop offset="1" stop-color="#e8a65a"></stop>
+                      </lineargradient>
+                      <lineargradient id="v76car" x1="0" x2="0" y1="0" y2="1">
+                        <stop stop-color="#a6c8e3"></stop>
+                        <stop offset="1" stop-color="#496c91"></stop>
+                      </lineargradient>
+                    </defs>
+                    <ellipse cx="265" cy="258" fill="#051326" opacity=".4" rx="160" ry="18"></ellipse>
+                    <path d="M137 115 265 56 390 116 263 175Z" fill="#ffeac1"></path>
+                    <path d="M137 115v100l126 57v-97Z" fill="url(#v76box)"></path>
+                    <path d="M263 175v97l127-57v-99Z" fill="#bd8042"></path>
+                    <path d="m137 115 126 60 127-59" fill="none" stroke="#a5653b" stroke-width="4"></path>
+                    <g transform="translate(195,12)">
+                      <rect
+                        fill="url(#v76car)"
+                        height="69"
+                        rx="15"
+                        stroke="#bed7ed"
+                        stroke-width="3"
+                        width="135"
+                        x="4"
+                        y="46"
+                      ></rect>
+                      <path d="m26 46 21-30h54l20 30" fill="#526e8e" stroke="#b9d4eb" stroke-width="4"></path>
+                      <rect fill="#b1dfff" height="23" rx="5" width="40" x="55" y="17"></rect>
+                      <circle cx="28" cy="111" fill="#16283d" r="14" stroke="#89a9c6" stroke-width="4"></circle>
+                      <circle cx="115" cy="111" fill="#16283d" r="14" stroke="#89a9c6" stroke-width="4"></circle>
+                      <circle cx="22" cy="72" fill="#66dcfa" r="6"></circle>
+                      <circle cx="120" cy="72" fill="#66dcfa" r="6"></circle>
+                    </g>
+                    <path
+                      d="M93 74 76 58M424 72l24-20M266 39V12"
+                      stroke="#ffe0a2"
+                      stroke-linecap="round"
+                      stroke-width="4"
+                    ></path>
+                    <circle cx="73" cy="56" fill="#ffe0a2" r="5"></circle>
+                    <circle cx="450" cy="51" fill="#ffe0a2" r="6"></circle>
+                  </svg>
+                </div>
+              </div>
+              <div class="v80-info">
+                <span class="v80-index">01 · HANDS-ON KIT</span>
+                <h3>실습 교구 <em>무상 제공</em></h3>
+                <p class="v80-promise">배운 후에도 내 것으로.</p>
+                <p>대상 과정 실습 교구 제공 · 반납 없이 소장</p>
+                <small>※ 교구 제공 과정 한정</small>
+              </div>
+            </article>
+            <article class="v80-card v80-ai">
+              <div class="v80-visual">
+                <div aria-hidden="true" class="v76-small-art v76-ai-art">
+                  <div class="v76-ai-disc"><span>✦</span></div>
+                  <div class="v76-ai-window"><i></i><i></i><i></i></div>
+                </div>
+              </div>
+              <div class="v80-info">
+                <span class="v80-index">02 · AI LEARNING BONUS</span>
+                <h3>Google AI Pro <em>1개월 지원</em></h3>
+                <p class="v80-promise">배우면서 유료 AI 도구까지.</p>
+                <p>AI 업무자동화 과정에서 이용료 지원</p>
+                <small>※ 해당 과정 한정 · 지급 조건 별도 안내</small>
+              </div>
+            </article>
+            <article class="v80-card v80-cert">
+              <div class="v80-visual">
+                <div aria-hidden="true" class="v76-small-art v76-cert-art">
+                  <svg viewbox="0 0 300 170" xmlns="http://www.w3.org/2000/svg">
+                    <rect fill="#fbf6e9" height="141" rx="9" transform="rotate(5 150 90)" width="151" x="75" y="16"></rect>
+                    <rect fill="#fff" height="141" rx="8" stroke="#d6dced" stroke-width="3" width="151" x="67" y="13"></rect>
+                    <path
+                      d="M93 49h96M93 63h74M93 78h96M93 92h62"
+                      stroke="#b1c3dc"
+                      stroke-linecap="round"
+                      stroke-width="5"
+                    ></path>
+                    <circle cx="177" cy="112" fill="#f3c66e" r="21"></circle>
+                    <path d="m165 129-8 21 19-9 15 12-3-26" fill="#dc9b48"></path>
+                    <path
+                      d="m172 111 5 6 11-13"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="5"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="v80-info">
+                <span class="v80-index">03 · CERTIFICATE PATHWAY</span>
+                <h3>배움에서 <em>자격증 연계</em>까지</h3>
+                <p class="v80-promise">학습 이후의 가능성도.</p>
+                <p>과정별 관련 자격증 연계 안내</p>
+                <small>※ 별도 취득 요건 적용 · 취득 보장 아님</small>
+              </div>
+            </article>
+            <article class="v80-card v80-online">
+              <div class="v80-visual v80-learning-art" aria-hidden="true">
+                <svg viewBox="0 0 320 200" role="img" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="v80Screen" x1="0" x2="1" y1="0" y2="1">
+                      <stop stop-color="#90caff"/>
+                      <stop offset="1" stop-color="#4386ed"/>
+                    </linearGradient>
+                  </defs>
+                  <rect
+                    x="47"
+                    y="25"
+                    width="226"
+                    height="138"
+                    rx="15"
+                    fill="#102b4c"
+                    stroke="#93c2ed"
+                    stroke-width="4"
+                  />
+                  <rect x="61" y="39" width="198" height="110" rx="7" fill="url(#v80Screen)"/>
+                  <circle cx="160" cy="92" r="29" fill="#dceeff" opacity=".94"/>
+                  <path d="m152 77 26 15-26 15Z" fill="#2563eb"/>
+                  <path d="M30 169h260l-32 19H62Z" fill="#c6d9ef"/>
+                  <path d="M125 169h70l8 7h-86Z" fill="#7da4ce"/>
+                  <circle cx="278" cy="47" r="24" fill="#f4d18a"/>
+                  <path
+                    d="m267 47 8 7 14-17"
+                    stroke="#254366"
+                    stroke-width="5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    fill="none"
+                  />
+                </svg>
+              </div>
+              <div class="v80-info">
+                <span class="v80-index">04 · ONLINE SUPPORT</span>
+                <h3><em>100% 온라인</em>으로, 든든하게</h3>
+                <p class="v80-promise">내 시간에 배우고, 도움도 받고.</p>
+                <p>학습자료 · 1:1 코칭 상담 · 수료증 안내</p>
+                <small>※ 학습·수료 및 상담 조건은 과정별 확인</small>
+              </div>
+            </article>
+          </div>
+          <a class="btn v76-cta" data-modal="kit" href="#kit-details" id="kit-filter">교육 혜택 자세히 보기 ↗</a>
+          <p class="note">※ 위 혜택은 모두 동일하게 제공되는 것이 아닙니다. 과정별 지급 대상 및 이용 조건을 확인해 주세요.</p>
+        </div>
+      </section>
+      <section class="section price price-support-highlight" id="price">
+        <div class="wrap">
+          <p class="kicker">COST &amp; SUPPORT</p>
+          <h2>배움을 위한 든든한 지원.<br><span class="highlight">교육비 90%를 국가가 지원합니다.</span></h2>
+          <div class="support-hero" aria-label="현재 운영 중인 대상 과정 교육비 국비지원 비율 90퍼센트">
+            <div class="support-amount">
+              <span class="support-label">현재 운영 중인 대상 과정</span>
+              <div class="support-number"><span>90</span><sup>%</sup></div>
+              <strong>국비지원</strong>
+              <p>배움의 시작을 국가가 함께 지원합니다.</p>
+            </div>
+            <div class="support-meter" role="img" aria-label="전체 교육비 중 국비지원 90퍼센트"><span class="support-meter-funded"></span><span class="support-meter-other"></span></div>
+            <div class="support-meter-note"><span><i></i> 정부 지원 90%</span><span>해당 과정 기준</span></div>
+          </div>
+          <p class="support-fineprint">※ 2026년 9월 교육 안내 전단지에 기재된 현재 운영 과정 기준입니다. 신규 개설 과정 및 지원 자격에 따라 적용 조건이 다를 수 있습니다.</p>
+          <a class="btn" href="#price-details" data-modal="cost">국비지원 혜택 자세히 보기 ↗</a>
+        </div>
+      </section>
+      <section class="section courses-section" id="courses">
+        <div class="wrap">
+          <p class="kicker">FIND YOUR COURSE</p>
+          <h2>그래서, <span class="highlight">뭘 배워볼까요?</span></h2>
+          <p class="desc">관심 분야를 선택하면 과정이 바로 바뀝니다.</p>
+          <div aria-label="교육과정 관심 분야" class="course-tabs" role="group">
+            <button aria-pressed="true" class="course-tab" data-filter="all" type="button">전체 교육과정</button>
+            <button aria-pressed="false" class="course-tab" data-filter="work" type="button">AI 업무 활용</button>
+            <button aria-pressed="false" class="course-tab" data-filter="make" type="button">직접 만드는 기술</button>
+            <button aria-pressed="false" class="course-tab" data-filter="basic" type="button">코딩·디지털 기초</button>
+          </div>
+          <div class="course-status"><strong id="filter-name">전체 교육과정</strong><span aria-live="polite" id="filter-count">9개 과정</span></div>
+          <div class="course-grid" id="course-grid"></div>
+          <div class="nothing" hidden="" id="no-results">해당하는 과정이 없습니다. 전체 과정을 선택해 주세요.</div>
+          <div class="quiz-teaser">
+            <div><span aria-hidden="true" class="quiz-emoji">✨</span><strong>뭘 배워야 할지 모르겠다면?</strong><span>세 가지 선택으로 나에게 맞는 과정을 찾아보세요.</span></div>
+            <button aria-controls="quiz-panel" aria-expanded="false" class="quiz-launch" id="quiz-launch" type="button">나에게 맞는 과정 찾기 ↗</button>
+          </div>
+          <div class="quiz-panel" hidden="" id="quiz-panel">
+            <div class="quiz-head">
+              <span id="quiz-progress">질문 1 / 3</span>
+              <button aria-label="추천 설문 닫기" class="quiz-close" id="quiz-close" type="button">✕</button>
+            </div>
+            <div class="quiz-meter">
+              <div id="quiz-meter-fill"></div>
+            </div>
+            <div aria-live="polite" class="quiz-step" id="quiz-step"></div>
+            <div aria-live="polite" class="quiz-result" hidden="" id="quiz-result"></div>
+          </div>
+          <p class="desc" style="font-size:12px;margin-top:22px">※ 과정명과 분류는 기획 검토용입니다. 실제 개설 여부·금액·상세페이지 URL은 운영 자료 확정 후 연결합니다.</p>
+        </div>
+      </section>
+      <section class="section apply" id="apply">
+        <div class="wrap">
+          <p class="kicker">READY TO START?</p>
+          <h2>수강 신청,<br><span class="highlight">이렇게 시작하세요.</span></h2>
+          <p class="desc">국민내일배움카드 준비 상태에 따라 필요한 절차만 확인하세요.</p>
+          <div class="apply-guide" aria-label="수강 신청 3단계 안내">
+            <h3>국민내일배움카드가 있으신가요?</h3>
+            <div class="apply-choice" role="group" aria-label="국민내일배움카드 보유 여부">
+              <button type="button" data-path="no" aria-pressed="true">아직 없어요</button>
+              <button type="button" data-path="yes" aria-pressed="false">네, 있어요</button>
+            </div>
+            <div class="apply-stage-tabs" role="group" aria-label="수강 신청 단계">
+              <button type="button" class="is-active" data-step="0" aria-pressed="true"></button>
+              <button type="button" data-step="1" aria-pressed="false"></button>
+              <button type="button" data-step="2" aria-pressed="false"></button>
+            </div>
+            <div class="apply-stage-detail" aria-live="polite">
+              <span class="apply-stage-index" id="apply-stage-index">STEP 01</span>
+              <h4 id="apply-stage-title">국민내일배움카드 신청</h4>
+              <p id="apply-stage-desc">고용24에서 카드 신청 자격과 발급 절차를 확인하세요.</p>
+              <div class="apply-stage-actions">
+                <button type="button" id="apply-next">다음 단계 →</button>
+              </div>
+            </div>
+          </div>
+          <div class="apply-help">
+            <span class="apply-help-icon" aria-hidden="true">☎</span>
+            <div><strong>카드 발급이 어려우시면 미라클 평생교육원으로 문의주세요.</strong><a href="tel:18998954" aria-label="미라클 평생교육원 1899-8954 전화 걸기">1899-8954</a></div>
+          </div>
+          <p class="apply-footnote">※ 실제 발급·신청 가능 여부 및 결제 절차는 고용24와 교육기관의 확정 안내에 따릅니다.</p>
+          <div aria-labelledby="faq-title" class="faq mind-faq" id="faq">
+            <div class="mind-wrap">
+              <p class="kicker">WORRIES, SOLVED</p>
+              <h3 class="faq-title" id="faq-title">아직 머릿속에 <span class="highlight">걱정이 남아 있나요?</span></h3>
+              <p class="desc">마음에 걸리는 걱정 구름을 눌러보세요. 그 자리에서 답해드릴게요.</p>
+              <div aria-label="걱정 구름을 선택하는 체험 공간" class="mind-scene">
+                <div aria-hidden="true" class="mind-halo"></div>
+                <svg aria-label="여러 생각이 떠오르는 사람의 옆모습 실루엣" class="mind-person" role="img" viewbox="0 0 360 380">
+                  <defs>
+                    <lineargradient id="faceg" x1="0" x2="1" y1="1" y2="0">
+                      <stop stop-color="#224e98"></stop>
+                      <stop offset="1" stop-color="#91b9ff"></stop>
+                    </lineargradient>
+                    <radialgradient id="glowg">
+                      <stop stop-color="#82acff" stop-opacity=".37"></stop>
+                      <stop offset="1" stop-color="#82acff" stop-opacity="0"></stop>
+                    </radialgradient>
+                  </defs>
+                  <circle cx="180" cy="185" fill="url(#glowg)" r="175"></circle>
+                  <path
+                    d="M118 357v-52c-38-24-62-66-62-116C56 107 112 50 188 50c77 0 120 53 120 122 0 28-8 46-22 61l-20 23v42c0 11-8 18-19 18h-38v41"
+                    fill="url(#faceg)"
+                    opacity=".95"
+                  ></path>
+                  <path d="M111 311c25 11 52 13 80 6" fill="none" opacity=".45" stroke="#c7dcff" stroke-width="3"></path>
+                  <path d="M264 161c15-8 23-4 26 4-12 3-20 4-26-4Z" fill="#dceaff" opacity=".75"></path>
+                  <path
+                    d="M305 183l27 23-34 13"
+                    fill="none"
+                    stroke="#85b4ff"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="11"
+                  ></path>
+                  <path
+                    d="M265 247c13 6 23 5 32-1"
+                    fill="none"
+                    stroke="#e3ecff"
+                    stroke-linecap="round"
+                    stroke-width="4"
+                  ></path>
+                </svg>
+                <div aria-label="고민 선택" class="mind-clouds" role="group">
+                  <button aria-pressed="false" class="mind-cloud c1" data-mind="0" type="button">AI는 너무 어렵지 않을까?</button>
+                  <button aria-pressed="false" class="mind-cloud c2" data-mind="1" type="button">코딩을 몰라도 될까?</button>
+                  <button aria-pressed="false" class="mind-cloud c3" data-mind="2" type="button">퇴근하고도 가능할까?</button>
+                  <button aria-pressed="false" class="mind-cloud c4" data-mind="3" type="button">비용이 부담돼…</button>
+                  <button aria-pressed="false" class="mind-cloud c5" data-mind="4" type="button">듣기만 하면 잊어버릴 텐데?</button>
+                  <button aria-pressed="false" class="mind-cloud c6" data-mind="5" type="button">내 나이에도 괜찮을까?</button>
+                  <button aria-pressed="false" class="mind-cloud c7" data-mind="6" type="button">어디에 써먹을 수 있지?</button>
+                  <button aria-pressed="false" class="mind-cloud c8" data-mind="7" type="button">뭐부터 배워야 하지?</button>
+                </div>
+                <p class="mind-hint" id="mind-hint">☝ 궁금한 걱정을 누르면 그 자리에서 답을 볼 수 있어요</p>
+              </div>
+              <p class="faq-outro">걱정을 다 없앨 필요는 없어요. <strong>관심 있는 한 가지부터 시작하면 됩니다.</strong></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section reviews-section" id="reviews" aria-labelledby="reviews-title">
+        <div class="wrap reviews-heading">
+          <p class="kicker">LEARNER STORIES</p>
+          <h2 id="reviews-title">먼저 배운 사람들의<br><span class="highlight">이야기를 들어보세요.</span></h2>
+          <p class="desc">수강을 고민하고 있다면, 학습 경험을 살펴보세요.</p>
+        </div>
+        <div class="review-window" id="review-window" tabindex="0" aria-label="수강 후기 카드 슬라이더. 마우스를 올리거나 선택하면 이동이 멈춥니다.">
+          <div class="review-track" id="review-track">
+            <article class="review-card">
+              <span class="review-label">업무 활용</span>
+              <p>“반복하던 업무를 자동화하는 방법을 익히는 과정이 인상 깊었어요.”</p>
+              <span class="review-person">AI 업무자동화 과정 · 후기 예시</span>
+            </article>
+            <article class="review-card">
+              <span class="review-label">실습 경험</span>
+              <p>“이론을 본 뒤 직접 작동시켜 보니까 훨씬 쉽게 이해할 수 있었어요.”</p>
+              <span class="review-person">자율주행 과정 · 후기 예시</span>
+            </article>
+            <article class="review-card">
+              <span class="review-label">온라인 학습</span>
+              <p>“시간에 맞춰 온라인으로 공부하고 배운 내용을 다시 확인할 수 있었어요.”</p>
+              <span class="review-person">디지털 기초 과정 · 후기 예시</span>
+            </article>
+            <article class="review-card">
+              <span class="review-label">새로운 도전</span>
+              <p>“어렵게만 느꼈던 AI를 조금 더 친숙하게 접할 수 있었어요.”</p>
+              <span class="review-person">AI 기초 과정 · 후기 예시</span>
+            </article>
+          </div>
+        </div>
+        <p class="review-note">※ 위 문장은 레이아웃 검토용 <strong>가상 후기 예시</strong>입니다. 실제 수강생의 검증된 후기·동의받은 내용으로 교체한 후 게시해야 합니다.</p>
+      </section>
+      <section class="section end">
+        <div class="wrap">
+          <p class="kicker">YOUR NEXT STEP</p>
+          <h2>AI 시대,<br/><span class="highlight">선택이 아닌 생존입니다.</span></h2>
+          <p class="desc">변화는 이미 시작됐습니다. 지금 배우고 준비하세요.</p>
+          <a class="btn" href="#courses">내게 맞는 과정 선택하기 →</a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap footer-wrap"><span>미라클 K-디지털 기초역량훈련</span><span>V7.0 · 기획/CTA 동선 검토용 HTML 와이어프레임 · 실제 신청 미연결</span></div>
+    </footer>
+    <div class="mobile-cta"><a href="#courses">나에게 맞는 과정 찾기 →</a></div>
+    <script>
+      const courses=[
+        {
+          title: 'AI로 완성하는 홈페이지',
+          type: 'work',
+          desc: '아이디어를 웹페이지로',
+          kit: false
+        },
+        {
+          title: 'AI로 쉽게 만드는 PPT 끝판왕',
+          type: 'work',
+          desc: '발표자료 제작에 AI 활용',
+          kit: false
+        },
+        {
+          title: '누구나 쉽게 배우는 AI 업무자동화 풀코스',
+          type: 'work',
+          desc: '반복 업무에 AI 활용',
+          kit: false
+        },
+        {
+          title: '미래모빌리티 자율주행의 이해와 실습',
+          type: 'make',
+          desc: '자동차 움직임을 직접 제어',
+          kit: true
+        },
+        {
+          title: '3D프린팅 실무와 시제품제작(Fusion)',
+          type: 'make',
+          desc: '아이디어를 입체로 구현',
+          kit: true
+        },
+        {
+          title: 'AI 로봇팔로 배우는 협동로봇 제어 원리',
+          type: 'make',
+          desc: '로봇팔 제어 원리 실습',
+          kit: true
+        },
+        {
+          title: '파이썬으로 배우는 딥러닝 & 인공지능 기초',
+          type: 'basic',
+          desc: 'AI·코딩의 기초 이해',
+          kit: false
+        },
+        {
+          title: '파이썬으로 제어하는 AI드론',
+          type: 'basic',
+          desc: '프로그래밍으로 드론 제어',
+          kit: false
+        },
+        {
+          title: '파이썬으로 제어하는 자율주행 전기차',
+          type: 'basic',
+          desc: '코드로 이동체 제어',
+          kit: false
+        }
+      ];
+      let type='all', kitOnly=false;
+      const grid=document.getElementById('course-grid');
+      const tabs=[
+        ...document.querySelectorAll('[data-filter]')
+      ];
+      const names={
+        all: '전체 교육과정',
+        work: 'AI 업무 활용',
+        make: '직접 만드는 기술',
+        basic: '코딩·디지털 기초'
+      };
+      function render(){
+        const list=courses.filter(c=>(type==='all'||c.type===type)&&(!kitOnly||c.kit));
+        grid.replaceChildren(...list.map(c=>{
+          const art=document.createElement('article');
+          art.className='course-card';
+          const cap=document.createElement('span');
+          cap.className='eyebrow';
+          cap.textContent=names[c.type];
+          const title=document.createElement('h3');
+          title.textContent=c.title;
+          const p=document.createElement('p');
+          p.textContent=c.desc;
+          art.append(cap, title, p);
+          if(c.kit){
+            const label=document.createElement('span');
+            label.className='kitmark';
+            label.textContent='실습 교구 제공 대상';
+            art.append(label)
+          }
+          const foot=document.createElement('div');
+          foot.className='foot';
+          const a=document.createElement('span');
+          a.textContent='훈련비·지원조건 확인 필요';
+          const b=document.createElement('strong');
+          b.textContent='상세 안내 보기 ↗';
+          foot.append(a, b);
+          art.append(foot);
+          art.tabIndex=0;
+          art.setAttribute('role', 'button');
+          art.setAttribute('aria-label', c.title+' 상세 안내 열기');
+          art.dataset.course=c.title;
+          return art
+        }));
+        document.getElementById('filter-name').textContent=kitOnly?'실습 교구 제공 대상': names[type];
+        document.getElementById('filter-count').textContent=list.length+'개 과정';
+        document.getElementById('no-results').hidden=list.length>0;
+        tabs.forEach(b=>b.setAttribute('aria-pressed', String(!kitOnly&&b.dataset.filter===type)))
+      }
+      function setFilter(next, isKit=false){
+        type=next;
+        kitOnly=isKit;
+        render()
+      };
+      tabs.forEach(b=>b.addEventListener('click', ()=>setFilter(b.dataset.filter)));
+      document.querySelectorAll('[data-pick]').forEach(a=>a.addEventListener('click', ()=>setFilter(a.dataset.pick)));
+      document.getElementById('kit-filter').addEventListener('click', ()=>setFilter('all', true));
+      render();
+      // V6.2 3단계 관심사 탐색: 적성 판정이 아닌 관심 기반 추천
+      const quizQuestions=[
+        {
+          title: '어떤 변화가 가장 기대되세요?',
+          answers: [
+            [
+              '일에 AI를 활용하기',
+              'work'
+            ],
+            [
+              '직접 무언가 만들기',
+              'make'
+            ],
+            [
+              '기술의 원리 이해하기',
+              'basic'
+            ]
+          ]
+        },
+        {
+          title: '더 끌리는 활동은 무엇인가요?',
+          answers: [
+            [
+              '홈페이지·자료 만들기',
+              'work'
+            ],
+            [
+              '로봇·자동차 조작하기',
+              'make'
+            ],
+            [
+              '코딩의 기초부터 익히기',
+              'basic'
+            ]
+          ]
+        },
+        {
+          title: '먼저 경험하고 싶은 것은?',
+          answers: [
+            [
+              'AI로 결과물 완성',
+              'work'
+            ],
+            [
+              '실물 실습과 작동 경험',
+              'make'
+            ],
+            [
+              '프로그래밍 학습',
+              'basic'
+            ]
+          ]
+        }
+      ];
+      let quizStep=0, quizSelections=[];
+      const quizPanel=document.getElementById('quiz-panel'), quizStepEl=document.getElementById('quiz-step'), quizResultEl=document.getElementById('quiz-result'), quizMeter=document.getElementById('quiz-meter-fill');
+      function showQuestion(){
+        quizResultEl.hidden=true;
+        quizStepEl.hidden=false;
+        document.getElementById('quiz-progress').textContent='질문 '+(quizStep+1)+' / 3';
+        quizMeter.style.width=((quizStep+1)/3*100)+'%';
+        const q=quizQuestions[quizStep];
+        quizStepEl.replaceChildren();
+        quizStepEl.classList.remove('quiz-appear');
+        void quizStepEl.offsetWidth;
+        quizStepEl.classList.add('quiz-appear');
+        const h=document.createElement('h3');
+        h.textContent=q.title;
+        const answers=document.createElement('div');
+        answers.className='quiz-answers';
+        q.answers.forEach(([
+          label,
+          key
+        ])=>{
+          const b=document.createElement('button');
+          b.className='quiz-answer';
+          b.type='button';
+          b.textContent=label+'  →';
+          b.addEventListener('click', ()=>{
+            quizSelections.push(key);
+            quizStep++;
+            if(quizStep===3)showResult();
+            else showQuestion()
+          });
+          answers.append(b)
+        });
+        quizStepEl.append(h, answers)
+      }
+      function showResult(){
+        quizStepEl.hidden=true;
+        quizResultEl.hidden=false;
+        document.getElementById('quiz-progress').textContent='추천 완료';
+        quizMeter.style.width='100%';
+        const order=[
+          'work',
+          'make',
+          'basic'
+        ];
+        const score=Object.fromEntries(order.map(k=>[
+          k,
+          quizSelections.filter(x=>x===k).length
+        ]));
+        const chosen=order.reduce((best, k)=>score[k]>score[best]?k: best, 'work');
+        const labels={
+          work: 'AI 업무 활용',
+          make: '직접 만드는 기술',
+          basic: '코딩·디지털 기초'
+        };
+        const candidates=courses.filter(c=>c.type===chosen).slice(0, 3);
+        quizResultEl.replaceChildren();
+        const h=document.createElement('h3');
+        h.textContent='이런 과정이 잘 맞을 것 같아요 ✨';
+        const p=document.createElement('p');
+        p.textContent='선택한 관심사에는 '+labels[chosen]+' 분야가 가까워요. 가볍게 추천한 결과이며, 수강 조건은 과정별로 확인해 주세요.';
+        const picks=document.createElement('div');
+        picks.className='quiz-suggestions';
+        candidates.forEach(c=>{
+          const r=document.createElement('div');
+          r.textContent='✓ '+c.title;
+          picks.append(r)
+        });
+        const actions=document.createElement('div');
+        actions.className='quiz-actions';
+        const see=document.createElement('button');
+        see.type='button';
+        see.className='primary';
+        see.textContent='이 과정들 바로 보기 ↓';
+        see.addEventListener('click', ()=>{
+          setFilter(chosen);
+          quizPanel.hidden=true;
+          document.getElementById('quiz-launch').setAttribute('aria-expanded', 'false');
+          document.querySelector('.course-status').scrollIntoView({
+            behavior: window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto': 'smooth',
+            block: 'start'
+          })
+        });
+        const retry=document.createElement('button');
+        retry.type='button';
+        retry.textContent='다시 선택하기';
+        retry.addEventListener('click', ()=>{
+          quizStep=0;
+          quizSelections=[];
+          showQuestion()
+        });
+        actions.append(see, retry);
+        quizResultEl.append(h, p, picks, actions)
+      }
+      document.getElementById('quiz-launch').addEventListener('click', ()=>{
+        quizPanel.hidden=false;
+        document.getElementById('quiz-launch').setAttribute('aria-expanded', 'true');
+        quizStep=0;
+        quizSelections=[];
+        showQuestion();
+        quizPanel.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest'
+        })
+      });
+      document.getElementById('quiz-close').addEventListener('click', ()=>{
+        quizPanel.hidden=true;
+        document.getElementById('quiz-launch').setAttribute('aria-expanded', 'false');
+        document.getElementById('quiz-launch').focus()
+      });
+    </script>
+    <script>
+      (function(){
+        const items=document.querySelectorAll('[data-news-reveal]');
+        if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+          items.forEach(el=>el.classList.add('is-visible'));
+          return;
+        }
+        const observer=new IntersectionObserver(entries=>{
+          entries.forEach(entry=>{
+            if(entry.isIntersecting){
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          })
+        }, {
+          rootMargin: '0px 0px -12% 0px',
+          threshold: 0.12
+        });
+        items.forEach(el=>observer.observe(el));
+      })();
+    </script>
+    <script>
+      /* V6.8: four-beat scroll story, no clicks, independent of existing interactions */
+      (()=>{
+        const area=document.getElementById('story-scroll'),
+        lines=[
+          ...document.querySelectorAll('[data-story-line]')
+        ],
+        bar=document.getElementById('story-meter'),
+        count=document.getElementById('story-count');
+        if(!area||!lines.length)return;
+        let previous=-1,
+        ticking=false;
+        function update(){
+          const rect=area.getBoundingClientRect(),
+          range=Math.max(1, rect.height-innerHeight),
+          progress=Math.max(0, Math.min(1, -rect.top/range));
+          const stage=Math.min(3, Math.floor(progress*4));
+          if(stage!==previous){
+            lines.forEach((el, i)=>{
+              el.classList.toggle('is-current', i===stage);
+              el.setAttribute('aria-hidden', String(i!==stage))
+            });
+            count.textContent=String(stage+1).padStart(2, '0')+' / 04';
+            bar.style.width=((stage+1)/4*100)+'%';
+            previous=stage
+          }
+          ticking=false
+        }
+        function request(){
+          if(!ticking){
+            requestAnimationFrame(update);
+            ticking=true
+          }
+        }
+        addEventListener('scroll', request, {
+          passive: true
+        });
+        addEventListener('resize', request);
+        update()
+      })();
+      /* V6.8: reveal answers in the same cloud, no scrolling to a detached response */
+      (()=>{
+        const answers=[
+          [
+            '기초부터 시작할 수 있어요.',
+            '과정별 선수지식을 확인하세요.'
+          ],
+          [
+            '코딩 경험이 없어도 선택 가능한 과정이 있어요.',
+            '관심 분야와 난이도를 확인해 보세요.'
+          ],
+          [
+            '100% 온라인 수업이에요.',
+            '수강 기간과 학습 일정은 과정별 확인.'
+          ],
+          [
+            '국민내일배움카드 지원을 확인해 보세요.',
+            '실제 본인부담금은 과정마다 달라요.'
+          ],
+          [
+            '일부 과정은 실습 교구를 제공해요.',
+            '대상 과정에서는 직접 활용해 볼 수 있어요.'
+          ],
+          [
+            '중요한 건 나이보다 배움의 목표예요.',
+            '지원 자격은 개별 기준을 확인하세요.'
+          ],
+          [
+            '일과 일상에 활용할 길이 있어요.',
+            '나에게 필요한 활용 목표부터 찾아보세요.'
+          ],
+          [
+            '3가지 질문으로 관심 분야를 찾아보세요.',
+            '아래 교육과정 추천 기능을 이용해 보세요.'
+          ]
+        ];
+        const clouds=[
+          ...document.querySelectorAll('#faq .mind-cloud')
+        ];
+        clouds.forEach((button, i)=>{
+          const original=button.textContent.trim();
+          button.replaceChildren();
+          const label=document.createElement('span');
+          label.className='cloud-original';
+          label.textContent=original;
+          button.append(label);
+          button.setAttribute('aria-label', original+' 답 보기');
+          button.addEventListener('click', ()=>{
+            const opening=!button.classList.contains('is-open');
+            clouds.forEach(c=>{
+              c.classList.remove('is-open');
+              c.setAttribute('aria-pressed', 'false');
+              while(c.children.length>1)c.lastElementChild.remove();
+              const originalText=c.querySelector('.cloud-original');
+              if(originalText)c.setAttribute('aria-label', originalText.textContent+' 답 보기')
+            });
+            if(opening){
+              const headline=document.createElement('strong');
+              headline.className='cloud-solution';
+              headline.textContent=answers[i][0];
+              const more=document.createElement('span');
+              more.className='cloud-more';
+              more.textContent=answers[i][1];
+              button.append(headline, more);
+              button.classList.add('is-open', 'is-solved');
+              button.setAttribute('aria-pressed', 'true');
+              button.setAttribute('aria-label', original+' 해결책: '+answers[i].join(' '))
+            }
+          })
+        })
+      })();
+    </script>
+    <dialog aria-labelledby="dialog-title" class="detail-dialog" id="detail-dialog">
+      <div class="dialog-shell">
+        <div class="dialog-head">
+          <span id="dialog-label">상세 안내</span>
+          <button aria-label="상세 안내 닫기" class="dialog-close" id="dialog-close" type="button">✕</button>
+        </div>
+        <div class="dialog-content" id="dialog-content">
+          <h2 id="dialog-title"></h2>
+          <div id="dialog-body"></div>
+        </div>
+        <div class="dialog-actions">
+          <button class="dialog-done" id="dialog-done" type="button">확인했어요 · 닫기</button>
+        </div>
+      </div>
+    </dialog>
+    <script>
+      /* V7.0 interaction layer: detail dialogs without losing scroll position */
+      (()=>{
+        const dlg=document.getElementById('detail-dialog');
+        const title=document.getElementById('dialog-title');
+        const body=document.getElementById('dialog-body');
+        const label=document.getElementById('dialog-label');
+        let origin=null;
+        const details={
+          support: {
+            label: '디지털 역량을 국가가 지원하는 이유',
+            title: 'AI 시대, 국가는 사람의 역량에 투자하고 있습니다.',
+            html: `
+      <p class="policy-metric-lead">AI와 디지털 기술이 산업과 일의 방식을 바꾸고 있습니다. 정부가 디지털 역량을 <strong>국가 경쟁력과 직업능력의 중요한 과제</strong>로 보고 훈련 지원을 확대하는 이유입니다.</p>
+      <div class="policy-stat">
+        <div class="policy-stat-eyebrow">01 · 디지털 산업의 성장</div>
+        <div class="policy-stat-number">1,378조 원 <small>2024년 국내 디지털 산업 매출</small></div>
+        <div class="policy-bars" aria-label="디지털 산업 매출: 2022년 1,142조 원, 2023년 1,261조 원, 2024년 1,378조 원">
+          <div class="policy-bar-row"><span>2022</span><div class="policy-bar-track"><div class="policy-bar-fill" style="width:82.9%"></div></div><strong>1,142조</strong></div>
+          <div class="policy-bar-row"><span>2023</span><div class="policy-bar-track"><div class="policy-bar-fill" style="width:91.5%"></div></div><strong>1,261조</strong></div>
+          <div class="policy-bar-row"><span>2024</span><div class="policy-bar-track"><div class="policy-bar-fill" style="width:100%"></div></div><strong>1,378조</strong></div>
+        </div>
+        <p class="policy-stat-desc">2024년 매출은 전년 대비 <b>9.3% 증가</b>했습니다. 디지털 산업 전체의 통계이며, AI 산업만의 매출이나 채용 증가율을 뜻하지 않습니다.</p>
+        <p class="policy-stat-source">출처: 과학기술정보통신부, 2025 디지털산업실태조사(2024년 실적). <a href="https://www.msit.go.kr/bbs/view.do?bbsSeqNo=42&amp;nttSeqNo=1283&amp;sCode=user" target="_blank" rel="noopener noreferrer">공식 자료 보기 ↗</a></p>
+      </div>
+      <div class="policy-stat">
+        <div class="policy-stat-eyebrow">02 · AI 교육훈련 참여 확대</div>
+        <div class="policy-stat-number">약 2.8배 <small>전년 동기 대비 참여 인원</small></div>
+        <div class="policy-bars" aria-label="AI 교육훈련 참여 인원: 2025년 1분기 2만8천 명, 2026년 1분기 7만8천 명">
+          <div class="policy-bar-row"><span>2025 1Q</span><div class="policy-bar-track"><div class="policy-bar-fill" style="width:35.9%"></div></div><strong>2.8만 명</strong></div>
+          <div class="policy-bar-row"><span>2026 1Q</span><div class="policy-bar-track"><div class="policy-bar-fill" style="width:100%"></div></div><strong>7.8만 명</strong></div>
+        </div>
+        <p class="policy-stat-desc">정부가 발표한 <b>AI 교육훈련 참여 인원</b> 비교입니다. AI 인재 채용 증가율을 뜻하지는 않습니다.</p>
+        <p class="policy-stat-source">출처: 고용노동부 국정성과 자료(2026년 1분기 참여 인원). <a href="https://moel.go.kr/news/achievements/view.do?bbs_seq=20260201224" target="_blank" rel="noopener noreferrer">공식 자료 보기 ↗</a></p>
+      </div>
+      <div class="policy-stat">
+        <div class="policy-stat-eyebrow">03 · 정부의 AI 역량 지원 목표</div>
+        <div class="policy-stat-number">100만 명+ <small>5년간 AI 직업능력개발 지원 목표</small></div>
+        <p class="policy-stat-desc">고용노동부는 <b>「AI+역량 Up 프로젝트」</b>를 통해 구직자, 재직자, 이·전직 준비자 등에게 AI 훈련 기회를 넓히겠다는 계획을 발표했습니다. 이 수치는 <b>정책 목표치</b>이며, 이미 교육을 완료한 사람 수가 아닙니다.</p>
+        <p class="policy-stat-source">출처: 고용노동부, 「노동시장 AI 인재양성 추진방안」(2025.12.18). <a href="https://www.moel.go.kr/news/enews/report/enewsView.do?news_seq=18752" target="_blank" rel="noopener noreferrer">공식 발표 보기 ↗</a></p>
+      </div>
+      <p class="policy-endline">국가가 디지털 역량을 키우기 위해 지원하는 지금,<br>나에게 맞는 배움부터 시작해 보세요.</p>
+      <p class="dialog-note">※ 위 산업 성장과 훈련 참여 통계는 정책의 배경을 설명하는 자료입니다. K-디지털 기초역량훈련 하나만의 성과는 아닙니다. 특정 교육기관 또는 과정에 대한 정부의 공식 추천을 의미하지 않습니다.</p>
+    `
+          },
+          kit: {
+            label: '미라클 K-디지털 교육 혜택',
+            title: '배우는 동안에도, 배운 후에도 남는 가치',
+            html: `<div class="dialog-fact"><strong>01 · 실습 교구 제공 및 소장</strong><p>실습 교구 제공 대상 과정에 한해 무상 제공하며 반납 없이 소장할 수 있습니다. 지급 품목은 각 과정 안내에서 확인하세요.</p></div><div class="dialog-fact"><strong>02 · Google AI Pro 1개월 이용료 지원</strong><p>전단지 기준 ‘누구나 쉽게 배우는 AI 업무자동화 풀코스’의 수강 혜택입니다. 제공 방법과 세부 이용 조건은 과정 안내에 따릅니다.</p></div><div class="dialog-fact"><strong>03 · 과정별 자격증 연계</strong><p>운영 중인 네 과정의 연계 자격증 예시: 자율주행 AI 코딩지도사, 드론 코딩지도사, AI활용전문가(Gemini), AI 딥러닝 모델 엔지니어.</p><p>자격증은 자동 취득이 아니며 발급 기준·시험·발급비 등은 별도 확인이 필요합니다.</p></div><div class="dialog-fact"><strong>그 밖의 학습 지원</strong><p>100% 온라인 수업, 학습자료, 1:1 코칭 상담, 수료증 및 우수훈련자 포상제도는 전단지에 안내된 항목입니다. 과정별 적용 여부를 확인하세요.</p></div><p class="dialog-note">※ 현재 안내에 포함된 자격증·AI 도구 지원은 기존 운영 4개 과정의 전단지 내용을 기준으로 합니다. 신규 개설 예정 과정에 일괄 적용되지 않습니다.</p>`
+          },
+          cost: {
+            label: '훈련비 안내',
+            title: '실제 납부 금액을 확인하고 선택하세요',
+            html: `<p>훈련비 지원 여부와 실제 본인부담금은 수강자 요건 및 과정에 따라 달라질 수 있습니다.</p><div class="dialog-fact"><strong>신청 전 확인 순서</strong><ul><li>내일배움카드 지원 자격 확인</li><li>관심 과정의 총 훈련비·지원 적용 여부 확인</li><li>실제 본인부담금 및 결제 절차 확인</li></ul></div><p class="dialog-note">과정별 확정 금액 미입력 상태의 와이어프레임입니다. 실제 운영 시 정확한 금액을 입력해야 합니다.</p>`
+          }
+        };
+        const escapeHtml=x=>String(x).replace(/[&<>"']/g, c=>({
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#39;'
+        }
+        [c]));
+        function open(data, btn){
+          origin=btn;
+          label.textContent=data.label;
+          title.textContent=data.title;
+          body.innerHTML=data.html;
+          dlg.showModal();
+        }
+        document.querySelectorAll('[data-modal]').forEach(a=>a.addEventListener('click', e=>{
+          e.preventDefault();
+          open(details[a.dataset.modal], a)
+        }));
+        function openCourse(card){
+          const name=card.dataset.course;
+          const c=typeof courses!=='undefined'?courses.find(x=>x.title===name): null;
+          if(!c)return;
+          open({
+            label: '교육과정 상세 · 기획용',
+            title: c.title,
+            html: `<p>${escapeHtml(c.desc)}</p><div class="dialog-fact"><strong>이 과정에서 확인할 정보</strong><ul><li>학습 목표 및 주요 내용</li><li>강의 시간·수강 기간</li><li>총 훈련비·지원 금액·본인부담금</li><li>${c.kit?'실습 교구 지급·소장 조건':'과정별 실습 방식'}</li><li>신청 자격과 실제 신청 경로</li></ul></div><p class="dialog-note">현재는 기획용 미리보기입니다. 구체적인 커리큘럼·비용·신청 URL은 운영 자료 확정 후 연결합니다.</p>`
+          }, card);
+        }
+        document.getElementById('course-grid').addEventListener('click', e=>{
+          const card=e.target.closest('[data-course]');
+          if(card)openCourse(card)
+        });
+        document.getElementById('course-grid').addEventListener('keydown', e=>{
+          if((e.key==='Enter'||e.key===' ')&&e.target.matches('[data-course]')){
+            e.preventDefault();
+            openCourse(e.target)
+          }
+        });
+        function close(){
+          dlg.close()
+        };
+        document.getElementById('dialog-close').addEventListener('click', close);
+        document.getElementById('dialog-done').addEventListener('click', close);
+        dlg.addEventListener('click', e=>{
+          if(e.target===dlg)close()
+        });
+        dlg.addEventListener('close', ()=>{
+          origin?.focus({
+            preventScroll: true
+          });
+          origin=null
+        });
+      })();
+    </script>
+    <script>
+      /* V7.1: existing ticker drives the local news preview; no external navigation */
+      (()=>{
+        const policy=document.querySelector('#policy');
+        if(!policy)return;
+        const stories=[
+          {
+            publisher: 'KBS',
+            date: '2026.09.10',
+            title: 'AI가 연구실을 넘어 산업 현장으로',
+            paragraphs: [
+              'AI 기술은 연구 단계에 머무르지 않고 제조·서비스 등 다양한 산업 현장에서 활용 가능성을 넓혀가고 있습니다.',
+              '기업 현장에서는 기술 개발뿐 아니라 실제 업무에 도입하고 활용할 수 있는 역량이 중요해지고 있습니다.',
+              '※ 이 항목은 원문 전체를 확인하지 못해 기존 보도 제목을 바탕으로 맥락을 안내한 것입니다.'
+            ]
+          },
+          {
+            publisher: 'MBC',
+            date: '2026.08.18',
+            title: 'AI 영향 큰 업종, 청년 일자리 변화',
+            paragraphs: [
+              '한국은행 보고서를 인용한 MBC 보도에 따르면, 2022년 6월부터 2026년 6월까지 감소한 청년 일자리 28만 5천 개 중 26만 8천 개가 AI 고노출 업종에서 발생했습니다.',
+              '정보서비스업과 출판업, 컴퓨터 프로그래밍·시스템 통합·관리업 등에서 청년 고용 감소가 두드러졌습니다.',
+              '한국은행은 AI뿐 아니라 산업별 고용 조정과 경력직 중심 채용 등 여러 요인이 함께 영향을 미쳤을 수 있다고 설명했습니다.',
+              '단순히 AI가 일자리를 없앤다는 의미가 아니라, 변화하는 직무에 맞는 경험과 역량을 쌓는 일이 중요해졌다는 점을 보여줍니다.'
+            ]
+          },
+          {
+            publisher: '연합뉴스',
+            date: '2026.10.26',
+            title: '한국은행, AI 확산과 청년 고용 변화 진단',
+            paragraphs: [
+              '한국은행은 AI 확산과 산업구조 재편, 노동시장 구조 등이 함께 작용하며 청년 고용에 영향을 준다고 분석했습니다.',
+              '특히 AI 활용도가 높은 직무에서는 경력직을 선호하는 경향과 함께 초급·기초 업무 수요가 줄어드는 현상이 나타났습니다.',
+              '보고서는 이런 변화에 대응하기 위해 교육과 산업 현장의 연계, 업무 역량을 축적할 수 있는 경력 경로의 중요성을 제시했습니다.',
+              'AI 활용 역량을 배워두는 것이 변화에 대비하는 한 가지 방법이 될 수 있습니다.'
+            ]
+          },
+          {
+            publisher: 'KBS',
+            date: '2026.08.03',
+            title: '방송 제작 현장에도 생성형 AI 도입',
+            paragraphs: [
+              '방송 제작에서도 생성형 AI 활용이 주요한 관심사가 되고 있습니다.',
+              '콘텐츠 제작·편집·기획 등 창작 업무에서 AI 도구를 실제로 어떻게 활용할지 살펴볼 필요가 있습니다.',
+              '※ 이 항목은 원문 전체를 확인하지 못해 기존 보도 제목을 바탕으로 맥락을 안내한 것입니다.'
+            ]
+          }
+        ];
+        const fields={
+          publisher: policy.querySelector('#news-screen-publisher'),
+          date: policy.querySelector('#news-screen-date'),
+          title: policy.querySelector('#news-screen-title'),
+          summary: policy.querySelector('#news-screen-summary'),
+          counter: policy.querySelector('#news-screen-counter')
+        };
+        const tv=policy.querySelector('#news-preview');
+        const links=[
+          ...policy.querySelectorAll('.verified-news-item a')
+        ];
+        let active=-1;
+        function show(i){
+          if(!Number.isInteger(i)||i<0||i>=stories.length)return;
+          active=i;
+          const s=stories[i];
+          fields.publisher.textContent=s.publisher;
+          fields.date.textContent=s.date;
+          fields.title.textContent=s.title;
+          fields.summary.replaceChildren(...s.paragraphs.map(line=>{
+            const p=document.createElement('p');
+            p.textContent=line;
+            return p;
+          }));
+          fields.summary.scrollTop=0;
+          fields.counter.textContent=String(i+1).padStart(2, '0')+' / 04';
+          links.forEach(a=>a.closest('.verified-news-item').classList.toggle('is-selected', Number(a.dataset.newsIndex)===i));
+          tv.classList.remove('is-updating');
+          void tv.offsetWidth;
+          tv.classList.add('is-updating')
+        }
+        links.forEach(a=>a.addEventListener('click', e=>{
+          e.preventDefault();
+          show(Number(a.dataset.newsIndex));
+        }));
+        show(0);
+      })();
+    </script>
+    <script>
+      (function(){
+        const root=document.querySelector('.apply-guide');
+        if(!root)return;
+        const paths={
+          no: [
+            [
+              '국민내일배움카드 신청',
+              '고용24에서 국민내일배움카드 발급 신청 자격과 절차를 확인하세요. 본인 인증 후 신청을 진행할 수 있어요.'
+            ],
+            [
+              '카드 발급 및 이용 준비',
+              '카드 발급 진행 상태를 확인하고 카드 수령 및 사용 가능 여부를 점검하세요.'
+            ],
+            [
+              '원하는 과정 신청',
+              '관심 있는 K-디지털 과정을 고른 후 고용24와 교육기관 안내에 따라 수강 신청을 진행하세요.'
+            ]
+          ],
+          yes: [
+            [
+              '교육과정 검색',
+              '고용24에서 미라클 K-디지털 훈련과정을 검색하고 개설 여부·지원 조건을 확인하세요.'
+            ],
+            [
+              '수강 신청',
+              '원하는 과정을 선택해 고용24의 수강 신청을 진행하세요.'
+            ],
+            [
+              '수강 등록 확인',
+              '교육기관 안내에 따라 등록 및 필요한 결제 절차를 확인하세요.'
+            ]
+          ]
+        };
+        let path='no',
+        step=0;
+        const pathBtns=[
+          ...root.querySelectorAll('[data-path]')
+        ],
+        stepBtns=[
+          ...root.querySelectorAll('[data-step]')
+        ];
+        const idx=root.querySelector('#apply-stage-index'),
+        title=root.querySelector('#apply-stage-title'),
+        desc=root.querySelector('#apply-stage-desc'),
+        next=root.querySelector('#apply-next');
+        function update(){
+          pathBtns.forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.path===path)));
+          stepBtns.forEach((b, i)=>{
+            b.classList.toggle('is-active', i===step);
+            b.setAttribute('aria-pressed', String(i===step));
+            b.innerHTML='<small>STEP 0'+(i+1)+'</small>'+paths[path][i][0]
+          });
+          idx.textContent='STEP 0'+(step+1);
+          title.textContent=paths[path][step][0];
+          desc.textContent=paths[path][step][1];
+          next.textContent=step===2?'처음부터 보기 ↺': '다음 단계 →'
+        }
+        pathBtns.forEach(b=>b.addEventListener('click', ()=>{
+          path=b.dataset.path;
+          step=0;
+          update()
+        }));
+        stepBtns.forEach(b=>b.addEventListener('click', ()=>{
+          step=Number(b.dataset.step);
+          update()
+        }));
+        next.addEventListener('click', ()=>{
+          step=(step+1)%3;
+          update()
+        });
+        update();
+      })();
+      (function(){
+        const track=document.getElementById('review-track');
+        if(!track)return;
+        track.insertAdjacentHTML('beforeend', track.innerHTML);
+      })();
+    </script>
+  </body>
+</html>
