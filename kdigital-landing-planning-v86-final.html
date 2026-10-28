@@ -17,14 +17,15 @@
         --ink:#10233f;
         --muted:#65748b;
         --bg:#f5f7fb;
-        --line:#dfe6f0
+        --line:#dfe6f0;
+        --sticky-tabs-height:48px
       }
       * {
         box-sizing:border-box
       }
       html {
         scroll-behavior:smooth;
-        scroll-padding-top:72px
+        scroll-padding-top:calc(var(--sticky-tabs-height) + 16px)
       }
       body {
         margin:0;
@@ -49,34 +50,137 @@
         width:min(1040px,calc(100% - 44px));
         margin:auto
       }
-      .nav {
-        height:66px;
+      .site-header-img {
+        position:relative;
+        width:100%;
+        height:127px;
+        overflow:hidden;
+        background:#fff
+      }
+      .site-header-img img {
+        position:absolute;
+        left:50%;
+        top:0;
+        display:block;
+        width:1900px;
+        max-width:none;
+        height:127px;
+        transform:translateX(-50%)
+      }
+      .subnav {
+        position:sticky;
+        top:0;
+        z-index:50;
+        height:var(--sticky-tabs-height);
+        background:#102879
+      }
+      .subnav-inner {
+        width:min(1120px,calc(100% - 44px));
+        height:100%;
+        margin:auto;
         display:flex;
         align-items:center;
         justify-content:space-between;
-        gap:18px
+        gap:24px
       }
-      .logo {
-        font-size:17px;
-        font-weight:850;
-        letter-spacing:-.7px
+      .subnav-tabs {
+        display:flex;
+        gap:36px;
+        height:100%
       }
-      .logo b {
-        color:var(--blue)
-      }
-      header {
-        position:sticky;
-        top:0;
-        background:#fff;
-        z-index:50;
-        border-bottom:1px solid #e4eaf3
-      }
-      .navlinks {
+      .subnav-tabs a {
         display:flex;
         align-items:center;
-        gap:23px;
-        font-size:12px;
-        font-weight:750
+        height:100%;
+        border-bottom:2px solid transparent;
+        color:rgba(255,255,255,.72);
+        font-size:14.5px;
+        font-weight:700;
+        white-space:nowrap
+      }
+      .subnav-tabs a:hover {
+        color:#fff;
+        border-bottom-color:rgba(255,255,255,.4)
+      }
+      .subnav-tabs a[aria-current="location"] {
+        color:#fff;
+        border-bottom-color:#fff
+      }
+      .subnav-cta {
+        display:flex;
+        align-items:center;
+        gap:8px;
+        height:22px;
+        padding-left:28px;
+        border-left:1px solid rgba(255,255,255,.18);
+        color:rgba(255,255,255,.9);
+        font-size:14px;
+        font-weight:700;
+        white-space:nowrap
+      }
+      .subnav-cta:hover {
+        color:#fff
+      }
+      .subnav-cta img {
+        display:block;
+        width:22px;
+        height:22px;
+        flex:none
+      }
+      .subnav a:focus-visible {
+        outline:2px solid #fff;
+        outline-offset:-4px
+      }
+      @media(max-width:1000px) {
+        .subnav-inner {
+          gap:16px
+        }
+        .subnav-tabs {
+          gap:22px
+        }
+        .subnav-tabs a {
+          font-size:13px
+        }
+        .subnav-cta {
+          padding-left:16px;
+          font-size:12px
+        }
+      }
+      @media(max-width:760px) {
+        :root {
+          --sticky-tabs-height:88px
+        }
+        .site-header-img {
+          height:72px
+        }
+        .site-header-img img {
+          top:-13px;
+          clip-path:inset(28px 0 57px)
+        }
+        .subnav-inner {
+          width:calc(100% - 32px);
+          flex-direction:column;
+          gap:0
+        }
+        .subnav-tabs {
+          width:100%;
+          height:48px;
+          flex:none;
+          justify-content:space-between;
+          gap:12px
+        }
+        .subnav-tabs a {
+          font-size:12px
+        }
+        .subnav-cta {
+          width:100%;
+          height:40px;
+          flex:none;
+          justify-content:center;
+          padding-left:0;
+          border-left:0;
+          border-top:1px solid rgba(255,255,255,.18)
+        }
       }
       .btn {
         display:inline-flex;
@@ -95,10 +199,6 @@
       .btn:hover {
         background:#164bd4;
         transform:translateY(-2px)
-      }
-      .nav .btn {
-        padding:10px 17px;
-        font-size:12px
       }
       .section {
         padding:100px 0;
@@ -483,9 +583,6 @@
         }
         .hero h1 {
           letter-spacing:-2.3px
-        }
-        .navlinks {
-          display:none
         }
       }
       @media(max-width:560px) {
@@ -2262,8 +2359,8 @@
       }
       .story-sticky {
         position:sticky;
-        top:66px;
-        height:calc(100vh - 66px);
+        top:var(--sticky-tabs-height);
+        height:calc(100vh - var(--sticky-tabs-height));
         min-height:570px;
         display:flex;
         align-items:center;
@@ -4039,13 +4136,23 @@
     </style>
   </head>
   <body>
-    <header>
-      <div class="wrap nav">
-        <a class="logo" href="#top">미라클 <b>K-디지털</b></a>
-        <nav aria-label="메인 메뉴" class="navlinks"><a href="#policy">국비지원</a><a href="#kit">실습 혜택</a><a href="#courses">교육과정</a><a href="#apply">신청 안내</a></nav>
-        <a class="btn" href="#courses">과정 보기 →</a>
-      </div>
+    <header class="site-header-img">
+      <img src="assets/site-header.png" alt="미라클 평생교육원" width="1900" height="127"/>
     </header>
+    <nav class="subnav" aria-label="빠른 이동">
+      <div class="subnav-inner">
+        <div class="subnav-tabs">
+          <a href="#top" aria-current="location">교육 소개</a>
+          <a href="#what">학습 소개</a>
+          <a href="#courses">커리큘럼</a>
+          <a href="#faq">자주묻는 질문</a>
+        </div>
+        <a href="#courses" class="subnav-cta">
+          <img src="assets/kdigital-symbol.png" alt="" width="22" height="22"/>
+          국민내일배움카드 교육 전체
+        </a>
+      </div>
+    </nav>
     <main>
       <section class="hero" id="top">
         <div class="wrap">
@@ -5197,6 +5304,34 @@
         const track=document.getElementById('review-track');
         if(!track)return;
         track.insertAdjacentHTML('beforeend', track.innerHTML);
+      })();
+    </script>
+    <script>
+      (()=>{
+        const nav=document.querySelector('.subnav');
+        const links=[...nav.querySelectorAll('.subnav-tabs a')];
+        const targets=links.map(link=>document.getElementById(link.hash.slice(1)));
+        let ticking=false;
+        function update(){
+          const offset=nav.getBoundingClientRect().height+20;
+          let active=0;
+          targets.forEach((target,index)=>{
+            if(target.getBoundingClientRect().top<=offset)active=index;
+          });
+          links.forEach((link,index)=>{
+            if(index===active)link.setAttribute('aria-current','location');
+            else link.removeAttribute('aria-current');
+          });
+          ticking=false;
+        }
+        function request(){
+          if(ticking)return;
+          ticking=true;
+          requestAnimationFrame(update);
+        }
+        addEventListener('scroll',request,{passive:true});
+        addEventListener('resize',request);
+        update();
       })();
     </script>
   </body>
