@@ -85,8 +85,9 @@
       }
       .subnav-tabs {
         display:flex;
-        gap:36px;
-        height:100%
+        gap:22px;
+        height:100%;
+        min-width:0
       }
       .subnav-tabs a {
         display:flex;
@@ -111,8 +112,10 @@
         align-items:center;
         gap:8px;
         height:22px;
-        padding-left:28px;
+        padding:0 0 0 20px;
+        border:0;
         border-left:1px solid rgba(255,255,255,.18);
+        background:transparent;
         color:rgba(255,255,255,.9);
         font-size:14px;
         font-weight:700;
@@ -127,16 +130,68 @@
         height:22px;
         flex:none
       }
-      .subnav a:focus-visible {
+      .subnav-course-menu {
+        position:relative;
+        display:flex;
+        align-items:center;
+        height:100%;
+        flex:none
+      }
+      .subnav-course-arrow {
+        font-size:10px;
+        transition:transform .2s
+      }
+      .subnav-cta[aria-expanded="true"] .subnav-course-arrow {
+        transform:rotate(180deg)
+      }
+      .subnav-course-list {
+        position:absolute;
+        top:100%;
+        right:0;
+        width:min(440px,calc(100vw - 32px));
+        max-height:min(560px,calc(100dvh - var(--sticky-tabs-height) - 144px));
+        overflow-y:auto;
+        overscroll-behavior:contain;
+        margin:0;
+        padding:8px;
+        list-style:none;
+        border:1px solid #dfe6f0;
+        border-radius:0 0 16px 16px;
+        background:#fff;
+        box-shadow:0 16px 36px #09182b26
+      }
+      .subnav-course-list[hidden] {
+        display:none
+      }
+      .subnav-course-list a {
+        display:block;
+        padding:12px 14px;
+        border-radius:8px;
+        color:#20344f;
+        font-size:13px;
+        font-weight:650;
+        line-height:1.5
+      }
+      .subnav-course-list a:hover {
+        background:#edf3ff;
+        color:#1458d8
+      }
+      .subnav a:focus-visible,
+      .subnav button:focus-visible {
         outline:2px solid #fff;
         outline-offset:-4px
+      }
+      .subnav-course-list a:focus-visible {
+        outline:2px solid var(--blue);
+        outline-offset:-2px;
+        background:#edf3ff
       }
       @media(max-width:1000px) {
         .subnav-inner {
           gap:16px
         }
         .subnav-tabs {
-          gap:22px
+          gap:14px
         }
         .subnav-tabs a {
           font-size:13px
@@ -166,11 +221,21 @@
           width:100%;
           height:48px;
           flex:none;
-          justify-content:space-between;
-          gap:12px
+          overflow-x:auto;
+          overscroll-behavior-x:contain;
+          scrollbar-width:none;
+          gap:20px
+        }
+        .subnav-tabs::-webkit-scrollbar {
+          display:none
         }
         .subnav-tabs a {
+          flex:none;
           font-size:12px
+        }
+        .subnav-course-menu {
+          width:100%;
+          height:40px
         }
         .subnav-cta {
           width:100%;
@@ -4143,14 +4208,29 @@
       <div class="subnav-inner">
         <div class="subnav-tabs">
           <a href="#top" aria-current="location">교육 소개</a>
-          <a href="#what">학습 소개</a>
-          <a href="#courses">커리큘럼</a>
-          <a href="#faq">자주묻는 질문</a>
+          <a href="#courses">교육 과정</a>
+          <a href="#kit">지원 및 혜택</a>
+          <a href="#apply">신청 안내</a>
+          <a href="#faq">자주 묻는 질문</a>
         </div>
-        <a href="#courses" class="subnav-cta">
-          <img src="assets/kdigital-symbol.png" alt="" width="22" height="22"/>
-          국민내일배움카드 교육 전체
-        </a>
+        <div class="subnav-course-menu">
+          <button class="subnav-cta" id="subnav-course-toggle" type="button" aria-expanded="false" aria-controls="subnav-course-list">
+            <img src="assets/kdigital-symbol.png" alt="" width="22" height="22"/>
+            국민내일배움카드 교육 전체
+            <span class="subnav-course-arrow" aria-hidden="true">▼</span>
+          </button>
+          <ul class="subnav-course-list" id="subnav-course-list" aria-labelledby="subnav-course-toggle" hidden>
+            <li><a href="#courses" data-course="미래모빌리티 자율주행의 이해와 실습">미래모빌리티 자율주행의 이해와 실습</a></li>
+            <li><a href="#courses" data-course="3D프린팅 실무와 시제품제작(Fusion)">3D프린팅 실무와 시제품제작</a></li>
+            <li><a href="#courses" data-course="AI 로봇팔로 배우는 협동로봇 제어 원리">AI 로봇팔로 배우는 협동로봇 제어 원리</a></li>
+            <li><a href="#courses" data-course="AI로 완성하는 홈페이지">AI로 완성하는 홈페이지</a></li>
+            <li><a href="#courses" data-course="AI로 쉽게 만드는 PPT 끝판왕">AI로 쉽게 만드는 PPT 끝판왕</a></li>
+            <li><a href="#courses" data-course="파이썬으로 제어하는 AI드론">파이썬으로 제어하는 AI드론</a></li>
+            <li><a href="#courses" data-course="파이썬으로 제어하는 자율주행 전기차">파이썬으로 제어하는 자율주행 전기차</a></li>
+            <li><a href="#courses" data-course="누구나 쉽게 배우는 AI 업무자동화 풀코스">누구나 쉽게 배우는 AI업무자동화 풀코스</a></li>
+            <li><a href="#courses" data-course="파이썬으로 배우는 딥러닝 &amp; 인공지능 기초">파이썬으로 배우는 딥러닝 &amp; 인공지능 기초</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
     <main>
@@ -5095,7 +5175,7 @@
           e.preventDefault();
           open(details[a.dataset.modal], a)
         }));
-        function openCourse(card){
+        function openCourse(card, trigger=card){
           const name=card.dataset.course;
           const c=typeof courses!=='undefined'?courses.find(x=>x.title===name): null;
           if(!c)return;
@@ -5104,7 +5184,7 @@
               label: '개설 예정 과정 · 기획 검토용',
               title: c.title,
               html: `<p class="detail-summary">${escapeHtml(c.outcome||c.desc)}</p><div class="dialog-fact"><strong>이런 분께 추천</strong><p>${escapeHtml(c.recommended)}</p></div><div class="dialog-fact"><strong>현재 상태: 개설 예정</strong><p>현재 확정된 모집 일정·훈련비·정부 지원 비율·교구 및 별도 혜택은 없습니다. 운영 정보가 확정되면 다시 안내합니다.</p></div><div class="dialog-fact"><strong>예정 과정 확인사항</strong><p>모집 일정 / 신청 대상 / 교육 기간 / 실제 훈련비 / 적용 혜택 / 신청 링크</p></div><p class="dialog-note">※ 현재는 콘텐츠 기획용 시안으로, 이 과정을 지금 신청할 수 있다는 뜻이 아닙니다.</p><a class="detail-action secondary" href="tel:18998954">개설 관련 문의 · 1899-8954 ↗</a>`
-            }, card);
+            }, trigger);
             return;
           }
           const money=n=>n.toLocaleString('ko-KR')+'원';
@@ -5112,7 +5192,7 @@
             label: '현재 운영 과정 · 신청 전 정보 확인',
             title: c.title,
             html: `<p class="detail-summary">${escapeHtml(c.outcome)}</p><div class="dialog-fact"><strong>이런 분께 추천</strong><p>${escapeHtml(c.recommended)}</p></div><div class="detail-metrics"><div><small>총 훈련비</small><strong>${money(c.fee)}</strong></div><div><small>전단지 기준 본인부담금</small><strong>${money(c.self)}</strong></div><div><small>정부 지원 비율</small><strong>90%*</strong></div></div><div class="dialog-fact"><strong>이 과정의 특별 혜택</strong><p>${escapeHtml(c.benefit)}</p></div><div class="dialog-fact"><strong>관련 자격증 연계</strong><p>${escapeHtml(c.certificate)}</p><p class="subtle-detail">자격증이 자동 발급되는 것은 아니며 시험·발급 기준과 비용은 별도 확인이 필요합니다.</p></div><div class="dialog-fact"><strong>신청 전 꼭 확인하세요</strong><ul><li>내일배움카드 발급 및 지원 대상 여부</li><li>개강 일정, 수강 기간, 수업 시간, 선수지식·난이도</li><li>실제 적용 지원율과 본인부담금</li><li>고용24 및 교육기관 신청 절차</li></ul></div><p class="dialog-note">※ 비용은 제공된 전단지 기준의 기획 시안입니다. 신청 조건과 실제 결제 금액은 고용24 및 교육기관 최신 안내를 최종 기준으로 확인해야 합니다. 본 시안에는 특정 과정의 확정 신청 링크가 연결되어 있지 않습니다.</p><div class="detail-actions"><a class="detail-action" href="https://www.work24.go.kr/" target="_blank" rel="noopener noreferrer">고용24에서 과정 검색하기 ↗</a><a class="detail-action secondary" href="tel:18998954">교육원 신청 문의 · 1899-8954</a></div>`
-          }, card);
+          }, trigger);
         }
         document.getElementById('course-grid').addEventListener('click', e=>{
           const card=e.target.closest('[data-course]');
@@ -5123,6 +5203,12 @@
             e.preventDefault();
             openCourse(e.target)
           }
+        });
+        document.getElementById('subnav-course-list').addEventListener('click', e=>{
+          const link=e.target.closest('a[data-course]');
+          if(!link)return;
+          e.preventDefault();
+          openCourse(link,document.getElementById('subnav-course-toggle'));
         });
         function close(){
           dlg.close()
@@ -5315,8 +5401,13 @@
         function update(){
           const offset=nav.getBoundingClientRect().height+20;
           let active=0;
+          let nearest=-Infinity;
           targets.forEach((target,index)=>{
-            if(target.getBoundingClientRect().top<=offset)active=index;
+            const top=target.getBoundingClientRect().top;
+            if(top<=offset&&top>nearest){
+              nearest=top;
+              active=index;
+            }
           });
           links.forEach((link,index)=>{
             if(index===active)link.setAttribute('aria-current','location');
@@ -5332,6 +5423,59 @@
         addEventListener('scroll',request,{passive:true});
         addEventListener('resize',request);
         update();
+
+        const menu=nav.querySelector('.subnav-course-menu');
+        const toggle=document.getElementById('subnav-course-toggle');
+        const list=document.getElementById('subnav-course-list');
+        const items=[...list.querySelectorAll('a')];
+        function setMenu(open,restoreFocus=false){
+          toggle.setAttribute('aria-expanded',String(open));
+          list.hidden=!open;
+          if(restoreFocus)toggle.focus({preventScroll:true});
+        }
+        menu.addEventListener('pointerenter',e=>{
+          if(e.pointerType==='mouse')setMenu(true);
+        });
+        menu.addEventListener('pointerleave',e=>{
+          if(e.pointerType==='mouse'&&!list.contains(document.activeElement))setMenu(false);
+        });
+        toggle.addEventListener('click',()=>setMenu(list.hidden));
+        toggle.addEventListener('keydown',e=>{
+          if(e.key!=='ArrowDown'&&e.key!=='ArrowUp')return;
+          e.preventDefault();
+          e.stopPropagation();
+          setMenu(true);
+          items[e.key==='ArrowDown'?0:items.length-1].focus();
+        });
+        menu.addEventListener('keydown',e=>{
+          if(e.key==='Escape'){
+            e.preventDefault();
+            setMenu(false,true);
+            return;
+          }
+          const index=items.indexOf(document.activeElement);
+          if(index<0)return;
+          let next;
+          if(e.key==='ArrowDown')next=(index+1)%items.length;
+          else if(e.key==='ArrowUp')next=(index+items.length-1)%items.length;
+          else if(e.key==='Home')next=0;
+          else if(e.key==='End')next=items.length-1;
+          else return;
+          e.preventDefault();
+          items[next].focus();
+        });
+        menu.addEventListener('focusout',()=>{
+          requestAnimationFrame(()=>{
+            if(!menu.contains(document.activeElement))setMenu(false);
+          });
+        });
+        document.addEventListener('pointerdown',e=>{
+          if(!menu.contains(e.target))setMenu(false);
+        });
+        list.addEventListener('click',e=>{
+          if(e.target.closest('a[data-course]'))setMenu(false);
+        });
+        links.forEach(link=>link.addEventListener('click',()=>setMenu(false)));
       })();
     </script>
   </body>
