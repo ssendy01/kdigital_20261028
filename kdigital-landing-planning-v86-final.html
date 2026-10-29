@@ -138,7 +138,7 @@
         flex:none
       }
       .subnav-course-arrow {
-        font-size:10px;
+        font-size:14px;
         transition:transform .2s
       }
       .subnav-cta[aria-expanded="true"] .subnav-course-arrow {
@@ -168,7 +168,7 @@
         padding:12px 14px;
         border-radius:8px;
         color:#20344f;
-        font-size:13px;
+        font-size:14px;
         font-weight:650;
         line-height:1.5
       }
@@ -194,11 +194,11 @@
           gap:14px
         }
         .subnav-tabs a {
-          font-size:13px
+          font-size:14px
         }
         .subnav-cta {
           padding-left:16px;
-          font-size:12px
+          font-size:14px
         }
       }
       @media(max-width:760px) {
@@ -231,7 +231,7 @@
         }
         .subnav-tabs a {
           flex:none;
-          font-size:12px
+          font-size:14px
         }
         .subnav-course-menu {
           width:100%;
@@ -257,8 +257,7 @@
         background:var(--blue);
         color:#fff;
         padding:15px 25px;
-        font-size:14px;
-        font-weight:800;
+        font-size:20px;
         transition:transform .2s,background .2s
       }
       .btn:hover {
@@ -270,7 +269,7 @@
         text-align:center
       }
       .kicker {
-        font-size:12px;
+        font-size:14px;
         font-weight:850;
         letter-spacing:1.3px;
         color:var(--blue);
@@ -317,11 +316,14 @@
         color:#8ab5ff
       }
       .hero .sub {
-        font-size:clamp(16px,2vw,21px);
+        font-size: clamp(18px, 2vw, 15px);
         color:#d8e7f9;
-        font-weight:600;
         margin:0 auto 28px;
         line-height:1.5
+      }
+      .hero .sub .sub-detail {
+        font-size:.88em;
+        color:#b7cde8
       }
       .hero .mini {
         display:flex;
@@ -330,7 +332,7 @@
         flex-wrap:wrap;
         margin-top:22px;
         color:#b7cde8;
-        font-size:12px
+        font-size:14px
       }
       .hero .mini span:before {
         content:'✓ ';
@@ -398,12 +400,12 @@
         padding:9px 17px;
         background:#dbe8ff;
         color:#1254c8;
-        font-size:13px;
+        font-size:14px;
         font-weight:800;
         margin:25px 0 29px
       }
       .policy .disclaimer {
-        font-size:12px;
+        font-size:14px;
         color:#77859b;
         line-height:1.55;
         margin:19px auto 0;
@@ -437,7 +439,7 @@
         padding:12px 18px;
         border-radius:999px;
         font-weight:750;
-        font-size:13px;
+        font-size:14px;
         background:#132841
       }
       .kit .btn {
@@ -447,7 +449,7 @@
       .kit .note {
         color:#9fb3cc;
         margin:20px auto 0;
-        font-size:12px
+        font-size:14px
       }
       .price {
         background:#fff
@@ -466,7 +468,7 @@
         margin-bottom:10px
       }
       .price .price-banner p {
-        font-size:13px;
+        font-size:14px;
         color:var(--muted);
         margin:0
       }
@@ -475,6 +477,13 @@
       }
       .courses-section {
         background:#f3f6fb
+      }
+      .course-selection-note {
+        margin:24px 0 0;
+        font-size:15px;
+        line-height:1.6;
+        color:#617492;
+        text-align:center
       }
       .course-tabs {
         display:grid;
@@ -491,7 +500,8 @@
         font-weight:800;
         padding:17px 8px
       }
-      .course-tab[aria-pressed=true] {
+      .course-tab.is-active,
+      .course-tab[aria-pressed="true"] {
         background:#e5edff;
         color:#1458d8;
         border-color:#3980ff;
@@ -525,8 +535,28 @@
         flex-direction:column;
         box-shadow:0 8px 24px #12304d05
       }
+      .course-card .course-thumbnail {
+        width:100%;
+        aspect-ratio:16 / 9;
+        flex-shrink:0;
+        display:grid;
+        place-items:center;
+        margin-bottom:18px;
+        border:1px solid #dfe6f0;
+        border-radius:10px;
+        background:repeating-linear-gradient(135deg,#edf1f7 0,#edf1f7 12px,#dfe6f0 12px,#dfe6f0 14px)
+      }
+      .course-card .course-thumbnail span {
+        padding:7px 12px;
+        border-radius:6px;
+        background:#ffffffeb;
+        color:#65748b;
+        font-size:14px;
+        font-weight:700;
+        line-height:1.5
+      }
       .course-card .eyebrow {
-        font-size:11px;
+        font-size:14px;
         color:#2264d5;
         font-weight:850
       }
@@ -537,7 +567,7 @@
         margin:13px 0 9px
       }
       .course-card p {
-        font-size:13px;
+        font-size:14px;
         line-height:1.55;
         color:#52627a;
         margin:0 0 17px
@@ -550,22 +580,36 @@
         margin-top:auto;
         border-top:1px solid #edf0f6;
         padding-top:14px;
-        font-size:12px;
+        font-size:14px;
         color:#7b899d
       }
       .course-card .foot strong {
         color:#175ddb
       }
-      .course-card .kitmark {
-        display:inline-block;
-        margin-top:10px;
-        font-size:11px;
+      .course-card .course-benefits {
+        display:flex;
+        flex-wrap:wrap;
+        gap:8px;
+        margin-bottom:18px
+      }
+      .course-card .course-benefit {
+        display:inline-flex;
+        align-items:center;
+        font-size:14px;
+        line-height:1.5;
         font-weight:800;
-        color:#956518;
-        background:#fff4d8;
+        color:#175ddb;
+        background:#e8f1ff;
         padding:5px 8px;
-        border-radius:5px;
-        align-self:flex-start
+        border-radius:5px
+      }
+      .course-card .course-benefit.kitmark {
+        color:#956518;
+        background:#fff4d8
+      }
+      .course-card .course-benefit.aimark {
+        color:#6b35b4;
+        background:#f1eaff
       }
       .nothing {
         background:#fff;
@@ -610,7 +654,7 @@
         font-size:15px
       }
       .faq details p {
-        font-size:13px;
+        font-size:14px;
         line-height:1.7;
         color:var(--muted);
         margin:13px 0 3px
@@ -624,7 +668,7 @@
       footer {
         background:#08182b;
         color:#a1b2c8;
-        font-size:12px;
+        font-size:14px;
         padding:26px 0
       }
       .footer-wrap {
@@ -749,7 +793,7 @@
         padding:15px 19px;
         background:#0c1830;
         flex-shrink:0;
-        font-size:11px;
+        font-size:14px;
         font-weight:900;
         letter-spacing:1px;
         color:#a8c9ff
@@ -774,11 +818,11 @@
         white-space:nowrap;
         animation:newsMove 19s linear infinite;
         padding-left:25px;
-        font-size:13px;
+        font-size:14px;
         font-weight:750
       }
       .news-caution {
-        font-size:11px;
+        font-size:14px;
         color:#7c8ba3;
         margin:0 auto 33px;
         max-width:780px;
@@ -816,7 +860,7 @@
         font-size:17px
       }
       .quiz-teaser span:not(.quiz-emoji) {
-        font-size:13px;
+        font-size:14px;
         color:#617492
       }
       .quiz-emoji {
@@ -826,7 +870,7 @@
         background:var(--navy);
         border:0;
         color:white;
-        font-size:13px;
+        font-size:14px;
         font-weight:850;
         padding:14px 18px;
         border-radius:12px;
@@ -853,7 +897,7 @@
         align-items:center;
         justify-content:space-between;
         color:#336bde;
-        font-size:12px;
+        font-size:14px;
         font-weight:900
       }
       .quiz-close {
@@ -1001,7 +1045,7 @@
           padding:14px 11px
         }
         .newsrail {
-          font-size:11px
+          font-size:14px
         }
         .quiz-panel {
           padding:19px
@@ -1072,7 +1116,7 @@
       }
       .news-label {
         flex:0 0 108px;
-        font-size:10px;
+        font-size:14px;
         letter-spacing:1px;
         font-weight:850;
         color:#a9c6ef;
@@ -1145,7 +1189,7 @@
         transition:opacity .7s,transform .7s
       }
       .news-solution-label {
-        font-size:12px;
+        font-size:14px;
         color:#a6bfdf;
         letter-spacing:.5px;
         margin:0
@@ -1160,7 +1204,7 @@
       .news-legal {
         max-width:720px;
         margin:35px auto 0;
-        font-size:11px;
+        font-size:14px;
         line-height:1.7;
         color:#90a6c2
       }
@@ -1193,7 +1237,7 @@
         }
         .news-label {
           flex-basis:63px;
-          font-size:8px;
+          font-size:14px;
           letter-spacing:0
         }
         .news-strip strong {
@@ -1235,16 +1279,9 @@
         align-items:center;
         margin:0 0 13px;
         color:#a9c7ee;
-        font-size:11px;
+        font-size:14px;
         font-weight:850;
         letter-spacing:.7px
-      }
-      .policy-cinematic .verified-news-heading::before {
-        content:"";
-        width:7px;
-        height:7px;
-        border-radius:50%;
-        background:#ff857a
       }
       .policy-cinematic .verified-news-window {
         overflow:hidden;
@@ -1264,13 +1301,16 @@
       .policy-cinematic .verified-news-window:hover .verified-news-track,.policy-cinematic .verified-news-window:focus-within .verified-news-track {
         animation-play-state:paused
       }
+      .policy-cinematic .verified-news-window.is-resumed .verified-news-track {
+        animation-play-state:running
+      }
       .policy-cinematic .verified-news-item {
         display:inline-flex;
         gap:12px;
         align-items:center;
         white-space:nowrap;
         color:#dce8fa;
-        font-size:13px;
+        font-size:14px;
         font-weight:650
       }
       .policy-cinematic .verified-news-item .publisher {
@@ -1279,7 +1319,7 @@
       }
       .policy-cinematic .verified-news-item time {
         color:#a8bad2;
-        font-size:12px
+        font-size:14px
       }
       .policy-cinematic .verified-news-item a:hover,.policy-cinematic .verified-news-item a:focus-visible {
         color:#fff;
@@ -1294,7 +1334,7 @@
       }
       .policy-cinematic .verified-news-source {
         color:#8fa7c6;
-        font-size:11px;
+        font-size:14px;
         margin:11px 0 0;
         text-align:center
       }
@@ -1315,7 +1355,7 @@
           gap:22px
         }
         .policy-cinematic .verified-news-item {
-          font-size:12px;
+          font-size:14px;
           gap:9px
         }
       }
@@ -1381,7 +1421,7 @@
       }
       .demo-top {
         border-bottom:1px solid #233b5b;
-        font-size:11px;
+        font-size:14px;
         letter-spacing:.7px;
         color:#aac5e9
       }
@@ -1403,7 +1443,7 @@
         border:1px solid #304968;
         padding:8px 12px;
         border-radius:8px;
-        font-size:12px;
+        font-size:14px;
         font-weight:750
       }
       .demo-stage {
@@ -1438,7 +1478,7 @@
         font-weight:850
       }
       .demo-hint {
-        font-size:12px;
+        font-size:14px;
         font-weight:500;
         color:#94b0d2
       }
@@ -1473,7 +1513,7 @@
       .browser-top div {
         margin:auto;
         color:#6d839e;
-        font-size:10px
+        font-size:14px
       }
       .browser-content {
         height:238px;
@@ -1732,7 +1772,7 @@
           grid-template-columns:repeat(2,minmax(0,1fr))
         }
         .skill-switch .skill-option {
-          font-size:12px;
+          font-size:14px;
           padding:13px 7px;
           min-width:0
         }
@@ -1763,7 +1803,7 @@
           height:25px
         }
         .demo-hint {
-          font-size:11px
+          font-size:14px
         }
       }
       @media(prefers-reduced-motion:reduce) {
@@ -1818,7 +1858,7 @@
       }
       .web-overline {
         width:auto;
-        font:700 10px/1.5 sans-serif;
+        font:700 14px/1.5 sans-serif;
         background:none;
         color:#2474e3;
         letter-spacing:1px;
@@ -1835,7 +1875,7 @@
       .web-copy {
         width:auto;
         margin-top:12px;
-        font:500 12px/1.4 sans-serif;
+        font:500 14px/1.4 sans-serif;
         color:#657992;
         background:none;
         animation-delay:1.5s
@@ -1846,7 +1886,7 @@
         margin-top:18px;
         background:#2563f2;
         color:white;
-        font:750 11px/1 sans-serif;
+        font:750 14px/1 sans-serif;
         animation-delay:2s
       }
       .web-gallery {
@@ -1858,7 +1898,7 @@
         display:grid;
         place-items:center;
         color:#fff;
-        font:900 12px/1 sans-serif;
+        font:900 14px/1 sans-serif;
         height:57px
       }
       .real-print-head {
@@ -1917,11 +1957,11 @@
           font-size:17px
         }
         .web-copy {
-          font-size:9px
+          font-size:14px
         }
         .web-gallery b {
           height:31px;
-          font-size:9px
+          font-size:14px
         }
       }
       @media(prefers-reduced-motion:reduce) {
@@ -2056,7 +2096,7 @@
       }
       .mind-cloud.c8 {
         left:36%;
-        bottom:4%;
+        bottom:2%;
         --dur:6.6s;
         --delay:-2.2s
       }
@@ -2066,7 +2106,7 @@
         left:0;
         right:0;
         margin:0;
-        font-size:12px;
+        font-size:14px;
         color:#5c76a0
       }
       .mind-answer {
@@ -2095,7 +2135,7 @@
       }
       .mind-answer-label {
         margin:12px 0 7px;
-        font-size:11px;
+        font-size:14px;
         font-weight:800;
         letter-spacing:1px;
         color:#4972b4
@@ -2118,7 +2158,7 @@
         margin-top:17px;
         color:#2463e8;
         font-weight:850;
-        font-size:13px;
+        font-size:14px;
         border-bottom:1px solid #91b0f3;
         padding-bottom:3px
       }
@@ -2149,7 +2189,7 @@
           transform:none
         }
       }
-      @media(max-width:720px) {
+      @media(max-width:960px) {
         .mind-section {
           padding-top:72px
         }
@@ -2180,7 +2220,7 @@
           position:relative;
           inset:auto;
           white-space:normal;
-          font-size:12px;
+          font-size:14px;
           line-height:1.4;
           min-height:62px;
           padding:10px 12px;
@@ -2199,7 +2239,7 @@
         }
         .mind-ending {
           margin-top:34px;
-          font-size:13px
+          font-size:14px
         }
       }
       @media(prefers-reduced-motion:reduce) {
@@ -2261,7 +2301,7 @@
       .kit-v76 .v80-index {
         color:#a9c9ed;
         letter-spacing:.8px;
-        font-size:10px;
+        font-size:14px;
         font-weight:800
       }
       .kit-v76 .v80-info h3 {
@@ -2282,13 +2322,13 @@
         margin:0!important
       }
       .kit-v76 .v80-info p:not(.v80-promise) {
-        font-size:12px;
+        font-size:14px;
         line-height:1.6;
         color:#d2e0f2;
         margin:0
       }
       .kit-v76 .v80-info small {
-        font-size:10px;
+        font-size:14px;
         line-height:1.55;
         color:#9eb7d2
       }
@@ -2349,10 +2389,10 @@
           font-size:19px
         }
         .kit-v76 .v80-promise {
-          font-size:12px!important
+          font-size:14px!important
         }
         .kit-v76 .v80-info p:not(.v80-promise) {
-          font-size:11px
+          font-size:14px
         }
         .kit-v76 .v80-visual,.kit-v76 .v80-visual .v76-art,.kit-v76 .v80-visual .v76-small-art {
           min-height:210px
@@ -2395,7 +2435,7 @@
       /* V8.6: 학습자 중심 교육과정 추천 메시지 */
       .course-card .course-recommended {
         color:#174caa;
-        font-size:13px;
+        font-size:14px;
         font-weight:800;
         line-height:1.6;
         margin:0 0 8px;
@@ -2472,7 +2512,7 @@
         visibility:visible
       }
       .story-index {
-        font-size:12px;
+        font-size:14px;
         font-weight:850;
         color:#2969e9;
         letter-spacing:1px
@@ -2504,7 +2544,7 @@
         justify-content:center;
         gap:18px;
         color:#7f90aa;
-        font-size:11px;
+        font-size:14px;
         font-weight:800;
         letter-spacing:.7px
       }
@@ -2551,8 +2591,10 @@
         margin:35px auto 0
       }
       .mind-faq .mind-cloud {
-        max-width:270px;
-        min-height:60px;
+        max-width:300px;
+        min-height:76px;
+        padding:20px 26px;
+        font-size:16px;
         white-space:normal;
         line-height:1.4;
         display:flex;
@@ -2564,29 +2606,29 @@
       .mind-faq .mind-cloud.is-open {
         z-index:10;
         animation:none;
-        min-width:215px;
-        min-height:134px;
-        max-width:255px;
-        border-radius:24px;
+        min-width:260px;
+        min-height:170px;
+        max-width:310px;
+        border-radius:28px;
         background:#2563f2;
         color:white;
-        padding:16px;
+        padding:22px;
         box-shadow:0 15px 50px #1f5bd05a;
         transform:translateY(-5px);
-        font-size:12px;
+        font-size:16px;
         display:flex;
         flex-direction:column;
-        gap:8px;
+        gap:10px;
         cursor:pointer;
         white-space:normal
       }
       .mind-faq .mind-cloud.is-open .cloud-solution {
-        font-size:13px;
+        font-size:18px;
         line-height:1.45;
         font-weight:850
       }
       .mind-faq .mind-cloud.is-open .cloud-more {
-        font-size:10px;
+        font-size:16px;
         color:#deecff;
         font-weight:650;
         line-height:1.35
@@ -2598,7 +2640,7 @@
         display:block
       }
       .mind-faq .mind-cloud.is-open .cloud-original {
-        font-size:10px;
+        font-size:15px;
         opacity:.78
       }
       .mind-faq .mind-hint {
@@ -2643,6 +2685,8 @@
         .story-footer {
           bottom:15px
         }
+      }
+      @media(max-width:960px) {
         .mind-faq {
           padding-top:65px
         }
@@ -2652,18 +2696,21 @@
           padding-top:260px
         }
         .mind-faq .mind-cloud {
-          max-width:none
+          max-width:none;
+          min-height:88px;
+          padding:16px 14px
         }
         .mind-faq .mind-cloud.is-open {
           max-width:none;
           min-width:0;
-          min-height:134px;
+          min-height:170px;
+          padding:18px 14px;
           transform:none;
-          font-size:11px;
+          font-size:16px;
           grid-column:span 1
         }
         .mind-faq .mind-cloud.is-open .cloud-solution {
-          font-size:12px
+          font-size:17px
         }
         .mind-faq .mind-cloud.is-open .cloud-more {
           display:none
@@ -2671,10 +2718,10 @@
       }
       @media(max-width:420px) {
         .mind-faq .mind-cloud.is-open .cloud-original {
-          font-size:9px
+          font-size:15px
         }
         .mind-faq .mind-cloud.is-open .cloud-solution {
-          font-size:11px
+          font-size:17px
         }
         .story-scroll {
           height:205vh
@@ -2767,20 +2814,20 @@
       .apply-extra {
         max-width:690px;
         margin:0 auto 12px;
-        font-size:13px;
+        font-size:14px;
         line-height:1.7;
         color:#66758e
       }
-      .course-card[role=button] {
+      .course-card[href] {
         cursor:pointer;
         transition:transform .2s,border-color .2s,box-shadow .2s
       }
-      .course-card[role=button]:hover {
+      .course-card[href]:hover {
         transform:translateY(-3px);
         border-color:#8dafef;
         box-shadow:0 12px 30px #225cad14
       }
-      .course-card[role=button]:focus-visible {
+      .course-card[href]:focus-visible {
         outline:3px solid #8badf9;
         outline-offset:2px
       }
@@ -2813,7 +2860,7 @@
         justify-content:space-between
       }
       #dialog-label {
-        font-size:12px;
+        font-size:14px;
         letter-spacing:.7px;
         font-weight:850;
         color:#2d66c6
@@ -2858,7 +2905,7 @@
         margin:16px 0
       }
       .dialog-note {
-        font-size:12px!important;
+        font-size:14px!important;
         color:#73839b!important
       }
       .dialog-actions {
@@ -2931,7 +2978,7 @@
       }
       .policy-cinematic .policy-focus-copy .news-legal {
         margin:27px auto 0;
-        font-size:10px;
+        font-size:14px;
         max-width:670px
       }
       .policy-cinematic .verified-news {
@@ -2940,7 +2987,7 @@
       }
       .news-tv {
         align-self:stretch;
-        min-height:320px;
+        max-height:350px;
         border:1px solid #496b9a;
         border-radius:17px;
         background:linear-gradient(155deg,#203f68,#091a2e 75%);
@@ -2966,7 +3013,7 @@
         padding:13px 17px;
         background:#061326b8;
         color:#a9c3e6;
-        font-size:10px;
+        font-size:14px;
         font-weight:800;
         letter-spacing:1px
       }
@@ -2984,7 +3031,7 @@
       }
       .news-tv-channel {
         color:#e8f3ff;
-        font-size:11px
+        font-size:14px
       }
       .news-tv-display {
         flex:1;
@@ -2998,7 +3045,7 @@
       }
       .news-tv-date {
         color:#94bbfc;
-        font-size:11px;
+        font-size:14px;
         font-weight:800;
         letter-spacing:.5px
       }
@@ -3011,7 +3058,7 @@
       }
       .news-tv-display p {
         color:#ccdbef;
-        font-size:13px;
+        font-size:14px;
         line-height:1.75;
         margin:0
       }
@@ -3104,15 +3151,26 @@
         box-shadow:none!important;
         border-radius:0!important;
         color:#b9d2f8;
-        font-size:11px;
+        font-size:14px;
         font-weight:650;
         letter-spacing:0
       }
-      .news-blink-gif {
-        width:15px;
-        height:15px;
-        flex:0 0 15px;
-        object-fit:contain
+      .news-bulb {
+        width:24px;
+        height:24px;
+        flex:0 0 24px;
+        filter:drop-shadow(0 0 4px #ffe45c) drop-shadow(0 0 10px #ffd400);
+        animation:newsBulbBlink 1s ease-in-out infinite
+      }
+      @keyframes newsBulbBlink {
+        0%,100% {
+          opacity:1;
+          transform:scale(1.12)
+        }
+        50% {
+          opacity:.35;
+          transform:scale(.9)
+        }
       }
       .policy-metric-lead {
         font-size:15px;
@@ -3128,7 +3186,7 @@
         margin:15px 0
       }
       .policy-stat-eyebrow {
-        font-size:11px;
+        font-size:14px;
         font-weight:850;
         color:#235cc7;
         letter-spacing:.4px;
@@ -3150,7 +3208,7 @@
       .policy-stat-desc {
         margin:9px 0;
         color:#506280;
-        font-size:13px;
+        font-size:14px;
         line-height:1.65
       }
       .policy-bars {
@@ -3163,7 +3221,7 @@
         grid-template-columns:65px 1fr 65px;
         align-items:center;
         gap:8px;
-        font-size:12px;
+        font-size:14px;
         color:#4a5e7b
       }
       .policy-bar-track {
@@ -3180,10 +3238,10 @@
       .policy-bar-row strong {
         text-align:right;
         color:#243b5d;
-        font-size:12px
+        font-size:14px
       }
       .policy-stat-source {
-        font-size:10px!important;
+        font-size:14px!important;
         line-height:1.6!important;
         color:#6a7f9c!important;
         margin:12px 0 0!important
@@ -3211,13 +3269,8 @@
         }
       }
       @media(prefers-reduced-motion:reduce) {
-        .news-blink-gif {
-          visibility:hidden
-        }
-        .news-click-message::before {
-          content:'●';
-          font-size:10px;
-          color:#84b3ff
+        .news-bulb {
+          animation:none
         }
       }
     </style>
@@ -3229,7 +3282,7 @@
         max-height:340px;
         overflow:hidden;
         gap:10px;
-        padding:20px 19px
+        padding:20px 19px 10px;
       }
       .news-tv-display h3 {
         font-size:clamp(18px,1.9vw,23px);
@@ -3247,7 +3300,7 @@
         outline-offset:-2px
       }
       .news-tv-article p {
-        font-size:12px;
+        font-size:14px;
         line-height:1.7;
         margin:0 0 12px;
         color:#d0e0f3
@@ -3261,13 +3314,6 @@
       .news-tv-article::-webkit-scrollbar-thumb {
         background:#7496c1;
         border-radius:6px
-      }
-      .news-tv-display:after {
-        content:'아래로 스크롤해 자세히 보기 ↓';
-        font-size:10px;
-        color:#a6c5ed;
-        flex:none;
-        padding-top:3px
       }
       .benefit-showcase {
         display:grid;
@@ -3333,7 +3379,7 @@
         bottom:27px;
         left:0;
         right:0;
-        font-size:10px;
+        font-size:14px;
         font-weight:850;
         letter-spacing:2px;
         color:#d6d0ff;
@@ -3343,7 +3389,7 @@
         padding:26px 24px
       }
       .benefit-tag {
-        font-size:10px;
+        font-size:14px;
         letter-spacing:1.2px;
         color:#b4cbeb;
         font-weight:850
@@ -3363,13 +3409,13 @@
         color:#c7baff
       }
       .benefit-feature p {
-        font-size:12px;
+        font-size:14px;
         line-height:1.7;
         color:#cbd8e9;
         margin:0 0 18px
       }
       .benefit-keyline {
-        font-size:11px;
+        font-size:14px;
         letter-spacing:.5px;
         color:#fbe0b8
       }
@@ -3403,7 +3449,7 @@
           font-size:21px
         }
         .benefit-feature p {
-          font-size:11px
+          font-size:14px
         }
         .benefit-illustration {
           min-height:220px
@@ -3466,7 +3512,7 @@
         align-items:flex-start
       }
       .v76-label {
-        font-size:11px;
+        font-size:14px;
         letter-spacing:1.4px;
         color:#a9c9ed;
         font-weight:850
@@ -3489,7 +3535,7 @@
         margin:0 0 17px
       }
       .v76-content small {
-        font-size:11px;
+        font-size:14px;
         color:#abc0d9;
         line-height:1.6;
         margin-top:12px
@@ -3505,7 +3551,7 @@
         border-radius:99px;
         padding:7px 12px;
         color:#f8dfb5;
-        font-size:12px;
+        font-size:14px;
         font-weight:750
       }
       .v76-secondary {
@@ -3577,7 +3623,7 @@
         font-size:clamp(20px,2.1vw,27px)
       }
       .v76-secondary .v76-content p {
-        font-size:12px
+        font-size:14px
       }
       .v76-ai .v76-content h3 em {
         color:#c9bfff
@@ -3591,7 +3637,7 @@
         margin:25px auto 29px
       }
       .v76-extras span {
-        font-size:12px;
+        font-size:14px;
         font-weight:750;
         color:#cbdaf0;
         padding:9px 15px;
@@ -3648,10 +3694,10 @@
           letter-spacing:-.8px
         }
         .v76-secondary .v76-content p {
-          font-size:11px
+          font-size:14px
         }
         .v76-secondary .v76-content small {
-          font-size:10px
+          font-size:14px
         }
         .v76-ai-disc {
           width:80px;
@@ -3661,7 +3707,7 @@
           font-size:64px
         }
         .v76-extras span {
-          font-size:11px
+          font-size:14px
         }
       }
     </style>
@@ -3688,7 +3734,7 @@
         background:#dceaff;
         color:#1c57c4;
         font-weight:850;
-        font-size:13px;
+        font-size:14px;
         border-radius:99px;
         padding:8px 16px
       }
@@ -3743,7 +3789,7 @@
         display:flex;
         justify-content:space-between;
         margin-top:11px;
-        font-size:12px;
+        font-size:14px;
         color:#61748d;
         font-weight:700
       }
@@ -3760,7 +3806,7 @@
       }
       .price-support-highlight .support-fineprint {
         color:#718198;
-        font-size:12px;
+        font-size:14px;
         line-height:1.65;
         max-width:730px;
         margin:19px auto 24px
@@ -3782,149 +3828,80 @@
       }
     </style>
     <style>
-      /* V7.9: only application guide and learner reviews */
-      .apply-guide {
-        margin:36px auto 0;
-        max-width:820px;
-        padding:28px;
-        background:#fff;
-        border:1px solid #d9e4f6;
-        border-radius:23px;
-        text-align:center;
-        box-shadow:0 12px 28px #122b4908
+      /* apply guide (v3 minimal verified) — scoped to .ag */
+      .ag{margin:36px auto 0;max-width:950px;text-align:left}
+      .ag *{box-sizing:border-box}
+      .ag-shell{background:#fff;border:1px solid #e6ebf4;box-shadow:0 25px 90px rgba(28,50,91,.055);border-radius:26px;padding:clamp(26px,5vw,53px)}
+      .ag-question{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:34px;border-bottom:1px solid #e5ebf3}
+      .ag-question h3{font-size:18px;letter-spacing:-.045em;margin:0 0 6px}
+      .ag-question small{color:#8290a4;font-size:14px}
+      .ag-qhead{position:relative;display:flex;align-items:center;flex-wrap:wrap;gap:6px 12px;margin-bottom:6px}
+      .ag-qhead h3{margin:0}
+      .ag-info-btn{border:1px solid #cfdcf3;background:#f4f8ff;color:#2864eb;border-radius:999px;padding:5px 12px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:background .2s}
+      .ag-info-btn:hover,.ag-info-btn[aria-expanded="true"]{background:#e3edff}
+      .ag-pop{position:absolute;top:calc(100% + 10px);left:0;z-index:5;width:min(340px,calc(100vw - 74px));background:#fff;border:1px solid #dce5f3;border-radius:14px;box-shadow:0 14px 40px rgba(28,50,91,.14);padding:18px 20px;animation:agUp .2s both}
+      .ag-pop[hidden]{display:none}
+      .ag-pop strong{display:block;font-size:15px;margin-bottom:8px}
+      .ag-pop p{margin:0;font-size:14px;line-height:1.7;color:#516480}
+      .ag-pop .ag-pop-note{margin-top:8px;color:#7a889c}
+      .ag-guide-link{display:inline-block;margin-top:12px;color:#2864eb;font-size:14px;font-weight:700;text-decoration:none;border-bottom:1px solid #2864eb55}
+      .ag-guide-link:hover{border-bottom-color:#2864eb}
+      .ag-switch-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex-shrink:0}
+      .ag-switch-label{font-size:14px;letter-spacing:.02em;color:#7b8aa1;font-weight:800}
+      .ag-switch{display:grid;grid-template-columns:1fr 1fr;background:#f2f6fc;border:1px solid #dce5f3;border-radius:16px;padding:5px;gap:5px}
+      .ag-switch button{min-width:158px;border:1.5px solid transparent;border-radius:12px;background:transparent;color:#667892;padding:13px 15px;font:inherit;font-size:14px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;transition:background .22s,color .22s,border-color .22s,box-shadow .22s}
+      .ag-switch button:hover:not(.active){background:#e7effc;color:#285bba}
+      .ag-switch button.active{background:#2864eb;color:#fff;border-color:#2864eb;box-shadow:0 6px 17px #2864eb33}
+      .ag-choice-icon{width:22px;height:22px;display:grid;place-items:center;border:1.5px solid currentColor;border-radius:100%;font-size:14px;line-height:1;flex:none}
+      .ag-switch button.active .ag-choice-icon{background:#fff;color:#2864eb;border-color:#fff}
+      .ag-label-main{letter-spacing:-.03em}
+      .ag-label-sub{display:block;font-size:14px;font-weight:600;opacity:.77;margin-top:3px}
+      .ag-switch button.active .ag-label-sub{opacity:.94}
+      .ag button:focus-visible,.ag a:focus-visible{outline:3px solid #8db0ff;outline-offset:4px}
+      .ag-steps{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:42px 0 30px}
+      .ag-track{position:absolute;top:23px;left:16.66%;right:16.66%;height:2px;background:#e8edf5;z-index:0}
+      .ag-progress{height:100%;width:0;background:#3776ee;transition:width .4s ease}
+      .ag-step{border:0;background:transparent;padding:0 8px;position:relative;z-index:1;display:flex;align-items:center;flex-direction:column;gap:13px;cursor:pointer;font-family:inherit}
+      .ag-num{display:grid;place-items:center;width:47px;height:47px;border:1px solid #dfe6f0;background:#fff;border-radius:50%;color:#8d9aad;font-size:15px;font-weight:800;transition:all .25s}
+      .ag-step.active .ag-num{border-color:#2864eb;background:#2864eb;color:#fff;box-shadow:0 0 0 6px #edf3ff}
+      .ag-step.done .ag-num{background:#e8f0ff;border-color:#d7e6ff;color:#2864eb}
+      .ag-step-title{font-size:14px;letter-spacing:-.04em;color:#8b97a9;font-weight:650;transition:color .2s;text-align:center}
+      .ag-step.active .ag-step-title{color:#1c3559}
+      .ag-step.done .ag-step-title{color:#4771b1}
+      .ag-detail{min-height:196px;border:1px solid #e8edf7;border-radius:17px;background:linear-gradient(115deg,#f8faff 0%,#fff 100%);padding:32px 36px 28px;position:relative;overflow:hidden}
+      .ag-detail:after{content:'';position:absolute;right:-54px;top:-85px;width:250px;height:250px;background:radial-gradient(circle,#e6efff 0%,transparent 68%);pointer-events:none}
+      .ag-detail-content{position:relative;z-index:1;animation:agUp .34s both}
+      @keyframes agUp{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+      .ag-detail-top{font-size:14px;letter-spacing:.08em;color:#4277d9;font-weight:800;margin-bottom:13px}
+      .ag-detail h4{font-size:23px;letter-spacing:-.06em;line-height:1.4;margin:0 0 9px}
+      .ag-detail p{font-size:14px;line-height:1.9;color:#657690;margin:0;max-width:640px}
+      .ag-footer-nav{display:flex;align-items:center;justify-content:space-between;margin-top:20px}
+      .ag-back{color:#8592a3;border:0;background:transparent;cursor:pointer;font-size:14px;font-weight:700;font-family:inherit;padding:11px 3px}
+      .ag-back:disabled{opacity:.3;cursor:default}
+      .ag-next{border:0;border-radius:11px;background:#2864eb;color:#fff;padding:15px 24px;font-family:inherit;font-weight:700;font-size:14px;letter-spacing:-.025em;cursor:pointer;box-shadow:0 8px 20px rgba(40,100,235,.2);transition:transform .2s,box-shadow .2s}
+      .ag-next:hover{transform:translateY(-2px);box-shadow:0 12px 25px rgba(40,100,235,.27)}
+      .ag-next svg{vertical-align:-3px;margin-left:7px}
+      .ag-help{display:flex;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid #e5ebf3;padding-top:28px;margin-top:34px}
+      .ag-help strong{display:block;font-size:14px;letter-spacing:-.04em;margin-bottom:5px}
+      .ag-help p{font-size:14px;color:#8592a4;margin:0}
+      .ag-help a{text-decoration:none;font-size:24px;font-weight:800;color:#2864eb;letter-spacing:-.025em;white-space:nowrap}
+      .ag-note{text-align:center;margin:22px 0 0;color:#9aa6b9;font-size:14px}
+      .ag-note a{color:#5879a9;text-underline-offset:3px}
+      @media(max-width:700px){
+        .ag-shell{border-radius:19px;padding:26px 20px}
+        .ag-question{flex-direction:column;align-items:stretch;gap:17px;padding-bottom:27px}
+        .ag-switch-wrap{align-items:stretch}
+        .ag-switch button{min-width:0;padding:12px 6px;gap:6px;flex-direction:column}
+        .ag-steps{margin-top:32px}
+        .ag-track{top:20px}
+        .ag-num{width:40px;height:40px;font-size:14px}
+        .ag-step{gap:11px;padding:0 3px}
+        .ag-detail{min-height:202px;padding:25px 21px}
+        .ag-detail h4{font-size:20px}
+        .ag-help{align-items:flex-start;flex-direction:column;gap:13px}
+        .ag-help a{font-size:22px}
       }
-      .apply-guide h3 {
-        font-size:18px;
-        margin:0 0 18px
-      }
-      .apply-choice {
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        gap:8px;
-        padding:5px;
-        background:#f1f5fb;
-        border-radius:13px;
-        margin:0 0 18px
-      }
-      .apply-choice button {
-        border:0;
-        background:transparent;
-        border-radius:10px;
-        padding:13px;
-        font-size:14px;
-        font-weight:800;
-        color:#62728a
-      }
-      .apply-choice button[aria-pressed=true] {
-        background:#2563f2;
-        color:#fff;
-        box-shadow:0 4px 12px #235cf22d
-      }
-      .apply-stage-tabs {
-        display:grid;
-        grid-template-columns:repeat(3,minmax(0,1fr));
-        gap:7px
-      }
-      .apply-stage-tabs button {
-        min-height:76px;
-        padding:12px 8px;
-        border:1px solid #e1e8f5;
-        background:#ecf2fa;
-        border-radius:12px;
-        color:#415a7b;
-        font-weight:780;
-        font-size:13px;
-        line-height:1.35
-      }
-      .apply-stage-tabs button.is-active {
-        background:#2563f2;
-        color:white;
-        border-color:#2563f2
-      }
-      .apply-stage-tabs button small {
-        display:block;
-        font-size:10px;
-        opacity:.8;
-        margin-bottom:5px
-      }
-      .apply-stage-detail {
-        background:#eef4ff;
-        text-align:left;
-        border-radius:15px;
-        margin-top:12px;
-        padding:25px 26px;
-        min-height:188px
-      }
-      .apply-stage-index {
-        font-size:11px;
-        letter-spacing:1px;
-        font-weight:900;
-        color:#2563f2
-      }
-      .apply-stage-detail h4 {
-        font-size:21px;
-        margin:9px 0
-      }
-      .apply-stage-detail p {
-        font-size:14px;
-        color:#526986;
-        line-height:1.7;
-        margin:0
-      }
-      .apply-stage-actions {
-        display:flex;
-        justify-content:flex-end;
-        margin-top:12px
-      }
-      .apply-stage-actions button {
-        border:0;
-        background:#12223a;
-        color:white;
-        border-radius:999px;
-        padding:11px 19px;
-        font-weight:750;
-        font-size:13px
-      }
-      .apply-help {
-        max-width:820px;
-        margin:19px auto 0;
-        background:#e9f2ff;
-        border:1px solid #c7dcff;
-        border-radius:18px;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        gap:19px;
-        padding:24px;
-        text-align:left
-      }
-      .apply-help-icon {
-        display:grid;
-        place-items:center;
-        width:45px;
-        height:45px;
-        border-radius:14px;
-        background:white;
-        color:#2867e9;
-        font-size:24px
-      }
-      .apply-help strong {
-        display:block;
-        font-size:14px;
-        line-height:1.5
-      }
-      .apply-help a {
-        display:inline-block;
-        color:#2463e7;
-        font-size:27px;
-        font-weight:900;
-        margin-top:3px
-      }
-      .apply-footnote {
-        font-size:11px;
-        color:#72829b;
-        margin:15px 0 0
-      }
+      @media(prefers-reduced-motion:reduce){.ag *,.ag *:before,.ag *:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
       .reviews-section {
         background:#f6f8fc;
         overflow:hidden
@@ -3966,7 +3943,7 @@
         align-self:start;
         background:#eaf1ff;
         color:#245acc;
-        font-size:11px;
+        font-size:14px;
         font-weight:850;
         padding:7px 10px;
         border-radius:40px
@@ -3981,12 +3958,12 @@
         word-break:keep-all
       }
       .review-person {
-        font-size:12px;
+        font-size:14px;
         color:#70819a
       }
       .review-note {
         text-align:center;
-        font-size:11px;
+        font-size:14px;
         line-height:1.6;
         color:#73839c;
         padding:0 18px;
@@ -4002,30 +3979,6 @@
         }
       }
       @media(max-width:600px) {
-        .apply-guide {
-          padding:17px
-        }
-        .apply-guide h3 {
-          font-size:16px
-        }
-        .apply-stage-tabs button {
-          font-size:11px;
-          padding:10px 4px;
-          min-height:74px
-        }
-        .apply-stage-detail {
-          padding:20px
-        }
-        .apply-help {
-          padding:18px 14px;
-          gap:12px
-        }
-        .apply-help strong {
-          font-size:12px
-        }
-        .apply-help a {
-          font-size:24px
-        }
         .review-card {
           width:285px
         }
@@ -4054,11 +4007,11 @@
         border:1px solid #dbe4f0;
         border-radius:13px;
         background:#f8faff;
-        font-size:12px;
+        font-size:14px;
         color:#52647e
       }
       .course-guidance b {
-        font-size:12px;
+        font-size:14px;
         color:#233956
       }
       .course-guidance .dot {
@@ -4078,22 +4031,22 @@
         display:flex;
         flex-wrap:wrap;
         align-items:center;
-        gap:8px;
         margin-bottom:12px
       }
       .course-badges .eyebrow {
         margin:0
       }
+      .course-new-badge {
+        width:33px;
+        height:15px;
+        flex-shrink:0;
+        margin-right:6px
+      }
       .course-availability {
-        font-size:11px;
+        font-size:14px;
         font-weight:800;
         letter-spacing:-.02em;
-        padding:5px 9px;
         border-radius:50px
-      }
-      .course-availability.available {
-        background:#e8f1ff;
-        color:#1558c6
       }
       .course-availability.planned {
         background:#eef1f4;
@@ -4107,7 +4060,7 @@
         flex-wrap:wrap;
         gap:5px 12px;
         margin:17px 0 6px;
-        font-size:12px;
+        font-size:14px;
         color:#516781
       }
       .course-price-line strong {
@@ -4134,19 +4087,19 @@
       .detail-metrics small {
         display:block;
         color:#5b6e88;
-        font-size:11px;
+        font-size:14px;
         line-height:1.5
       }
       .detail-metrics strong {
         display:block;
-        font-size:clamp(13px,1.5vw,20px);
+        font-size:clamp(14px,1.5vw,20px);
         color:#174da0;
         margin-top:6px;
         word-break:keep-all
       }
       .subtle-detail {
         color:#748196;
-        font-size:12px
+        font-size:14px
       }
       .detail-actions {
         display:flex;
@@ -4164,7 +4117,7 @@
         border-radius:10px;
         background:#2465e8;
         color:white!important;
-        font-size:13px;
+        font-size:14px;
         font-weight:800
       }
       .detail-action.secondary {
@@ -4177,12 +4130,12 @@
         color:inherit;
         text-decoration:underline;
         text-underline-offset:4px;
-        font-size:13px
+        font-size:14px
       }
       .planning-note {
         margin:16px auto 0;
         max-width:720px;
-        font-size:11px;
+        font-size:14px;
         opacity:.68;
         line-height:1.7;
         text-align:center
@@ -4197,6 +4150,27 @@
         .course-guidance span:not(.dot) {
           flex:1 1 65%
         }
+      }
+    </style>
+    <style>
+      /* sticky bottom CTA */
+      .sticky-cta{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);width:min(980px,calc(100% - 32px));z-index:70;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 14px 12px 28px;background:#fff;border:1px solid #e3e9f3;border-radius:18px;box-shadow:0 12px 40px #0b254238}
+      .sticky-cta-text{display:flex;align-items:baseline;gap:12px;color:#5d6b80;font-size:16px;font-weight:650;min-width:0}
+      .sticky-cta-text strong{color:#12223a;font-size:22px;font-weight:900;letter-spacing:-.3px;white-space:nowrap}
+      .sticky-cta-actions{display:flex;gap:10px;flex:none}
+      .sticky-cta-actions a{display:inline-flex;align-items:center;justify-content:center;padding:15px 26px;border-radius:12px;font-size:14px;font-weight:850;color:#fff;white-space:nowrap;transition:transform .2s,box-shadow .2s}
+      .sticky-cta-actions a:hover{transform:translateY(-2px)}
+      .sticky-cta-apply{background:#0b4dff;box-shadow:0 6px 18px #0b4dff55}
+      .sticky-cta-consult{background:#12223a}
+      .sticky-cta a:focus-visible{outline:3px solid #8db0ff;outline-offset:3px}
+      body{padding-bottom:96px}
+      .mobile-cta{display:none!important}
+      @media(max-width:700px){
+        .sticky-cta{bottom:0;width:100%;border-radius:16px 16px 0 0;border-width:1px 0 0;padding:10px 16px calc(10px + env(safe-area-inset-bottom))}
+        .sticky-cta-text{display:none}
+        .sticky-cta-actions{width:100%}
+        .sticky-cta-actions a{flex:1;padding:14px 10px}
+        body{padding-bottom:78px}
       }
     </style>
   </head>
@@ -4216,7 +4190,7 @@
         <div class="subnav-course-menu">
           <button class="subnav-cta" id="subnav-course-toggle" type="button" aria-expanded="false" aria-controls="subnav-course-list">
             <img src="assets/kdigital-symbol.png" alt="" width="22" height="22"/>
-            국민내일배움카드 교육 전체
+            K-디지털 기초역량훈련
             <span class="subnav-course-arrow" aria-hidden="true">▼</span>
           </button>
           <ul class="subnav-course-list" id="subnav-course-list" aria-labelledby="subnav-course-toggle" hidden>
@@ -4238,10 +4212,10 @@
         <div class="wrap">
           <span aria-hidden="true" class="spark a">✦</span><span aria-hidden="true" class="spark b">✳</span>
           <p class="kicker">국가 지원 K-디지털 기초역량훈련</p>
-          <h1>AI 시대,<br/><em>구경만 할 건가요?</em></h1>
-          <p class="sub">처음이라도 괜찮아요. 내 속도대로, 직접 시작해보세요.</p>
-          <a class="btn" href="#what">왜 지금 시작할까요? ↓</a>
-          <div class="mini"><span>100% 온라인</span><span>국비지원 교육</span><span>대상 과정 교구 제공</span></div>
+          <h1>생성형 AI를 넘어<br/><em>현실을 움직이는 기술</em></h1>
+          <p class="sub">화면 속 AI를 넘어, 현실에서 직접 구현하며 배웁니다.<br><span class="sub-detail">업무자동화·3D프린팅·로봇팔까지 직접 경험하며 미래 역량을 키우세요.</span></p>
+          <a class="btn" href="#courses">교육과정 바로가기 ↓</a>
+          <div class="mini"><span>100% 온라인</span><span>국비지원 교육</span><span>교구 무상 제공</span></div>
         </div>
       </section>
       <section aria-labelledby="story-title" class="section what story-section" id="what">
@@ -4249,27 +4223,26 @@
           <div class="story-sticky">
             <div class="wrap story-inner">
               <h2 class="story-access-title" id="story-title">AI 시대, 구경에서 직접 경험으로</h2>
-              <p class="kicker story-kicker">IT'S YOUR TURN</p>
-              <div aria-label="변화 인식부터 직접 배우겠다는 결심까지 이어지는 네 장면" class="story-scenes">
+              <div aria-label="AI 기술의 변화부터 새로운 교육 기회에 대한 기대감까지 이어지는 네 장면" class="story-scenes">
                 <div class="story-line is-current" data-story-line="0">
                   <span class="story-index">01 / 변화의 체감</span>
-                  <p>다들 AI로<br/><em>새로운 걸 만들어내는데.</em></p>
-                  <small>일도, 일상도 달라지고 있죠. 나만 구경하고 있는 걸까요?</small>
+                  <p>AI는 이제,<br/><em>화면 밖 현실까지 바꾸고 있습니다.</em></p>
+                  <small>글과 이미지를 만드는 것을 넘어, 자동차와 로봇까지 움직이는 시대.</small>
                 </div>
                 <div class="story-line" data-story-line="1">
-                  <span class="story-index">02 / 나도 해보고 싶은 마음</span>
-                  <p>나도 직접<br/><em>해보고 싶어집니다.</em></p>
-                  <small>막연히 보는 것보다 한 번 만들어보고 싶은 마음.</small>
+                  <span class="story-index">02 / 직접 해보고 싶은 마음</span>
+                  <p>그 기술을 나도<br/><em>직접 다뤄보고 싶습니다.</em></p>
+                  <small>어떤 원리로 작동하는지, 내 손으로 확인해보고 싶어집니다.</small>
                 </div>
                 <div class="story-line" data-story-line="2">
-                  <span class="story-index">03 / 망설임과 긴박감</span>
-                  <p>어디서 시작해야 할지 막막한데,<br/><em>변화는 기다려주지 않으니까.</em></p>
-                  <small>처음이라 망설여도, 계속 미루고 싶지는 않죠.</small>
+                  <span class="story-index">03 / 현실적인 고민</span>
+                  <p>하지만 막상 시작하려니,<br/><em>어디서부터 배워야 할까요?</em></p>
+                  <small>낯선 기술에 교육비 부담까지, 시작이 쉽지만은 않습니다.</small>
                 </div>
                 <div class="story-line" data-story-line="3">
-                  <span class="story-index">04 / 시작할 수 있다는 확신</span>
-                  <p>필요한 건 대단한 실력보다<br/><em>직접 시작할 기회입니다.</em></p>
-                  <small>혼자 막막할 필요 없어요. 배울 수 있는 길이 있으니까요.</small>
+                  <span class="story-index">04 / 새로운 기회의 발견</span>
+                  <p>그런데 이제,<br/><em>시작할 수 있는 길이 있습니다.</em></p>
+                  <small>새로운 기술을 배우는 첫걸음, 혼자 준비하지 않아도 됩니다.</small>
                 </div>
               </div>
               <div aria-hidden="true" class="story-footer"><span class="story-progress"><i id="story-meter"></i></span><span id="story-count">01 / 04</span><span>SCROLL TO EXPLORE ↓</span></div>
@@ -4279,14 +4252,13 @@
       </section>
       <section aria-labelledby="policy-title" class="section policy-cinematic" id="policy">
         <div class="wrap">
-          <p class="kicker">GOVERNMENT SUPPORT</p>
+          <p class="kicker">정부 지원</p>
           <div class="policy-focus-layout">
             <div class="policy-focus-copy">
               <div class="news-message" data-news-reveal="">
                 <h2 id="policy-title">AI·디지털 역량, <span class="highlight">이제 국가가 지원하는 배움입니다.</span></h2>
               </div>
               <div class="news-solution" data-news-reveal=""><a class="btn" data-modal="support" href="#policy-details">국가 지원 자세히 보기 ↗</a></div>
-              <p class="news-legal">※ 국가의 훈련비 지원 제도 안내이며, 개별 교육기관·과정에 대한 정부의 추천을 의미하지 않습니다. 지원 자격과 본인부담금은 과정별 확인이 필요합니다.</p>
             </div>
             <aside aria-label="선택한 뉴스 내용 미리보기" class="news-tv" id="news-preview">
               <div class="news-tv-top"><span class="news-tv-live"><i></i> NEWS VIEW</span><span class="news-tv-channel" id="news-screen-publisher">KBS</span></div>
@@ -4303,23 +4275,22 @@
                   <p>헤드라인을 선택하면 주요 내용을 이곳에서 읽을 수 있습니다.</p>
                 </div>
               </div>
-              <div class="news-tv-bottom"><span>AI NEWS DIGEST</span><span id="news-screen-counter">01 / 04</span></div>
             </aside>
           </div>
           <div aria-label="실제 AI 관련 언론 보도" class="verified-news">
-            <p class="verified-news-heading">언론이 전하는 AI 변화 <span class="news-click-message"><img alt="" aria-hidden="true" class="news-blink-gif" src="data:image/gif;base64,R0lGODlhGAAYAIEAAAAAAHmt/////wAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQJGwAAACwAAAAAGAAYAAAIZgABCBxIsKDBgwgTKlzIcGCAhxAbOoRI8WHDihgDLMyYMSFHjggxChgpAONBkSRHmixYMWXKigZbulRJMSbFmTQjsryJE+ZOni99/oQYtObJjyuPIrWocKlGhkglCkwqtarVqwwDAgAh+QQJFwAAACwHAAcACgAKAIEAAAB5rf8AAAAAAAAIIAABCAxAMIDAgwULIkyokKHDhxAjMgQAcWHCgwMVCgwIACH5BAkbAAAALAMAAwASABIAgQAAAHmt/////wAAAAhLAAEIHBigoMGBCAkaXFgwoUCGEAMkjBhRIUWIDxkK2CgAI0SOHC8WBAlSJMmQF09uNKlSZICTHjWiXJjR5cGaLifmdCjSIUKMCQMCACH5BAkXAAAALAcABwAKAAoAgQAAAHmt/wAAAAAAAAggAAEIDEAwgMCDBQsiTKiQocOHECMyBABxYcKDAxUKDAgAIfkECRsAAAAsAwADABIAEgCBAAAAea3/////AAAACEsAAQgcGKCgwYEICRpcWDChQIYQAySMGFEhRYgPGQrYKAAjRI4cLxYECVIkyZAXT240qVJkgJMeNaJcmNHlwZouJ+Z0KNIhQowJAwIAIfkECRcAAAAsBwAHAAoACgCBAAAAea3/AAAAAAAACCAAAQgMQDCAwIMFCyJMqJChw4cQIzIEAHFhwoMDFQoMCAA7"/><span>뉴스 제목을 클릭해 내용을 확인해 보세요</span></span></p>
+            <p class="verified-news-heading"><span class="news-click-message"><svg aria-hidden="true" class="news-bulb" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-4 12.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3A7 7 0 0 0 12 2Z" fill="#ffe45c"/><path d="M9.5 20h5M10.5 22h3" stroke="#ffe45c" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg><span>뉴스 제목을 클릭해 내용을 확인해 보세요</span></span></p>
             <div class="verified-news-window">
               <div class="verified-news-track"><span class="verified-news-item" data-news-index="0"><span class="publisher">KBS</span><time datetime="2026-09-10">2026.09.10</time><a data-news-index="0" data-source-url="https://mylovekbs.kbs.co.kr/index.html?contents_id=70000000403945&amp;sname=mylovekbs&amp;source=mylovekbs&amp;stype=blog" href="#news-preview">AI가 연구실을 넘어 산업 현장으로</a></span><span class="verified-news-item" data-news-index="1"><span class="publisher">MBC</span><time datetime="2026-08-18">2026.08.18</time><a data-news-index="1" data-source-url="https://imnews.imbc.com/news/2026/econo/article/6845543_36933.html" href="#news-preview">AI 영향 큰 업종, 청년 일자리 변화</a></span><span class="verified-news-item" data-news-index="2"><span class="publisher">연합뉴스</span><time datetime="2026-10-26">2026.10.26</time><a data-news-index="2" data-source-url="https://www.yna.co.kr/view/AKR20261026078600002" href="#news-preview">한국은행, AI 확산과 청년 고용 변화 진단</a></span><span class="verified-news-item" data-news-index="3"><span class="publisher">KBS</span><time datetime="2026-08-03">2026.08.03</time><a data-news-index="3" data-source-url="https://mylovekbs.kbs.co.kr/index.html?contents_id=70000000403846&amp;sname=mylovekbs&amp;source=mylovekbs&amp;stype=magazine" href="#news-preview">방송 제작 현장에도 생성형 AI 도입</a></span><span aria-hidden="true" style="display:flex;gap:32px"><span class="verified-news-item" data-news-index="0"><span class="publisher">KBS</span><time datetime="2026-09-10">2026.09.10</time><a data-news-index="0" data-source-url="https://mylovekbs.kbs.co.kr/index.html?contents_id=70000000403945&amp;sname=mylovekbs&amp;source=mylovekbs&amp;stype=blog" href="#news-preview">AI가 연구실을 넘어 산업 현장으로</a></span><span class="verified-news-item" data-news-index="1"><span class="publisher">MBC</span><time datetime="2026-08-18">2026.08.18</time><a data-news-index="1" data-source-url="https://imnews.imbc.com/news/2026/econo/article/6845543_36933.html" href="#news-preview">AI 영향 큰 업종, 청년 일자리 변화</a></span><span class="verified-news-item" data-news-index="2"><span class="publisher">연합뉴스</span><time datetime="2026-10-26">2026.10.26</time><a data-news-index="2" data-source-url="https://www.yna.co.kr/view/AKR20261026078600002" href="#news-preview">한국은행, AI 확산과 청년 고용 변화 진단</a></span><span class="verified-news-item" data-news-index="3"><span class="publisher">KBS</span><time datetime="2026-08-03">2026.08.03</time><a data-news-index="3" data-source-url="https://mylovekbs.kbs.co.kr/index.html?contents_id=70000000403846&amp;sname=mylovekbs&amp;source=mylovekbs&amp;stype=magazine" href="#news-preview">방송 제작 현장에도 생성형 AI 도입</a></span></span></div>
             </div>
-            <p class="verified-news-source">뉴스 헤드라인을 누르면 오른쪽 화면에서 핵심 내용을 확인할 수 있습니다 · 원문으로 이동하지 않습니다</p>
+            <p class="verified-news-source">뉴스 헤드라인을 누르면 오른쪽 화면에서 핵심 내용을 확인할 수 있습니다.</p>
           </div>
         </div>
       </section>
       <section class="section kit kit-v76" id="kit">
         <div class="wrap">
-          <p class="kicker">MORE THAN LEARNING · 미라클 K-디지털 학습 혜택</p>
-          <h2>배우는 것으로 끝나지 않도록.<br/><span>경험도, 도구도, 가능성도.</span></h2>
-          <p class="desc">듣고 끝나는 수업이 아니라, 직접 경험하고 다음 배움으로 이어질 수 있도록.</p>
+          <p class="kicker"> 미라클 평생교육원의 학습 혜택</p>
+          <h2>배움에 필요한 혜택부터<br/><span>배운 후의 활용까지</span></h2>
+          <p class="desc">실습 교구 제공, AI 도구 지원, 자격증 연계, 온라인 학습까지<br>배움의 시작과 성장을 든든하게 지원합니다.</p>
           <div aria-label="미라클 K-디지털 교육 주요 혜택 4가지" class="v80-benefits">
             <article class="v80-card v80-kit">
               <div class="v80-visual">
@@ -4374,7 +4345,6 @@
                 <h3>실습 교구 <em>무상 제공</em></h3>
                 <p class="v80-promise">수업이 끝나도, 내 손으로 다시 해볼 수 있도록.</p>
                 <p>대상 과정 실습 교구 제공 · 반납 없이 소장</p>
-                <small>※ 교구 제공 과정 한정</small>
               </div>
             </article>
             <article class="v80-card v80-ai">
@@ -4389,7 +4359,6 @@
                 <h3>Google AI Pro <em>1개월 지원</em></h3>
                 <p class="v80-promise">배운 내용을 실제 AI 도구로 경험하도록.</p>
                 <p>AI 업무자동화 과정에서 이용료 지원</p>
-                <small>※ 해당 과정 한정 · 지급 조건 별도 안내</small>
               </div>
             </article>
             <article class="v80-card v80-cert">
@@ -4453,49 +4422,201 @@
               </div>
               <div class="v80-info">
                 <span class="v80-index">04 · ONLINE SUPPORT</span>
-                <h3><em>100% 온라인</em>으로, 든든하게</h3>
+                <h3><em>100% 온라인</em>으로 든든하게</h3>
                 <p class="v80-promise">내 일상에서 배우고, 필요할 때 도움받을 수 있도록.</p>
                 <p>학습자료 · 1:1 코칭 상담 · 수료증 안내</p>
                 <small>※ 학습·수료 및 상담 조건은 과정별 확인</small>
               </div>
             </article>
           </div>
-          <a class="btn v76-cta" data-modal="kit" href="#kit-details" id="kit-filter">교육 혜택 자세히 보기 ↗</a>
-          <p class="note">※ 위 혜택은 모두 동일하게 제공되는 것이 아닙니다. 과정별 지급 대상 및 이용 조건을 확인해 주세요.</p>
         </div>
       </section>
       <section class="section price price-support-highlight" id="price">
         <div class="wrap">
-          <p class="kicker">COST &amp; SUPPORT</p>
-          <h2>배우고 싶은 마음에,<br/><span class="highlight">교육비가 걸림돌이 되지 않도록.</span></h2>
+          <p class="kicker">비용과 지원</p>
+          <h2>배우고 싶은 마음에<br/><span class="highlight">교육비가 걸림돌이 되지 않도록</span></h2>
+          <p class="desc">재직자, 실업자, 학생, 주부 등 대한민국 국민이라면 누구나 지원대상입니다.</p>
           <div aria-label="현재 운영 중인 대상 과정 교육비 국비지원 비율 90퍼센트" class="support-hero">
             <div class="support-amount">
-              <span class="support-label">현재 운영 중인 대상 과정</span>
               <div class="support-number"><span>90</span><sup>%</sup></div>
               <strong>국비지원</strong>
               <p>배움의 시작을 국가가 함께 지원합니다.</p>
             </div>
             <div aria-label="전체 교육비 중 국비지원 90퍼센트" class="support-meter" role="img"><span class="support-meter-funded"></span><span class="support-meter-other"></span></div>
-            <div class="support-meter-note"><span><i></i> 정부 지원 90%</span><span>해당 과정 기준</span></div>
           </div>
           <p class="support-fineprint">※ 2026년 9월 교육 안내 전단지에 기재된 현재 운영 과정 기준입니다. 신규 개설 과정 및 지원 자격에 따라 적용 조건이 다를 수 있습니다.</p>
-          <a class="btn" data-modal="cost" href="#price-details">국비지원 혜택 자세히 보기 ↗</a>
         </div>
       </section>
       <section class="section courses-section" id="courses">
         <div class="wrap">
-          <p class="kicker">FIND YOUR COURSE</p>
+          <p class="kicker">나에게 맞는 과정 찾기</p>
           <h2>지금 나에게 필요한 기술은 <span class="highlight">무엇일까요?</span></h2>
-          <p class="desc">어떤 기술이 필요한지 몰라도 괜찮아요. <strong>내가 하고 싶은 일부터</strong> 골라보세요.<br>현재 운영 중인 4개 과정부터 확인할 수 있습니다.</p>
+          <p class="desc">어떤 기술이 필요한지 몰라도 괜찮아요. <strong>관심있는 교육부터</strong> 골라보세요.</p>
           <div aria-label="교육과정 관심 분야" class="course-tabs" role="group">
-            <button aria-pressed="true" class="course-tab" data-filter="all" type="button">전체 교육과정</button>
+            <button aria-pressed="true" class="course-tab is-active" data-filter="all" type="button">전체 교육과정</button>
             <button aria-pressed="false" class="course-tab" data-filter="work" type="button">AI 업무 활용</button>
             <button aria-pressed="false" class="course-tab" data-filter="make" type="button">직접 만드는 기술</button>
             <button aria-pressed="false" class="course-tab" data-filter="basic" type="button">코딩·디지털 기초</button>
           </div>
-          <div class="course-status"><strong id="filter-name">전체 교육과정</strong><span aria-live="polite" id="filter-count">9개 과정</span></div>
-          <div class="course-guidance"><span class="dot blue"></span><b>현재 운영 과정 4개</b><span>신청 전 실제 개설·지원 조건 확인</span><span class="dot gray"></span><b>개설 예정 5개</b><span>세부 운영 조건 확정 전</span></div>
-          <div class="course-grid" id="course-grid"></div>
+          <div class="course-grid" id="course-grid">
+            <a href="#" class="course-card course-planned" aria-label="AI로 완성하는 홈페이지 상세보기" data-course="AI로 완성하는 홈페이지">
+              <div class="course-thumbnail" aria-hidden="true">
+                <span>교육과정 썸네일</span>
+              </div>
+              <div class="course-badges">
+                <img class="course-new-badge" src="assets/course-new.gif" alt="NEW 신규 과정" width="33" height="15">
+                <span class="eyebrow">AI 업무 활용</span>
+              </div>
+              <h3>AI로 완성하는 홈페이지</h3>
+              <p>AI를 활용해 홈페이지를 기획하고 웹페이지 제작 과정까지 경험합니다.</p>
+              <div class="course-benefits">
+                <span class="course-benefit">국민내일배움카드</span>
+              </div>
+              <div class="foot">
+                <strong>교육과정 상세보기 ↗</strong>
+              </div>
+            </a>
+            <a href="#" class="course-card course-planned" aria-label="AI로 쉽게 만드는 PPT 끝판왕 상세보기" data-course="AI로 쉽게 만드는 PPT 끝판왕">
+              <div class="course-thumbnail" aria-hidden="true">
+                <span>교육과정 썸네일</span>
+              </div>
+              <div class="course-badges">
+                <img class="course-new-badge" src="assets/course-new.gif" alt="NEW 신규 과정" width="33" height="15">
+                <span class="eyebrow">AI 업무 활용</span>
+              </div>
+              <h3>AI로 쉽게 만드는 PPT 끝판왕</h3>
+              <p>AI로 발표자료의 내용과 구성을 기획하고 슬라이드 제작까지 익힙니다.</p>
+              <div class="course-benefits">
+                <span class="course-benefit">국민내일배움카드</span>
+              </div>
+              <div class="foot">
+                <strong>교육과정 상세보기 ↗</strong>
+              </div>
+            </a>
+            <a href="#" class="course-card course-planned" aria-label="미래모빌리티 자율주행의 이해와 실습 상세보기" data-course="미래모빌리티 자율주행의 이해와 실습">
+              <div class="course-thumbnail" aria-hidden="true">
+                <span>교육과정 썸네일</span>
+              </div>
+              <div class="course-badges">
+                <img class="course-new-badge" src="assets/course-new.gif" alt="NEW 신규 과정" width="33" height="15">
+                <span class="eyebrow">직접 만드는 기술</span>
+              </div>
+              <h3>미래모빌리티 자율주행의 이해와 실습</h3>
+              <p>자율주행의 작동 원리를 배우고 실습 교구로 자동차의 움직임을 확인합니다.</p>
+              <div class="course-benefits">
+                <span class="course-benefit">국민내일배움카드</span>
+                <span class="course-benefit kitmark">실습교구증정</span>
+              </div>
+              <div class="foot">
+                <strong>교육과정 상세보기 ↗</strong>
+              </div>
+            </a>
+            <a href="#" class="course-card course-planned" aria-label="3D프린팅 실무와 시제품제작(Fusion) 상세보기" data-course="3D프린팅 실무와 시제품제작(Fusion)">
+              <div class="course-thumbnail" aria-hidden="true">
+                <span>교육과정 썸네일</span>
+              </div>
+              <div class="course-badges">
+                <img class="course-new-badge" src="assets/course-new.gif" alt="NEW 신규 과정" width="33" height="15">
+                <span class="course-availability planned">개설 예정</span>
+                <span class="eyebrow">직접 만드는 기술</span>
+              </div>
+              <h3>3D프린팅 실무와 시제품제작(Fusion)</h3>
+              <p>Fusion으로 3D 모델을 설계하고 아이디어를 실제 시제품으로 구현합니다.</p>
+              <div class="course-benefits">
+                <span class="course-benefit">국민내일배움카드</span>
+                <span class="course-benefit kitmark">실습교구증정</span>
+              </div>
+              <div class="foot">
+                <strong>교육과정 상세보기 ↗</strong>
+              </div>
+            </a>
+            <a href="#" class="course-card course-planned" aria-label="AI 로봇팔로 배우는 협동로봇 제어 원리 상세보기" data-course="AI 로봇팔로 배우는 협동로봇 제어 원리">
+              <div class="course-thumbnail" aria-hidden="true">
+                <span>교육과정 썸네일</span>
+              </div>
+              <div class="course-badges">
+                <img class="course-new-badge" src="assets/course-new.gif" alt="NEW 신규 과정" width="33" height="15">
+                <span class="course-availability planned">개설 예정</span>
+                <span class="eyebrow">직접 만드는 기술</span>
+              </div>
+              <h3>AI 로봇팔로 배우는 협동로봇 제어 원리</h3>
+              <p>협동로봇의 작동 원리를 이해하고 로봇팔 제어를 직접 실습합니다.</p>
+              <div class="course-benefits">
+                <span class="course-benefit">국민내일배움카드</span>
+                <span class="course-benefit kitmark">실습교구증정</span>
+              </div>
+              <div class="foot">
+                <strong>교육과정 상세보기 ↗</strong>
+              </div>
+            </a>
+            <a href="#" class="course-card course-open" aria-label="누구나 쉽게 배우는 AI 업무자동화 풀코스 상세보기" data-course="누구나 쉽게 배우는 AI 업무자동화 풀코스">
+              <div class="course-thumbnail" aria-hidden="true">
+                <span>교육과정 썸네일</span>
+              </div>
+              <div class="course-badges">
+                <span class="eyebrow">AI 업무 활용</span>
+              </div>
+              <h3>누구나 쉽게 배우는 AI 업무자동화 풀코스</h3>
+              <p>Gemini·NotebookLM 등 AI 도구로 문서 분석부터 반복 업무 자동화까지 배웁니다.</p>
+              <div class="course-benefits">
+                <span class="course-benefit">국민내일배움카드</span>
+                <span class="course-benefit aimark">구글AI Pro 1개월 사용</span>
+              </div>
+              <div class="foot">
+                <strong>교육과정 상세보기 ↗</strong>
+              </div>
+            </a>
+            <a href="#" class="course-card course-open" aria-label="파이썬으로 제어하는 자율주행 전기차 상세보기" data-course="파이썬으로 제어하는 자율주행 전기차">
+              <div class="course-thumbnail" aria-hidden="true">
+                <span>교육과정 썸네일</span>
+              </div>
+              <div class="course-badges">
+                <span class="eyebrow">코딩·디지털 기초</span>
+              </div>
+              <h3>파이썬으로 제어하는 자율주행 전기차</h3>
+              <p>파이썬 코딩과 음성인식으로 자동차를 제어하고 게임 제작도 경험합니다.</p>
+              <div class="course-benefits">
+                <span class="course-benefit">국민내일배움카드</span>
+                <span class="course-benefit kitmark">실습교구증정</span>
+              </div>
+              <div class="foot">
+                <strong>교육과정 상세보기 ↗</strong>
+              </div>
+            </a>
+            <a href="#" class="course-card course-open" aria-label="파이썬으로 제어하는 AI드론 상세보기" data-course="파이썬으로 제어하는 AI드론">
+              <div class="course-thumbnail" aria-hidden="true">
+                <span>교육과정 썸네일</span>
+              </div>
+              <div class="course-badges">
+                <span class="eyebrow">코딩·디지털 기초</span>
+              </div>
+              <h3>파이썬으로 제어하는 AI드론</h3>
+              <p>드론 조종부터 파이썬 코딩, AI 자율비행과 목표물 자동추적 기술까지 배웁니다.</p>
+              <div class="course-benefits">
+                <span class="course-benefit">국민내일배움카드</span>
+                <span class="course-benefit kitmark">실습교구증정</span>
+              </div>
+              <div class="foot">
+                <strong>교육과정 상세보기 ↗</strong>
+              </div>
+            </a>
+            <a href="#" class="course-card course-open" aria-label="파이썬으로 배우는 딥러닝 &amp; 인공지능 기초 상세보기" data-course="파이썬으로 배우는 딥러닝 &amp; 인공지능 기초">
+              <div class="course-thumbnail" aria-hidden="true">
+                <span>교육과정 썸네일</span>
+              </div>
+              <div class="course-badges">
+                <span class="eyebrow">코딩·디지털 기초</span>
+              </div>
+              <h3>파이썬으로 배우는 딥러닝 &amp; 인공지능 기초</h3>
+              <p>AI·딥러닝의 기본 원리를 배우고 숫자와 이미지를 분류하는 AI 프로그램을 만들어 봅니다.</p>
+              <div class="course-benefits">
+                <span class="course-benefit">국민내일배움카드</span>
+              </div>
+              <div class="foot">
+                <strong>교육과정 상세보기 ↗</strong>
+              </div>
+            </a>
+          </div>
           <div class="nothing" hidden="" id="no-results">해당하는 과정이 없습니다. 전체 과정을 선택해 주세요.</div>
           <div class="quiz-teaser">
             <div><span aria-hidden="true" class="quiz-emoji">✨</span><strong>어떤 과정부터 시작할지 고민이라면?</strong><span>세 가지 질문으로 관심 분야에 맞는 과정을 찾아보세요.</span></div>
@@ -4512,39 +4633,21 @@
             <div aria-live="polite" class="quiz-step" id="quiz-step"></div>
             <div aria-live="polite" class="quiz-result" hidden="" id="quiz-result"></div>
           </div>
-          <p class="desc" style="font-size:12px;margin-top:22px">※ 운영 중 4개 과정의 금액은 제공된 2026년 9월 안내 자료 기준이며, 최종 신청 가능 여부·지원 조건·결제액은 고용24와 교육기관에서 재확인해야 합니다. 개설 예정 5개 과정은 일정·비용·혜택 미확정입니다.</p>
+          <p class="course-selection-note">교육과정은 <strong>최대 2개까지</strong> 선택 가능합니다.</p>
         </div>
       </section>
       <section class="section apply" id="apply">
         <div class="wrap">
-          <p class="kicker">READY TO START?</p>
-          <h2>수강 신청,<br/><span class="highlight">차근차근 따라오세요.</span></h2>
-          <p class="desc">국민내일배움카드 보유 여부만 선택하세요. 나에게 필요한 세 단계만 안내해 드립니다.</p>
-          <div aria-label="수강 신청 3단계 안내" class="apply-guide">
-            <h3>국민내일배움카드가 있으신가요?</h3>
-            <div aria-label="국민내일배움카드 보유 여부" class="apply-choice" role="group">
-              <button aria-pressed="true" data-path="no" type="button">아직 없어요</button>
-              <button aria-pressed="false" data-path="yes" type="button">네, 있어요</button>
-            </div>
-            <div aria-label="수강 신청 단계" class="apply-stage-tabs" role="group">
-              <button aria-pressed="true" class="is-active" data-step="0" type="button"></button>
-              <button aria-pressed="false" data-step="1" type="button"></button>
-              <button aria-pressed="false" data-step="2" type="button"></button>
-            </div>
-            <div aria-live="polite" class="apply-stage-detail">
-              <span class="apply-stage-index" id="apply-stage-index">STEP 01</span>
-              <h4 id="apply-stage-title">국민내일배움카드 신청</h4>
-              <p id="apply-stage-desc">고용24에서 카드 신청 자격과 발급 절차를 확인하세요.</p>
-              <div class="apply-stage-actions">
-                <button id="apply-next" type="button">다음 단계 →</button>
-              </div>
-            </div>
+          <p class="kicker">시작할 준비 되셨나요?</p>
+          <h2>수강 신청,<br/><span class="highlight">딱 3단계면 충분해요.</span></h2>
+          <p class="desc">내 상황에 맞는 신청 방법을 한눈에 확인해 보세요.</p>
+          <div class="ag">
+            <div class="ag-shell"><div class="ag-question"><div><div class="ag-qhead"><h3>국민내일배움카드가 있으신가요?</h3><button type="button" class="ag-info-btn" id="ag-info-btn" aria-expanded="false" aria-controls="ag-info-pop"><span aria-hidden="true">ⓘ</span> 국민내일배움카드란?</button><div class="ag-pop" id="ag-info-pop" role="dialog" aria-label="국민내일배움카드란?" hidden><strong>국민내일배움카드란?</strong><p>취업이나 직무능력 향상에 필요한 교육훈련비를 국가가 지원하는 제도입니다.</p><p class="ag-pop-note">일부 발급 제외 대상이 있으며, K-디지털 훈련 참여 조건은 별도로 확인해야 합니다.</p></div></div><small>선택에 따라 안내 순서가 달라집니다.</small></div><div class="ag-switch-wrap"><div class="ag-switch-label">카드 보유 여부 선택</div><div class="ag-switch" role="group" aria-label="국민내일배움카드 보유 여부"><button type="button" id="ag-without" aria-pressed="true" class="active"><span class="ag-choice-icon" aria-hidden="true">✓</span><span><span class="ag-label-main">카드 없어요</span><span class="ag-label-sub">발급부터 시작</span></span></button><button type="button" id="ag-with" aria-pressed="false"><span class="ag-choice-icon" aria-hidden="true">✓</span><span><span class="ag-label-main">카드 있어요</span><span class="ag-label-sub">과정 선택부터</span></span></button></div></div></div>
+              <div class="ag-steps" aria-label="수강 신청 절차"><div class="ag-track" aria-hidden="true"><div class="ag-progress" id="ag-progress"></div></div><button type="button" class="ag-step active" data-step="0" aria-current="step"><span class="ag-num">01</span><span class="ag-step-title">카드 신청</span></button><button type="button" class="ag-step" data-step="1"><span class="ag-num">02</span><span class="ag-step-title">발급 확인</span></button><button type="button" class="ag-step" data-step="2"><span class="ag-num">03</span><span class="ag-step-title">수강 신청</span></button></div>
+              <div class="ag-detail" aria-live="polite"><div class="ag-detail-content" id="ag-detail-content"></div></div><div class="ag-footer-nav"><button type="button" class="ag-back" id="ag-back" disabled>← 이전 단계</button><button type="button" class="ag-next" id="ag-next">다음 단계 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div>
+              <div class="ag-help"><div><strong>카드 발급이 어려우시면 미라클 평생교육원으로 문의주세요.</strong><p>국민내일배움카드 발급 및 교육과정 신청 문의</p></div><a href="tel:18998954" aria-label="미라클 평생교육원 1899-8954 전화 연결">1899-8954</a></div></div>
+            <p class="ag-note"><a href="https://www.work24.go.kr/hr/h/a/1100/selectIssuGudn.do" target="_blank" rel="noopener noreferrer">고용24 국민내일배움카드 공식 안내 ↗</a> &nbsp;·&nbsp; 고용24 공식 안내를 바탕으로 정리한 간단 가이드 · 세부 절차와 신청 조건은 고용24 및 교육기관의 안내를 확인하세요.</p>
           </div>
-          <div class="apply-help">
-            <span aria-hidden="true" class="apply-help-icon">☎</span>
-            <div><strong>카드 발급이 어려우시면 미라클 평생교육원으로 문의주세요.</strong><a aria-label="미라클 평생교육원 1899-8954 전화 걸기" href="tel:18998954">1899-8954</a></div>
-          </div>
-          <p class="apply-footnote">※ 실제 발급·신청 가능 여부 및 결제 절차는 고용24와 교육기관의 확정 안내에 따릅니다.</p>
           <div aria-labelledby="faq-title" class="faq mind-faq" id="faq">
             <div class="mind-wrap">
               <p class="kicker">WORRIES, SOLVED</p>
@@ -4588,14 +4691,14 @@
                   ></path>
                 </svg>
                 <div aria-label="고민 선택" class="mind-clouds" role="group">
-                  <button aria-pressed="false" class="mind-cloud c1" data-mind="0" type="button">AI는 너무 어렵지 않을까?</button>
-                  <button aria-pressed="false" class="mind-cloud c2" data-mind="1" type="button">코딩을 몰라도 될까?</button>
-                  <button aria-pressed="false" class="mind-cloud c3" data-mind="2" type="button">퇴근하고도 가능할까?</button>
-                  <button aria-pressed="false" class="mind-cloud c4" data-mind="3" type="button">비용이 부담돼…</button>
-                  <button aria-pressed="false" class="mind-cloud c5" data-mind="4" type="button">듣기만 하면 잊어버릴 텐데?</button>
-                  <button aria-pressed="false" class="mind-cloud c6" data-mind="5" type="button">내 나이에도 괜찮을까?</button>
-                  <button aria-pressed="false" class="mind-cloud c7" data-mind="6" type="button">어디에 써먹을 수 있지?</button>
-                  <button aria-pressed="false" class="mind-cloud c8" data-mind="7" type="button">뭐부터 배워야 하지?</button>
+                  <button aria-pressed="false" class="mind-cloud c1" data-mind="0" type="button">AI를 처음 배우는데, 따라갈 수 있을까?</button>
+                  <button aria-pressed="false" class="mind-cloud c2" data-mind="1" type="button">코딩을 한 번도 안 해봤는데?</button>
+                  <button aria-pressed="false" class="mind-cloud c3" data-mind="2" type="button">일하면서 배울 시간이 있을까?</button>
+                  <button aria-pressed="false" class="mind-cloud c4" data-mind="3" type="button">교육비가 많이 들지 않을까?</button>
+                  <button aria-pressed="false" class="mind-cloud c5" data-mind="4" type="button">영상만 보고 끝나는 건 아닐까?</button>
+                  <button aria-pressed="false" class="mind-cloud c6" data-mind="5" type="button">지금 시작하기엔 너무 늦지 않았을까?</button>
+                  <button aria-pressed="false" class="mind-cloud c7" data-mind="6" type="button">배워서 어디에 활용할 수 있을까?</button>
+                  <button aria-pressed="false" class="mind-cloud c8" data-mind="7" type="button">9개 과정 중 뭘 선택해야 할까?</button>
                 </div>
                 <p class="mind-hint" id="mind-hint">☝ 궁금한 걱정을 누르면 그 자리에서 답을 볼 수 있어요</p>
               </div>
@@ -4606,7 +4709,7 @@
       </section>
       <section class="section reviews-section" id="reviews" aria-labelledby="reviews-title">
         <div class="wrap reviews-heading">
-          <p class="kicker">LEARNER STORIES</p>
+          <p class="kicker">수강생 이야기</p>
           <h2 id="reviews-title">먼저 배운 사람들의<br><span class="highlight">이야기를 들어보세요.</span></h2>
           <p class="desc">수강을 고민하고 있다면, 학습 경험을 살펴보세요.</p>
         </div>
@@ -4634,15 +4737,14 @@
             </article>
           </div>
         </div>
-        <p class="review-note">※ 위 문장은 레이아웃 검토용 <strong>가상 후기 예시</strong>입니다. 실제 수강생의 검증된 후기·동의받은 내용으로 교체한 후 게시해야 합니다.</p>
+        <p class="review-note">이미 많은 수강생들이 교육 후 만족스러운 경험을 했습니다.</p>
       </section>
       <section class="section end">
         <div class="wrap">
-          <p class="kicker">YOUR NEXT STEP</p>
-          <h2>AI 시대,<br><span class="highlight">선택이 아닌 생존입니다.</span></br></h2>
-          <p class="desc">변화는 이미 시작됐습니다.<br>지금 시작한다면, 당신도 달라질 수 있습니다.</p>
+          <p class="kicker">지금이 시작할 때</p>
+          <h2>AI 격차를 좁히는 가장 빠른 시작<br><span class="highlight">바로 지금입니다</span></br></h2>
+          <p class="desc">망설이는 시간만큼 배움의 시작도 늦어집니다.<br>국가 지원 K-디지털 교육으로 지금 시작하세요.</p>
           <div class="final-cta-actions"><a aria-label="수강 신청할 과정 선택하기" class="btn" href="#courses">수강 신청하기 →</a><a aria-label="전화로 상담 신청하기 1899-8954" class="btn final-cta-consult" href="tel:18998954">상담 신청하기 →</a></div>
-          <p class="planning-note">※ 기획안 임시 동선: ‘수강 신청하기’는 운영 과정 목록으로, ‘상담 신청하기’는 전화(1899-8954)로 연결됩니다. 실제 신청·상담 접수 URL 확정 시 교체합니다.</p>
         </div>
       </section>
     </main>
@@ -4650,12 +4752,63 @@
       <div class="wrap footer-wrap"><span>미라클 K-디지털 기초역량훈련</span><span>V8.6 · 최종 마케팅 기획 검토용 HTML · 실제 LMS 신청 미연결</span></div>
     </footer>
     <div class="mobile-cta"><a href="#courses">나에게 맞는 과정 찾기 →</a></div>
+    <div class="sticky-cta" role="region" aria-label="수강 신청 및 상담"><div class="sticky-cta-text"><span>국비지원으로 지금 바로 시작하세요!</span><strong>1899-8954</strong></div><div class="sticky-cta-actions"><a class="sticky-cta-apply" href="#courses">수강 신청하기</a><a class="sticky-cta-consult" href="tel:18998954" aria-label="전화로 상담 신청하기 1899-8954">상담 신청하기</a></div></div>
     <script>
       const courses=[
         {
+          title: 'AI로 완성하는 홈페이지',
+          type: 'work',
+          desc: 'AI를 활용해 홈페이지를 기획하고 웹페이지 제작 과정까지 경험합니다.',
+          status: 'planned',
+          isNew: true,
+          outcome: 'AI 도구로 홈페이지 제작 흐름을 경험합니다.',
+          recommended: 'AI를 활용해 나만의 웹사이트를 만들어보고 싶은 분',
+          kit: false
+        },
+        {
+          title: 'AI로 쉽게 만드는 PPT 끝판왕',
+          type: 'work',
+          desc: 'AI로 발표자료의 내용과 구성을 기획하고 슬라이드 제작까지 익힙니다.',
+          status: 'planned',
+          isNew: true,
+          outcome: '발표자료 구성과 제작에 AI 도구를 활용합니다.',
+          recommended: '발표자료를 더 빠르고 효과적으로 만들고 싶은 분',
+          kit: false
+        },
+        {
+          title: '미래모빌리티 자율주행의 이해와 실습',
+          type: 'make',
+          desc: '자율주행의 작동 원리를 배우고 실습 교구로 자동차의 움직임을 확인합니다.',
+          status: 'planned',
+          isNew: true,
+          outcome: '미래 모빌리티 기술의 동작 원리를 이해합니다.',
+          recommended: '자율주행 기술이 실제로 어떻게 움직이는지 궁금한 분',
+          kit: true
+        },
+        {
+          title: '3D프린팅 실무와 시제품제작(Fusion)',
+          type: 'make',
+          desc: 'Fusion으로 3D 모델을 설계하고 아이디어를 실제 시제품으로 구현합니다.',
+          status: 'planned',
+          isNew: true,
+          outcome: '3D 모델링과 시제품 제작 과정을 경험합니다.',
+          recommended: '생각한 아이디어를 입체적인 시제품으로 구현하고 싶은 분',
+          kit: true
+        },
+        {
+          title: 'AI 로봇팔로 배우는 협동로봇 제어 원리',
+          type: 'make',
+          desc: '협동로봇의 작동 원리를 이해하고 로봇팔 제어를 직접 실습합니다.',
+          status: 'planned',
+          isNew: true,
+          outcome: '로봇팔 제어에 필요한 기본 원리를 익힙니다.',
+          recommended: '로봇의 움직임과 제어 원리를 직접 이해하고 싶은 분',
+          kit: true
+        },
+        {
           title: '누구나 쉽게 배우는 AI 업무자동화 풀코스',
           type: 'work',
-          desc: '반복 업무를 AI 도구로 효율적으로 처리하는 방법',
+          desc: 'Gemini·NotebookLM 등 AI 도구로 문서 분석부터 반복 업무 자동화까지 배웁니다.',
           status: 'open',
           fee: 400000,
           self: 40000,
@@ -4663,12 +4816,13 @@
           certificate: 'AI활용전문가(Gemini)',
           outcome: 'AI 도구를 활용해 반복적인 업무의 자동화 흐름을 설계해 봅니다.',
           recommended: '반복되는 업무를 AI로 더 효율적으로 처리하고 싶은 분',
+          googleAiPro: true,
           kit: false
         },
         {
           title: '파이썬으로 제어하는 자율주행 전기차',
           type: 'basic',
-          desc: '파이썬 코드로 자율주행 전기차를 제어하는 실습',
+          desc: '파이썬 코딩과 음성인식으로 자동차를 제어하고 게임 제작도 경험합니다.',
           status: 'open',
           fee: 480000,
           self: 48000,
@@ -4681,7 +4835,7 @@
         {
           title: '파이썬으로 제어하는 AI드론',
           type: 'basic',
-          desc: '파이썬을 활용한 드론 제어 및 코딩 실습',
+          desc: '드론 조종부터 파이썬 코딩, AI 자율비행과 목표물 자동추적 기술까지 배웁니다.',
           status: 'open',
           fee: 490000,
           self: 49000,
@@ -4694,7 +4848,7 @@
         {
           title: '파이썬으로 배우는 딥러닝 & 인공지능 기초',
           type: 'basic',
-          desc: '파이썬으로 이해하는 AI·딥러닝의 기본 원리',
+          desc: 'AI·딥러닝의 기본 원리를 배우고 숫자와 이미지를 분류하는 AI 프로그램을 만들어 봅니다.',
           status: 'open',
           fee: 371800,
           self: 37180,
@@ -4703,55 +4857,15 @@
           outcome: '기본 개념을 익히고 기초적인 딥러닝 모델 학습 흐름을 이해합니다.',
           recommended: '인공지능의 작동 원리를 기초부터 이해하고 싶은 분',
           kit: false
-        },
-        {
-          title: 'AI로 완성하는 홈페이지',
-          type: 'work',
-          desc: 'AI를 활용한 웹페이지 기획·제작',
-          status: 'planned',
-          outcome: 'AI 도구로 홈페이지 제작 흐름을 경험합니다.',
-          recommended: 'AI를 활용해 나만의 웹사이트를 만들어보고 싶은 분',
-          kit: false
-        },
-        {
-          title: 'AI로 쉽게 만드는 PPT 끝판왕',
-          type: 'work',
-          desc: 'AI를 활용한 발표자료 기획·제작',
-          status: 'planned',
-          outcome: '발표자료 구성과 제작에 AI 도구를 활용합니다.',
-          recommended: '발표자료를 더 빠르고 효과적으로 만들고 싶은 분',
-          kit: false
-        },
-        {
-          title: '미래모빌리티 자율주행의 이해와 실습',
-          type: 'make',
-          desc: '자율주행의 기본 원리와 실습',
-          status: 'planned',
-          outcome: '미래 모빌리티 기술의 동작 원리를 이해합니다.',
-          recommended: '자율주행 기술이 실제로 어떻게 움직이는지 궁금한 분',
-          kit: false
-        },
-        {
-          title: '3D프린팅 실무와 시제품제작(Fusion)',
-          type: 'make',
-          desc: '3D 모델링에서 시제품 제작까지',
-          status: 'planned',
-          outcome: '3D 모델링과 시제품 제작 과정을 경험합니다.',
-          recommended: '생각한 아이디어를 입체적인 시제품으로 구현하고 싶은 분',
-          kit: false
-        },
-        {
-          title: 'AI 로봇팔로 배우는 협동로봇 제어 원리',
-          type: 'make',
-          desc: '협동로봇의 기초 원리와 제어',
-          status: 'planned',
-          outcome: '로봇팔 제어에 필요한 기본 원리를 익힙니다.',
-          recommended: '로봇의 움직임과 제어 원리를 직접 이해하고 싶은 분',
-          kit: false
         }
       ];
       let type='all', kitOnly=false;
       const grid=document.getElementById('course-grid');
+      grid.addEventListener('click', e=>{
+        if(e.target.closest('a.course-card[href="#"]'))e.preventDefault();
+      });
+      const filterName=document.getElementById('filter-name');
+      const filterCount=document.getElementById('filter-count');
       const tabs=[
         ...document.querySelectorAll('[data-filter]')
       ];
@@ -4764,56 +4878,76 @@
       function render(){
         const list=courses.filter(c=>(type==='all'||c.type===type)&&(!kitOnly||c.kit));
         grid.replaceChildren(...list.map(c=>{
-          const art=document.createElement('article');
+          const art=document.createElement('a');
           art.className='course-card';
+          art.setAttribute('href', '#');
           art.classList.add(c.status==='planned'?'course-planned': 'course-open');
+          const thumbnail=document.createElement('div');
+          thumbnail.className='course-thumbnail';
+          thumbnail.setAttribute('aria-hidden', 'true');
+          const thumbnailLabel=document.createElement('span');
+          thumbnailLabel.textContent='교육과정 썸네일';
+          thumbnail.append(thumbnailLabel);
+          art.append(thumbnail);
           const badges=document.createElement('div');
           badges.className='course-badges';
+          if(c.isNew){
+            const newBadge=document.createElement('img');
+            newBadge.className='course-new-badge';
+            newBadge.src='assets/course-new.gif';
+            newBadge.alt='NEW 신규 과정';
+            newBadge.width=33;
+            newBadge.height=15;
+            badges.append(newBadge);
+          }
           const status=document.createElement('span');
           status.className='course-availability '+(c.status==='open'?'available': 'planned');
-          status.textContent=c.status==='open'?'현재 운영 과정': '개설 예정';
           const cap=document.createElement('span');
           cap.className='eyebrow';
           cap.textContent=names[c.type];
           badges.append(status, cap);
           const title=document.createElement('h3');
           title.textContent=c.title;
-          const who=document.createElement('p');
-          who.className='course-recommended';
-          who.textContent='이런 분께 추천 · '+c.recommended;
           const p=document.createElement('p');
           p.textContent=c.desc;
-          art.append(badges, title, who, p);
+          art.append(badges, title, p);
+          const benefits=document.createElement('div');
+          benefits.className='course-benefits';
+          const cardBadge=document.createElement('span');
+          cardBadge.className='course-benefit';
+          cardBadge.textContent='국민내일배움카드';
+          benefits.append(cardBadge);
           if(c.kit){
             const label=document.createElement('span');
-            label.className='kitmark';
-            label.textContent='실습 교구 제공 · 소장 대상';
-            art.append(label)
+            label.className='course-benefit kitmark';
+            label.textContent='실습교구증정';
+            benefits.append(label)
           }
-          if(c.status==='open'){
-            const info=document.createElement('div');
-            info.className='course-price-line';
-            info.innerHTML='<span>총 훈련비 '+c.fee.toLocaleString('ko-KR')+'원</span><strong>전단지 기준 본인부담 '+c.self.toLocaleString('ko-KR')+'원</strong>';
-            art.append(info)
+          if(c.googleAiPro){
+            const label=document.createElement('span');
+            label.className='course-benefit aimark';
+            label.textContent='구글AI Pro 1개월 사용';
+            benefits.append(label)
           }
+          art.append(benefits);
           const foot=document.createElement('div');
           foot.className='foot';
-          const a=document.createElement('span');
-          a.textContent=c.status==='open'?'학습 목표·혜택·신청 안내': '개설 일정·비용 확정 전';
           const b=document.createElement('strong');
-          b.textContent=c.status==='open'?'과정 상세 및 신청 안내 ↗': '개설 예정 안내 ↗';
-          foot.append(a, b);
+          b.textContent='교육과정 상세보기 ↗';
+          foot.append(b);
           art.append(foot);
-          art.tabIndex=0;
-          art.setAttribute('role', 'button');
-          art.setAttribute('aria-label', c.title+' 상세 안내 열기');
+          art.setAttribute('aria-label', c.title+' 상세보기');
           art.dataset.course=c.title;
           return art
         }));
-        document.getElementById('filter-name').textContent=kitOnly?'실습 교구 소장 대상': names[type];
-        document.getElementById('filter-count').textContent=list.length+'개 과정 · 운영 중 '+list.filter(c=>c.status==='open').length+'개 / 예정 '+list.filter(c=>c.status==='planned').length+'개';
+        if(filterName)filterName.textContent=kitOnly?'실습 교구 소장 대상': names[type];
+        if(filterCount)filterCount.textContent=list.length+'개 과정 · 운영 중 '+list.filter(c=>c.status==='open').length+'개 / 예정 '+list.filter(c=>c.status==='planned').length+'개';
         document.getElementById('no-results').hidden=list.length>0;
-        tabs.forEach(b=>b.setAttribute('aria-pressed', String(!kitOnly&&b.dataset.filter===type)))
+        tabs.forEach(b=>{
+          const active=!kitOnly&&b.dataset.filter===type;
+          b.classList.toggle('is-active', active);
+          b.setAttribute('aria-pressed', String(active))
+        })
       }
       function setFilter(next, isKit=false){
         type=next;
@@ -4822,8 +4956,8 @@
       };
       tabs.forEach(b=>b.addEventListener('click', ()=>setFilter(b.dataset.filter)));
       document.querySelectorAll('[data-pick]').forEach(a=>a.addEventListener('click', ()=>setFilter(a.dataset.pick)));
-      document.getElementById('kit-filter').addEventListener('click', ()=>setFilter('all', true));
-      render();
+      document.getElementById('kit-filter')?.addEventListener('click', ()=>setFilter('all', true));
+      setFilter('all');
       // V6.2 3단계 관심사 탐색: 적성 판정이 아닌 관심 기반 추천
       const quizQuestions=[
         {
@@ -5051,40 +5185,42 @@
       })();
       /* V6.8: reveal answers in the same cloud, no scrolling to a detached response */
       (()=>{
-        const answers=[
+        
+const answers = [
           [
-            '기초부터 시작할 수 있어요.',
-            '과정별 선수지식을 확인하세요.'
+            '처음이어도 괜찮아요.',
+            '어려운 전문지식 없이 기초부터 차근차근 배울 수 있어요.'
           ],
           [
-            '코딩 경험이 없어도 선택 가능한 과정이 있어요.',
-            '관심 분야와 난이도를 확인해 보세요.'
+            '코딩 경험이 없어도 시작할 수 있어요.',
+            '직접 따라 하고 실습하며 하나씩 익혀보세요.'
           ],
           [
-            '100% 온라인 수업이에요.',
-            '수강 기간과 학습 일정은 과정별 확인.'
+            '100% 온라인 교육이라 학원에 갈 필요가 없어요.',
+            '일상 속에서 배움의 기회를 만들어보세요.'
           ],
           [
-            '국민내일배움카드 지원을 확인해 보세요.',
-            '실제 본인부담금은 과정마다 달라요.'
+            '국가가 교육비를 지원해 부담을 줄일 수 있어요.',
+            '국민내일배움카드로 새로운 배움을 시작해보세요.'
           ],
           [
-            '일부 과정은 실습 교구를 제공해요.',
-            '대상 과정에서는 직접 활용해 볼 수 있어요.'
+            '눈으로만 배우는 교육이 아니에요.',
+            '직접 만들고 작동시켜 보며 기술을 익힐 수 있어요.'
           ],
           [
-            '중요한 건 나이보다 배움의 목표예요.',
-            '지원 자격은 개별 기준을 확인하세요.'
+            '배움에 늦은 나이는 없어요.',
+            '학생부터 중장년까지, 누구나 기초부터 도전할 수 있어요.'
           ],
           [
-            '일과 일상에 활용할 길이 있어요.',
-            '나에게 필요한 활용 목표부터 찾아보세요.'
+            '업무에 AI를 활용하고, 홈페이지를 만들고,',
+            '로봇을 제어하는 경험까지 할 수 있어요.'
           ],
           [
-            '3가지 질문으로 관심 분야를 찾아보세요.',
-            '아래 교육과정 추천 기능을 이용해 보세요.'
+            '처음부터 잘 알 필요는 없어요.',
+            '관심 있는 분야부터 선택하고 새로운 가능성을 발견해 보세요.'
           ]
         ];
+
         const clouds=[
           ...document.querySelectorAll('#faq .mind-cloud')
         ];
@@ -5226,16 +5362,6 @@
             html: `<p class="detail-summary">${escapeHtml(c.outcome)}</p><div class="dialog-fact"><strong>이런 분께 추천</strong><p>${escapeHtml(c.recommended)}</p></div><div class="detail-metrics"><div><small>총 훈련비</small><strong>${money(c.fee)}</strong></div><div><small>전단지 기준 본인부담금</small><strong>${money(c.self)}</strong></div><div><small>정부 지원 비율</small><strong>90%*</strong></div></div><div class="dialog-fact"><strong>이 과정의 특별 혜택</strong><p>${escapeHtml(c.benefit)}</p></div><div class="dialog-fact"><strong>관련 자격증 연계</strong><p>${escapeHtml(c.certificate)}</p><p class="subtle-detail">자격증이 자동 발급되는 것은 아니며 시험·발급 기준과 비용은 별도 확인이 필요합니다.</p></div><div class="dialog-fact"><strong>신청 전 꼭 확인하세요</strong><ul><li>내일배움카드 발급 및 지원 대상 여부</li><li>개강 일정, 수강 기간, 수업 시간, 선수지식·난이도</li><li>실제 적용 지원율과 본인부담금</li><li>고용24 및 교육기관 신청 절차</li></ul></div><p class="dialog-note">※ 비용은 제공된 전단지 기준의 기획 시안입니다. 신청 조건과 실제 결제 금액은 고용24 및 교육기관 최신 안내를 최종 기준으로 확인해야 합니다. 본 시안에는 특정 과정의 확정 신청 링크가 연결되어 있지 않습니다.</p><div class="detail-actions"><a class="detail-action" href="https://www.work24.go.kr/" target="_blank" rel="noopener noreferrer">고용24에서 과정 검색하기 ↗</a><a class="detail-action secondary" href="tel:18998954">교육원 신청 문의 · 1899-8954</a></div>`
           }, trigger);
         }
-        document.getElementById('course-grid').addEventListener('click', e=>{
-          const card=e.target.closest('[data-course]');
-          if(card)openCourse(card)
-        });
-        document.getElementById('course-grid').addEventListener('keydown', e=>{
-          if((e.key==='Enter'||e.key===' ')&&e.target.matches('[data-course]')){
-            e.preventDefault();
-            openCourse(e.target)
-          }
-        });
         document.getElementById('subnav-course-list').addEventListener('click', e=>{
           const link=e.target.closest('a[data-course]');
           if(!link)return;
@@ -5271,7 +5397,6 @@
             paragraphs: [
               'AI 기술은 연구 단계에 머무르지 않고 제조·서비스 등 다양한 산업 현장에서 활용 가능성을 넓혀가고 있습니다.',
               '기업 현장에서는 기술 개발뿐 아니라 실제 업무에 도입하고 활용할 수 있는 역량이 중요해지고 있습니다.',
-              '※ 이 항목은 원문 전체를 확인하지 못해 기존 보도 제목을 바탕으로 맥락을 안내한 것입니다.'
             ]
           },
           {
@@ -5302,8 +5427,7 @@
             title: '방송 제작 현장에도 생성형 AI 도입',
             paragraphs: [
               '방송 제작에서도 생성형 AI 활용이 주요한 관심사가 되고 있습니다.',
-              '콘텐츠 제작·편집·기획 등 창작 업무에서 AI 도구를 실제로 어떻게 활용할지 살펴볼 필요가 있습니다.',
-              '※ 이 항목은 원문 전체를 확인하지 못해 기존 보도 제목을 바탕으로 맥락을 안내한 것입니다.'
+              '콘텐츠 제작·편집·기획 등 창작 업무에서 AI 도구를 실제로 어떻게 활용할지 살펴볼 필요가 있습니다.'
             ]
           }
         ];
@@ -5332,7 +5456,7 @@
             return p;
           }));
           fields.summary.scrollTop=0;
-          fields.counter.textContent=String(i+1).padStart(2, '0')+' / 04';
+          if(fields.counter)fields.counter.textContent=String(i+1).padStart(2, '0')+' / 04';
           links.forEach(a=>a.closest('.verified-news-item').classList.toggle('is-selected', Number(a.dataset.newsIndex)===i));
           tv.classList.remove('is-updating');
           void tv.offsetWidth;
@@ -5340,83 +5464,86 @@
         }
         links.forEach(a=>a.addEventListener('click', e=>{
           e.preventDefault();
+          armed=true;
           show(Number(a.dataset.newsIndex));
+          a.blur();
         }));
+        const win=policy.querySelector('.verified-news-window');
+        let armed=false;
+        const track=win.querySelector('.verified-news-track');
+        const resume=()=>{
+          if(!armed)return;
+          win.classList.add('is-resumed');
+          track.style.setProperty('animation-play-state','running','important');
+        };
+        const reset=()=>{
+          armed=false;
+          win.classList.remove('is-resumed');
+          track.style.removeProperty('animation-play-state');
+        };
+        ['pointermove','mousemove'].forEach(t=>win.addEventListener(t,resume));
+        ['pointerleave','mouseleave'].forEach(t=>win.addEventListener(t,reset));
         show(0);
       })();
     </script>
     <script>
       (function(){
-        const root=document.querySelector('.apply-guide');
+        const root=document.querySelector('.ag');
         if(!root)return;
-        const paths={
-          no: [
-            [
-              '국민내일배움카드 신청',
-              '고용24에서 국민내일배움카드 발급 신청 자격과 절차를 확인하세요. 본인 인증 후 신청을 진행할 수 있어요.'
-            ],
-            [
-              '카드 발급 및 이용 준비',
-              '카드 발급 진행 상태를 확인하고 카드 수령 및 사용 가능 여부를 점검하세요.'
-            ],
-            [
-              '원하는 과정 신청',
-              '관심 있는 K-디지털 과정을 고른 후 고용24와 교육기관 안내에 따라 수강 신청을 진행하세요.'
-            ]
-          ],
-          yes: [
-            [
-              '교육과정 검색',
-              '고용24에서 미라클 K-디지털 훈련과정을 검색하고 개설 여부·지원 조건을 확인하세요.'
-            ],
-            [
-              '수강 신청',
-              '원하는 과정을 선택해 고용24의 수강 신청을 진행하세요.'
-            ],
-            [
-              '수강 등록 확인',
-              '교육기관 안내에 따라 등록 및 필요한 결제 절차를 확인하세요.'
-            ]
-          ]
-        };
-        let path='no',
-        step=0;
-        const pathBtns=[
-          ...root.querySelectorAll('[data-path]')
-        ],
-        stepBtns=[
-          ...root.querySelectorAll('[data-step]')
-        ];
-        const idx=root.querySelector('#apply-stage-index'),
-        title=root.querySelector('#apply-stage-title'),
-        desc=root.querySelector('#apply-stage-desc'),
-        next=root.querySelector('#apply-next');
-        function update(){
-          pathBtns.forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.path===path)));
-          stepBtns.forEach((b, i)=>{
-            b.classList.toggle('is-active', i===step);
-            b.setAttribute('aria-pressed', String(i===step));
-            b.innerHTML='<small>STEP 0'+(i+1)+'</small>'+paths[path][i][0]
+        const data={without:[
+          {title:'고용24에서 카드 발급 신청',desc:'고용24에서 지원 대상 여부를 확인하고 국민내일배움카드를 신청하세요. 실업 중이라면 구직등록이 필요할 수 있어요.'},
+          {title:'카드 발급 및 수령',desc:'발급 승인 후 은행 방문 또는 우편으로 카드를 수령하고 사용 가능 여부를 확인하세요.'},
+          {title:'K-디지털 과정 수강 신청',desc:'고용24에서 원하는 K-디지털 기초역량훈련 과정을 찾아 신청하고 본인부담금을 확인하세요.'}],
+        with:[
+          {title:'원하는 교육과정 찾기',desc:'고용24에서 K-디지털 기초역량훈련 과정을 검색하고 모집 여부와 신청 조건을 확인하세요.'},
+          {title:'고용24에서 수강 신청',desc:'과정을 선택해 수강 신청을 진행하고 안내된 본인부담금을 확인하세요.'},
+          {title:'등록 및 수강 준비 확인',desc:'고용24에서 수강 신청을 완료한 후, 미라클 평생교육원에서도 한 번 더 신청해 주세요. 신청이 완료되면 교육 이용 방법을 안내해 드립니다.'}]};
+        const labels={without:['카드 신청','발급 확인','수강 신청'],with:['과정 찾기','수강 신청','등록 확인']};
+        const $=s=>root.querySelector(s);
+        const buttons=[...root.querySelectorAll('.ag-step')];
+        const next=$('#ag-next'),back=$('#ag-back'),content=$('#ag-detail-content');
+        const arrow=' <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>';
+        let mode='without',index=0;
+        function render(){
+          const steps=data[mode];
+          ['without','with'].forEach(m=>{
+            const b=$('#ag-'+m);
+            b.classList.toggle('active',mode===m);
+            b.setAttribute('aria-pressed',String(mode===m));
           });
-          idx.textContent='STEP 0'+(step+1);
-          title.textContent=paths[path][step][0];
-          desc.textContent=paths[path][step][1];
-          next.textContent=step===2?'처음부터 보기 ↺': '다음 단계 →'
+          buttons.forEach((b,i)=>{
+            b.classList.toggle('active',i===index);
+            b.classList.toggle('done',i<index);
+            if(i===index)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current');
+            b.querySelector('.ag-step-title').textContent=labels[mode][i];
+          });
+          $('#ag-progress').style.width=(index/2*100)+'%';
+          content.innerHTML='<div class="ag-detail-top">STEP '+String(index+1).padStart(2,'0')+' / 03</div><h4>'+steps[index].title+'</h4><p>'+steps[index].desc+'</p>'+(mode==='without'&&index===0?'<a class="ag-guide-link" href="https://miso.center/m/main/Guide/guide_branch3.html" target="_blank" rel="noopener noreferrer">카드 발급 방법 자세히 보기 ↗</a>':'');
+          content.style.animation='none';void content.offsetWidth;content.style.animation='agUp .34s both';
+          back.disabled=index===0;
+          next.innerHTML='다음 단계'+arrow;
+          next.style.display=index===steps.length-1?'none':'';
         }
-        pathBtns.forEach(b=>b.addEventListener('click', ()=>{
-          path=b.dataset.path;
-          step=0;
-          update()
-        }));
-        stepBtns.forEach(b=>b.addEventListener('click', ()=>{
-          step=Number(b.dataset.step);
-          update()
-        }));
-        next.addEventListener('click', ()=>{
-          step=(step+1)%3;
-          update()
+        $('#ag-without').addEventListener('click',()=>{mode='without';index=0;render()});
+        $('#ag-with').addEventListener('click',()=>{mode='with';index=0;render()});
+        buttons.forEach((b,i)=>b.addEventListener('click',()=>{index=i;render()}));
+        back.addEventListener('click',()=>{if(index>0){index--;render()}});
+        next.addEventListener('click',()=>{
+          if(index<2){index++;render()}
         });
-        update();
+        const infoBtn=$('#ag-info-btn'),pop=$('#ag-info-pop');
+        function setPop(open){
+          pop.hidden=!open;
+          infoBtn.setAttribute('aria-expanded',String(open));
+        }
+        infoBtn.addEventListener('click',()=>setPop(pop.hidden));
+        document.addEventListener('click',e=>{
+          if(!pop.hidden&&!pop.contains(e.target)&&!infoBtn.contains(e.target))setPop(false);
+        });
+        document.addEventListener('keydown',e=>{
+          if(e.key==='Escape'&&!pop.hidden){setPop(false);infoBtn.focus()}
+        });
+        render();
       })();
       (function(){
         const track=document.getElementById('review-track');
