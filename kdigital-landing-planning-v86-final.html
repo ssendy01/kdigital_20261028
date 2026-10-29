@@ -91,7 +91,8 @@
         overflow-x:auto;
         scrollbar-width:none
       }
-      .subnav-tabs a {
+      .subnav-tabs a,
+      .subnav-card-guide {
         display:flex;
         align-items:center;
         height:100%;
@@ -101,13 +102,18 @@
         font-weight:700;
         white-space:nowrap
       }
-      .subnav-tabs a:hover {
+      .subnav-tabs a:hover,
+      .subnav-card-guide:hover {
         color:#fff;
         border-bottom-color:rgba(255,255,255,.4)
       }
       .subnav-tabs a[aria-current="location"] {
         color:#fff;
         border-bottom-color:#fff
+      }
+      .subnav-card-guide {
+        margin-left:auto;
+        flex:none
       }
       .subnav-cta {
         display:flex;
@@ -216,10 +222,13 @@
         }
         .subnav-inner {
           width:calc(100% - 32px);
-          flex-direction:column;
-          gap:0
+          display:grid;
+          grid-template-columns:minmax(80px,1fr) auto;
+          grid-template-rows:48px 40px;
+          gap:0 12px
         }
         .subnav-tabs {
+          grid-column:1 / -1;
           width:100%;
           height:48px;
           flex:none;
@@ -235,6 +244,13 @@
           flex:none;
           font-size:14px
         }
+        .subnav-card-guide {
+          margin-left:0;
+          font-size:12px;
+          white-space:normal;
+          line-height:1.35;
+          border-top:1px solid rgba(255,255,255,.18)
+        }
         .subnav-course-menu {
           width:100%;
           height:40px
@@ -246,7 +262,9 @@
           justify-content:center;
           padding-left:0;
           border-left:0;
-          border-top:1px solid rgba(255,255,255,.18)
+          border-top:1px solid rgba(255,255,255,.18);
+          font-size:12px;
+          gap:6px
         }
       }
       .btn {
@@ -4183,13 +4201,12 @@
     <nav class="subnav" aria-label="빠른 이동">
       <div class="subnav-inner">
         <div class="subnav-tabs">
-          <a href="#top" aria-current="location">교육 소개</a>
-          <a href="#courses">교육 과정</a>
+          <a href="#courses" aria-current="location">교육 소개</a>
           <a href="#kit">지원 및 혜택</a>
-          <a href="https://miso.center/m/main/Guide/guide_solpay.html" target="_blank" rel="noopener noreferrer">국민내일배움카드란?</a>
           <a href="#reviews">수강 후기</a>
           <a href="#faq">자주 묻는 질문</a>
         </div>
+        <a class="subnav-card-guide" href="https://miso.center/m/main/Guide/guide_solpay.html" target="_blank" rel="noopener noreferrer">국민내일배움카드란?</a>
         <div class="subnav-course-menu">
           <button class="subnav-cta" id="subnav-course-toggle" type="button" aria-expanded="false" aria-controls="subnav-course-list">
             <img src="assets/kdigital-symbol.png" alt="" width="22" height="22"/>
