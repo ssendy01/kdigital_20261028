@@ -4214,15 +4214,15 @@
             <span class="subnav-course-arrow" aria-hidden="true">▼</span>
           </button>
           <ul class="subnav-course-list" id="subnav-course-list" aria-labelledby="subnav-course-toggle" hidden>
-            <li><a href="#courses" data-course="미래모빌리티 자율주행의 이해와 실습">미래모빌리티 자율주행의 이해와 실습</a></li>
-            <li><a href="#courses" data-course="3D프린팅 실무와 시제품제작(Fusion)">3D프린팅 실무와 시제품제작</a></li>
-            <li><a href="#courses" data-course="AI 로봇팔로 배우는 협동로봇 제어 원리">AI 로봇팔로 배우는 협동로봇 제어 원리</a></li>
-            <li><a href="#courses" data-course="AI로 완성하는 홈페이지">AI로 완성하는 홈페이지</a></li>
-            <li><a href="#courses" data-course="AI로 쉽게 만드는 PPT 끝판왕">AI로 쉽게 만드는 PPT 끝판왕</a></li>
-            <li><a href="#courses" data-course="파이썬으로 제어하는 AI드론">파이썬으로 제어하는 AI드론</a></li>
-            <li><a href="#courses" data-course="파이썬으로 제어하는 자율주행 전기차">파이썬으로 제어하는 자율주행 전기차</a></li>
-            <li><a href="#courses" data-course="누구나 쉽게 배우는 AI 업무자동화 풀코스">누구나 쉽게 배우는 AI업무자동화 풀코스</a></li>
-            <li><a href="#courses" data-course="파이썬으로 배우는 딥러닝 &amp; 인공지능 기초">파이썬으로 배우는 딥러닝 &amp; 인공지능 기초</a></li>
+            <li><a role="link" aria-disabled="true" tabindex="-1" data-course="미래모빌리티 자율주행의 이해와 실습">미래모빌리티 자율주행의 이해와 실습</a></li>
+            <li><a role="link" aria-disabled="true" tabindex="-1" data-course="3D프린팅 실무와 시제품제작(Fusion)">3D프린팅 실무와 시제품제작</a></li>
+            <li><a role="link" aria-disabled="true" tabindex="-1" data-course="AI 로봇팔로 배우는 협동로봇 제어 원리">AI 로봇팔로 배우는 협동로봇 제어 원리</a></li>
+            <li><a role="link" aria-disabled="true" tabindex="-1" data-course="AI로 완성하는 홈페이지">AI로 완성하는 홈페이지</a></li>
+            <li><a role="link" aria-disabled="true" tabindex="-1" data-course="AI로 쉽게 만드는 PPT 끝판왕">AI로 쉽게 만드는 PPT 끝판왕</a></li>
+            <li><a role="link" aria-disabled="true" tabindex="-1" data-course="파이썬으로 제어하는 AI드론">파이썬으로 제어하는 AI드론</a></li>
+            <li><a role="link" aria-disabled="true" tabindex="-1" data-course="파이썬으로 제어하는 자율주행 전기차">파이썬으로 제어하는 자율주행 전기차</a></li>
+            <li><a role="link" aria-disabled="true" tabindex="-1" data-course="누구나 쉽게 배우는 AI 업무자동화 풀코스">누구나 쉽게 배우는 AI업무자동화 풀코스</a></li>
+            <li><a role="link" aria-disabled="true" tabindex="-1" data-course="파이썬으로 배우는 딥러닝 &amp; 인공지능 기초">파이썬으로 배우는 딥러닝 &amp; 인공지능 기초</a></li>
           </ul>
         </div>
       </div>
@@ -5382,12 +5382,6 @@ const answers = [
             html: `<p class="detail-summary">${escapeHtml(c.outcome)}</p><div class="dialog-fact"><strong>이런 분께 추천</strong><p>${escapeHtml(c.recommended)}</p></div><div class="detail-metrics"><div><small>총 훈련비</small><strong>${money(c.fee)}</strong></div><div><small>전단지 기준 본인부담금</small><strong>${money(c.self)}</strong></div><div><small>정부 지원 비율</small><strong>90%*</strong></div></div><div class="dialog-fact"><strong>이 과정의 특별 혜택</strong><p>${escapeHtml(c.benefit)}</p></div><div class="dialog-fact"><strong>관련 자격증 연계</strong><p>${escapeHtml(c.certificate)}</p><p class="subtle-detail">자격증이 자동 발급되는 것은 아니며 시험·발급 기준과 비용은 별도 확인이 필요합니다.</p></div><div class="dialog-fact"><strong>신청 전 꼭 확인하세요</strong><ul><li>내일배움카드 발급 및 지원 대상 여부</li><li>개강 일정, 수강 기간, 수업 시간, 선수지식·난이도</li><li>실제 적용 지원율과 본인부담금</li><li>고용24 및 교육기관 신청 절차</li></ul></div><p class="dialog-note">※ 비용은 제공된 전단지 기준의 기획 시안입니다. 신청 조건과 실제 결제 금액은 고용24 및 교육기관 최신 안내를 최종 기준으로 확인해야 합니다. 본 시안에는 특정 과정의 확정 신청 링크가 연결되어 있지 않습니다.</p><div class="detail-actions"><a class="detail-action" href="https://www.work24.go.kr/" target="_blank" rel="noopener noreferrer">고용24에서 과정 검색하기 ↗</a><a class="detail-action secondary" href="tel:18998954">교육원 신청 문의 · 1899-8954</a></div>`
           }, trigger);
         }
-        document.getElementById('subnav-course-list').addEventListener('click', e=>{
-          const link=e.target.closest('a[data-course]');
-          if(!link)return;
-          e.preventDefault();
-          openCourse(link,document.getElementById('subnav-course-toggle'));
-        });
         function close(){
           dlg.close()
         };
