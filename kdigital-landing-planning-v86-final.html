@@ -87,7 +87,9 @@
         display:flex;
         gap:22px;
         height:100%;
-        min-width:0
+        min-width:0;
+        overflow-x:auto;
+        scrollbar-width:none
       }
       .subnav-tabs a {
         display:flex;
@@ -4184,6 +4186,7 @@
           <a href="#top" aria-current="location">교육 소개</a>
           <a href="#courses">교육 과정</a>
           <a href="#kit">지원 및 혜택</a>
+          <a href="https://miso.center/m/main/Guide/guide_solpay.html" target="_blank" rel="noopener noreferrer">내일배움카드</a>
           <a href="#reviews">수강 후기</a>
           <a href="#faq">자주 묻는 질문</a>
         </div>
@@ -5554,7 +5557,7 @@ const answers = [
     <script>
       (()=>{
         const nav=document.querySelector('.subnav');
-        const links=[...nav.querySelectorAll('.subnav-tabs a')];
+        const links=[...nav.querySelectorAll('.subnav-tabs a[href^="#"]')];
         const targets=links.map(link=>document.getElementById(link.hash.slice(1)));
         let ticking=false;
         function update(){
