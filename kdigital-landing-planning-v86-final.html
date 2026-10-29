@@ -4193,6 +4193,47 @@
         body{padding-bottom:78px}
       }
     </style>
+    <style>
+      /* Consultation modal: styles are scoped to this dialog only. */
+      .consult-dialog{width:493px;max-width:calc(100vw - 24px);max-height:calc(100dvh - 32px);margin:auto;padding:24px 24px 40px;border:0;border-radius:0;background:#fff;color:#333;font-family:inherit;overflow:auto;overscroll-behavior:contain;box-shadow:0 20px 70px #0003}
+      .consult-dialog::backdrop{background:rgba(0,0,0,.5)}
+      .consult-dialog .consult-close{position:absolute;top:12px;right:8px;width:32px;height:32px;padding:0;border:0;background:transparent;color:#444}
+      .consult-dialog .consult-close::before,.consult-dialog .consult-close::after{content:"";position:absolute;top:15px;left:2px;width:28px;height:1.5px;background:currentColor;transform:rotate(48deg)}
+      .consult-dialog .consult-close::after{transform:rotate(-48deg)}
+      .consult-dialog .consult-title{margin:0;padding:0 24px;text-align:center;font-size:24px;font-weight:700;line-height:30px;letter-spacing:-.5px;outline:none}
+      .consult-dialog .consult-description{margin:4px 0 15px;font-size:14px;line-height:20px;color:#111}
+      .consult-dialog .consult-fields{display:grid;gap:10px}
+      .consult-dialog .consult-row{display:grid;grid-template-columns:90px minmax(0,1fr);align-items:center;gap:12px;min-width:0}
+      .consult-dialog .consult-label{font-size:13px;font-weight:700;color:#606060;line-height:18px}
+      .consult-dialog input[type="text"],.consult-dialog input[type="tel"],.consult-dialog select,.consult-dialog textarea{width:100%;min-width:0;height:35px;margin:0;padding:6px 2px;border:1px solid #808080;border-radius:2px;background:#fff;box-shadow:none;color:#111;font:inherit;font-size:13px;line-height:21px}
+      .consult-dialog input::placeholder,.consult-dialog textarea::placeholder{color:#888;opacity:1}
+      .consult-dialog .consult-phone{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;gap:11px;padding-right:15px}
+      .consult-dialog .consult-phone-part{position:relative;min-width:0}
+      .consult-dialog .consult-phone-part + .consult-phone-part::before{content:"-";position:absolute;left:-8px;top:7px;color:#777;font-size:13px}
+      .consult-dialog .consult-categories{display:grid;grid-template-columns:90px minmax(0,1fr);align-items:center;gap:12px;margin:10px 0 0;padding:0;border:0;min-width:0}
+      .consult-dialog .consult-options{display:flex;flex-direction:column;gap:0;min-width:0}
+      .consult-dialog .consult-option-row{display:flex;align-items:center;flex-wrap:wrap;gap:8px 14px;min-height:35px}
+      .consult-dialog .consult-option{display:inline-flex;align-items:center;gap:3px;max-width:100%;font-size:13px;line-height:18px;color:#707070;cursor:pointer}
+      .consult-dialog input[type="checkbox"]{flex:none;width:13px;height:13px;margin:0;accent-color:#ff5b0b}
+      .consult-dialog .consult-message{display:block;height:150px;margin-top:10px;padding:0;resize:vertical}
+      .consult-dialog .consult-consent{display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px;margin-top:14px;font-size:12px;line-height:18px}
+      .consult-dialog .consult-consent label{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+      .consult-dialog .consult-consent-text{text-decoration:underline;text-underline-offset:3px}
+      .consult-dialog .consult-privacy-toggle{padding:0;border:0;background:transparent;color:#777;font-size:12px;line-height:18px}
+      .consult-dialog .consult-privacy-copy{margin:10px 0 0;padding:12px;background:#f7f7f7;color:#666;font-size:12px;line-height:1.6}
+      .consult-dialog .consult-submit{display:block;width:311px;max-width:100%;height:40px;margin:30px auto 0;padding:0 12px;border:0;border-radius:0;background:#ff5b0b;color:#fff;font-size:16px;font-weight:700;line-height:40px}
+      .consult-dialog .consult-status{margin:14px 0 0;color:#666;font-size:13px;line-height:1.6;text-align:center}
+      .consult-dialog :is(input,select,textarea,button):focus-visible{outline:2px solid #ff8b54;outline-offset:2px}
+      @media(max-width:420px){
+        .consult-dialog{padding:24px 16px 32px}
+        .consult-dialog .consult-title{font-size:22px}
+        .consult-dialog .consult-description{font-size:13px}
+        .consult-dialog .consult-row,.consult-dialog .consult-categories{grid-template-columns:78px minmax(0,1fr);gap:8px}
+        .consult-dialog .consult-option-row{gap:8px 10px;padding:6px 0}
+        .consult-dialog .consult-option{font-size:12px}
+        .consult-dialog .consult-phone{padding-right:0}
+      }
+    </style>
   </head>
   <body>
     <header class="site-header-img">
@@ -4772,7 +4813,101 @@
       <div class="wrap footer-wrap"><span>미라클 K-디지털 기초역량훈련</span><span>V8.6 · 최종 마케팅 기획 검토용 HTML · 실제 LMS 신청 미연결</span></div>
     </footer>
     <div class="mobile-cta"><a href="#courses">나에게 맞는 과정 찾기 →</a></div>
-    <div class="sticky-cta" role="region" aria-label="수강 신청 및 상담"><div class="sticky-cta-text"><span>국비지원으로 지금 바로 시작하세요!</span><strong>1899-8954</strong></div><div class="sticky-cta-actions"><a class="sticky-cta-apply" href="#courses">수강 신청하기</a><a class="sticky-cta-consult" href="tel:18998954" aria-label="전화로 상담 신청하기 1899-8954">상담 신청하기</a></div></div>
+    <div class="sticky-cta" role="region" aria-label="수강 신청 및 상담"><div class="sticky-cta-text"><span>국비지원으로 지금 바로 시작하세요!</span><strong>1899-8954</strong></div><div class="sticky-cta-actions"><a class="sticky-cta-apply" href="#courses">수강 신청하기</a><a class="sticky-cta-consult" href="#consult-dialog" aria-haspopup="dialog" aria-controls="consult-dialog" aria-label="상담 신청 양식 열기">상담 신청하기</a></div></div>
+    <dialog class="consult-dialog" id="consult-dialog" aria-labelledby="consult-title" aria-describedby="consult-description">
+      <button class="consult-close" type="button" aria-label="상담 신청 창 닫기"></button>
+      <h2 class="consult-title" id="consult-title" tabindex="-1" autofocus>교육 및 서비스 신청</h2>
+      <p class="consult-description" id="consult-description">아래의 항목을 기재해 주시면, 담당자가 연락드리겠습니다.</p>
+      <form id="consult-form">
+        <div class="consult-fields">
+          <div class="consult-row">
+            <label class="consult-label" for="consult-company">기업 또는 개인</label>
+            <input id="consult-company" name="company" type="text" autocomplete="organization" placeholder="기업명 또는 개인 이름을 입력해주세요." required>
+          </div>
+          <div class="consult-row">
+            <label class="consult-label" for="consult-name">담당자 성함</label>
+            <input id="consult-name" name="contactName" type="text" autocomplete="name" placeholder="담당자 성함을 입력해주세요." required>
+          </div>
+          <div class="consult-row">
+            <label class="consult-label" for="consult-position">담당자 직함</label>
+            <input id="consult-position" name="position" type="text" autocomplete="organization-title" placeholder="담당자 직함을 입력해주세요.">
+          </div>
+          <div class="consult-row">
+            <label class="consult-label" for="consult-phone-prefix">연락처</label>
+            <div class="consult-phone" role="group" aria-label="연락처">
+              <div class="consult-phone-part"><select id="consult-phone-prefix" name="phonePrefix" autocomplete="tel-area-code" aria-label="연락처 앞자리"><option>010</option><option>011</option><option>016</option><option>017</option><option>018</option><option>019</option><option>02</option><option>031</option><option>032</option><option>033</option><option>041</option><option>042</option><option>043</option><option>044</option><option>051</option><option>052</option><option>053</option><option>054</option><option>055</option><option>061</option><option>062</option><option>063</option><option>064</option><option>070</option></select></div>
+              <div class="consult-phone-part"><input name="phoneMiddle" type="tel" inputmode="numeric" autocomplete="tel-local-prefix" aria-label="연락처 가운데 자리" pattern="[0-9]{3,4}" maxlength="4" required></div>
+              <div class="consult-phone-part"><input name="phoneLast" type="tel" inputmode="numeric" autocomplete="tel-local-suffix" aria-label="연락처 끝 네 자리" pattern="[0-9]{4}" maxlength="4" required></div>
+            </div>
+          </div>
+        </div>
+        <div class="consult-categories" role="group" aria-labelledby="consult-category-label">
+          <span class="consult-label" id="consult-category-label">문의사항 분류</span>
+          <div class="consult-options">
+            <div class="consult-option-row"><label class="consult-option"><input type="checkbox" name="categories" value="정부지원 직무교육">정부지원 직무교육</label><label class="consult-option"><input type="checkbox" name="categories" value="내일배움카드">내일배움카드</label></div>
+            <div class="consult-option-row"><label class="consult-option"><input type="checkbox" name="categories" value="북러닝과정">북러닝과정</label><label class="consult-option"><input type="checkbox" name="categories" value="자격증 및 실무능력 향상 과정">자격증 및 실무능력 향상 과정</label></div>
+            <div class="consult-option-row"><label class="consult-option"><input type="checkbox" name="categories" value="전문인력 양성과정">전문인력 양성과정</label><label class="consult-option"><input type="checkbox" name="categories" value="법정의무교육">법정의무교육</label></div>
+            <div class="consult-option-row"><label class="consult-option"><input type="checkbox" name="categories" value="IT 콘텐츠 개발">IT 콘텐츠 개발</label><label class="consult-option"><input type="checkbox" name="categories" value="기업부설연구소 설립">기업부설연구소 설립</label></div>
+            <div class="consult-option-row"><label class="consult-option"><input type="checkbox" name="categories" value="지피지기 도서추천2">지피지기 도서추천2</label></div>
+          </div>
+        </div>
+        <textarea class="consult-message" name="message" aria-label="기타 문의사항 또는 도서명" placeholder="기타 문의사항이나 도서명을 입력해 주세요."></textarea>
+        <div class="consult-consent">
+          <label><input type="checkbox" name="privacyConsent" required><span><span class="consult-consent-text">개인정보 수집 및 이용에 대한 안내</span>(필수)</span></label>
+          <button class="consult-privacy-toggle" type="button" aria-expanded="false" aria-controls="consult-privacy-copy">전체보기</button>
+        </div>
+        <p class="consult-privacy-copy" id="consult-privacy-copy" hidden>개인정보 수집 및 이용 안내문은 준비 중입니다. 실제 접수 전 운영 기관의 안내문 연결이 필요합니다.</p>
+        <button class="consult-submit" type="submit">상담문의 신청하기</button>
+        <p class="consult-status" id="consult-status" role="status" hidden></p>
+      </form>
+    </dialog>
+    <script>
+      (()=>{
+        const trigger=document.querySelector('.sticky-cta-consult');
+        const dialog=document.getElementById('consult-dialog');
+        const form=document.getElementById('consult-form');
+        const privacyToggle=dialog.querySelector('.consult-privacy-toggle');
+        const privacyCopy=document.getElementById('consult-privacy-copy');
+        const status=document.getElementById('consult-status');
+        let previousOverflow='';
+        trigger.addEventListener('click',event=>{
+          event.preventDefault();
+          if(dialog.open)return;
+          previousOverflow=document.documentElement.style.overflow;
+          status.hidden=true;
+          dialog.showModal();
+          dialog.scrollTop=0;
+          document.documentElement.style.overflow='hidden';
+        });
+        dialog.querySelector('.consult-close').addEventListener('click',()=>dialog.close());
+        let backdropPointerDown=false;
+        const isOutside=event=>{
+          const rect=dialog.getBoundingClientRect();
+          return event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom;
+        };
+        dialog.addEventListener('pointerdown',event=>{backdropPointerDown=event.target===dialog&&isOutside(event)});
+        dialog.addEventListener('click',event=>{
+          if(backdropPointerDown&&event.target===dialog&&isOutside(event))dialog.close();
+          backdropPointerDown=false;
+        });
+        dialog.addEventListener('close',()=>{
+          document.documentElement.style.overflow=previousOverflow;
+          trigger.focus({preventScroll:true});
+        });
+        privacyToggle.addEventListener('click',()=>{
+          const expanded=privacyToggle.getAttribute('aria-expanded')==='true';
+          privacyToggle.setAttribute('aria-expanded',String(!expanded));
+          privacyCopy.hidden=expanded;
+          privacyToggle.textContent=expanded?'전체보기':'접기';
+        });
+        form.addEventListener('submit',event=>{
+          event.preventDefault();
+          status.textContent='현재 상담 접수 시스템이 연결되어 있지 않습니다. 상담은 1899-8954로 문의해 주세요.';
+          status.hidden=false;
+          status.scrollIntoView({block:'nearest'});
+        });
+      })();
+    </script>
     <script>
       const courses=[
         {
