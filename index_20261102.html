@@ -3043,18 +3043,24 @@
       }
 
       .consultation-dialog {
-        width: min(520px, calc(100% - 32px));
-        max-height: calc(100svh - 32px);
+        width: min(380px, calc(100% - 24px));
+        height: min(680px, calc(100vh - 32px));
+        height: min(680px, calc(100dvh - 32px));
+        max-height: calc(100dvh - 32px);
         margin: auto;
-        padding: 32px;
-        overflow-y: auto;
-        overscroll-behavior: contain;
-        border: 1px solid #dfe6f0;
-        border-radius: 24px;
+        padding: 0;
+        overflow: hidden;
+        border: 1px solid #ccc;
+        border-radius: 10px;
         background: #fff;
         color: var(--ink);
         box-shadow: 0 24px 80px #09182b40;
         text-align: left
+      }
+
+      .consultation-dialog[open] {
+        display: flex;
+        flex-direction: column
       }
 
       .consultation-dialog::backdrop {
@@ -3067,125 +3073,213 @@
       }
 
       .consultation-head {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 16px;
-        margin-bottom: 12px
+        position: relative;
+        flex: none;
+        padding-inline: 26px;
+        margin: 12px 14px 8px;
+        text-align: center
       }
 
       .consultation-head h2 {
         margin: 0;
-        font-size: 26px;
+        font-size: 23px;
         line-height: 1.4;
         letter-spacing: -1px
       }
 
       .consultation-close {
+        position: absolute;
+        top: 0;
+        right: -6px;
         display: grid;
         place-items: center;
         flex: none;
-        width: 40px;
-        height: 40px;
+        width: 32px;
+        height: 32px;
         padding: 0;
         border: 0;
         border-radius: 50%;
-        background: #f1f5fb;
+        background: transparent;
         color: #516480;
-        font-size: 20px
+        font-size: 17px;
+        cursor: pointer
       }
 
       .consultation-description {
-        margin: 0 0 24px;
-        color: var(--muted);
-        font-size: 15px;
-        line-height: 1.8
+        margin: 0 0 4px;
+        color: #24486c;
+        font-size: 14px;
+        line-height: 1.5
       }
 
       .consultation-form {
-        display: grid;
-        gap: 18px
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        min-height: 0;
+        margin: 0;
+        color: #24374a;
+        font-size: 13px
       }
+
+      .consultation-scroll {
+        display: grid;
+        flex: 1;
+        align-content: start;
+        gap: 12px;
+        min-height: 0;
+        padding: 0 14px 16px;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        scroll-padding-block: 12px;
+        scrollbar-gutter: stable
+      }
+
+      .consultation-footer {
+        position: sticky;
+        bottom: 0;
+        z-index: 1;
+        display: grid;
+        flex: none;
+        gap: 8px;
+        padding: 12px 14px calc(12px + env(safe-area-inset-bottom));
+        border-top: 1px solid #e3e9f3;
+        background: #fff;
+        box-shadow: 0 -4px 12px #09182b0a
+      }
+
+      .consultation-footer .sticky-enquiry-status {max-height: 72px;overflow-y: auto;font-size: 12px}
 
       .consultation-field {
         display: grid;
-        gap: 8px
+        grid-template-columns: 74px minmax(0, 1fr);
+        align-items: center;
+        gap: 8px;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+        border: 0
       }
 
-      .consultation-field label {
-        font-size: 14px;
-        font-weight: 750
+      .consultation-field > label,
+      .consultation-field-title {
+        font-size: 13px;
+        font-weight: 750;
+        line-height: 1.4
       }
 
-      .consultation-field input {
+      .consultation-field input:not([type="checkbox"]):not([type="radio"]),
+      .consultation-message {
         width: 100%;
-        min-height: 50px;
-        padding: 12px 14px;
-        border: 1px solid #cfdaeb;
-        border-radius: 10px;
-        background: #f7f9fd;
+        min-width: 0;
+        min-height: 36px;
+        padding: 7px 3px;
+        border: 1px solid #888;
+        border-radius: 2px;
+        background: #fff;
         color: var(--ink);
         font: inherit;
-        font-size: 16px
+        font-size: 14px
       }
 
-      .consultation-dialog :is(input, button, summary, a):focus-visible {
+      .consultation-phone {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+        align-items: center;
+        gap: 3px
+      }
+
+      .consultation-phone input {text-align: center}
+
+      .consultation-choices {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 6px 12px;
+        min-width: 0
+      }
+
+      .consultation-choices label {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        min-height: 30px;
+        cursor: pointer
+      }
+
+      .consultation-course-field {grid-template-columns: minmax(0, 1fr);gap: 6px}
+      .consultation-course-limit {margin: 0;color: #65748b;font-size: 12px;line-height: 1.5}
+      .consultation-courses {display: grid;grid-template-columns: repeat(2, minmax(0, 1fr));gap: 6px 12px}
+      .consultation-courses label {align-items: flex-start;min-width: 0;min-height: 44px;padding-block: 4px;font-size: 12px;line-height: 1.5;letter-spacing: -.3px}
+      .consultation-courses label:last-child {grid-column: 1 / -1}
+      .consultation-courses input {margin-top: 3px}
+      .consultation-courses label:has(input:disabled) {color: #8993a1;cursor: not-allowed}
+      .consultation-referral-row {display: flex;flex-wrap: wrap;gap: 6px 12px;width: 100%}
+      .consultation-choices input,
+      .consultation-consent input {width: 14px;height: 14px;margin: 0;flex: none;accent-color: #ff5a0a}
+      .consultation-message {min-height: 84px;resize: vertical}
+      .consultation-dialog :is(input, textarea, button, summary, a):focus-visible {
         outline: 3px solid #8db0ff;
         outline-offset: 3px
       }
 
       .consultation-consent {
-        display: flex;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
         align-items: flex-start;
-        gap: 9px
-      }
-
-      .consultation-consent input {
-        flex: none;
-        width: 18px;
-        height: 18px;
-        margin: 2px 0 0;
-        accent-color: var(--blue)
+        gap: 8px
       }
 
       .consultation-consent label {
-        font-size: 14px;
+        display: flex;
+        align-items: flex-start;
+        gap: 6px;
+        font-size: 12px;
         line-height: 1.6;
-        cursor: pointer
+        cursor: pointer;
+        text-decoration: underline;
+        text-underline-offset: 2px
       }
 
+      .consultation-consent input {margin-top: 3px}
       .consultation-privacy {
-        padding: 12px 14px;
-        border: 1px solid #e3e9f3;
-        border-radius: 10px;
         color: #65748b;
-        font-size: 13px;
+        font-size: 12px;
         line-height: 1.7
       }
 
+      .consultation-privacy[open] {grid-column: 1 / -1;grid-row: 2}
       .consultation-privacy summary {
         color: #425978;
         font-weight: 700;
-        cursor: pointer
+        cursor: pointer;
+        list-style: none;
+        text-decoration: underline
       }
 
+      .consultation-privacy summary::-webkit-details-marker {display: none}
       .consultation-privacy p {
         margin: 10px 0 0
       }
 
       .consultation-submit {
-        width: 100%
+        justify-self: center;
+        width: min(230px, 100%);
+        min-height: 42px;
+        margin-top: 0;
+        padding: 10px 16px;
+        border: 0;
+        border-radius: 0;
+        background: #ff5a0a;
+        color: #fff;
+        font: inherit;
+        font-size: 16px;
+        font-weight: 750;
+        cursor: pointer
       }
 
-      .consultation-contact {
-        margin: 18px 0 0;
-        color: var(--muted);
-        font-size: 13px;
-        line-height: 1.7;
-        text-align: center
-      }
-
-      .consultation-contact a,
+      .consultation-submit:hover {background: #e84c00}
+      .consultation-submit:disabled {opacity: .65;cursor: wait}
       .consultation-privacy a {
         color: #2456b6;
         text-decoration: underline;
@@ -3193,13 +3287,9 @@
       }
 
       @media (max-width: 560px) {
-        .consultation-dialog {
-          padding: 24px 20px;
-          border-radius: 18px
-        }
-
-        .consultation-head h2 {
-          font-size: 23px
+        .consultation-scroll,
+        .consultation-footer {
+          padding-inline: 10px
         }
       }
 
@@ -5786,43 +5876,91 @@
       }
 
     </style>
-    <style id="sticky-enquiry-form-20261102">
+    <style id="sticky-action-bar-20261103">
       .sticky-cta {
         position: fixed;
         left: 50%;
-        bottom: 14px;
+        bottom: 0;
+        width: 60%;
         transform: translateX(-50%);
-        width: min(1140px, calc(100% - 32px));
         z-index: 70;
-        padding: 14px 16px;
+        padding: 16px 24px calc(16px + env(safe-area-inset-bottom));
         background: #fff;
         border: 1px solid #e3e9f3;
-        border-radius: 18px;
-        box-shadow: 0 12px 40px #0b254238;
+        border-radius: 12px 12px 0 0;
+        box-shadow: 0 -8px 32px #0b254214;
       }
-      .sticky-enquiry-form {
-        display: grid;
-        grid-template-columns: minmax(140px, 1fr) minmax(165px, 1.1fr) minmax(225px, 1.45fr) minmax(165px, 1.05fr);
+
+      .sticky-cta-inner {
+        display: flex;
         align-items: center;
+        justify-content: space-between;
+        width: min(1140px, 100%);
+        margin-inline: auto;
+        gap: 24px;
+      }
+
+      .sticky-cta-message {
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 12px;
+        min-width: 0;
+        margin: 0;
+        color: #666;
+        font-size: 16px;
+        font-weight: 750;
+        line-height: 1.5;
+      }
+
+      .sticky-cta-phone {
+        color: #111827;
+        font-size: 23px;
+        font-weight: 900;
+        letter-spacing: -.7px;
+        white-space: nowrap;
+      }
+
+      .sticky-cta-actions {
+        display: flex;
+        flex: none;
         gap: 12px;
       }
-      .sticky-enquiry-form > input {
-        width: 100%;
-        min-width: 0;
-        height: 52px;
-        padding: 0 16px;
-        border: 1px solid #cfdaeb;
+
+      .sticky-cta-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 150px;
+        min-height: 48px;
+        padding: 11px 20px;
+        border: 2px solid transparent;
         border-radius: 11px;
-        background: #f7f9fd;
-        color: #10233f;
+        color: #fff;
         font: inherit;
         font-size: 15px;
+        font-weight: 800;
+        line-height: 1.4;
+        text-align: center;
+        cursor: pointer;
       }
-      .sticky-enquiry-form > input::placeholder {color: #7b879a;opacity: 1}
-      .sticky-enquiry-consent {display: flex;align-items: center;gap: 9px;min-width: 0}
-      .sticky-enquiry-consent input {width: 18px;height: 18px;margin: 0;flex: none;accent-color: #2563f2;cursor: pointer}
-      .sticky-enquiry-consent label {color: #5d6b80;font-size: 12px;line-height: 1.5;cursor: pointer;word-break: keep-all}
-      .sticky-privacy-toggle {padding: 0;border: 0;background: none;color: #364d70;font: inherit;text-decoration: underline;text-underline-offset: 3px;cursor: pointer}
+
+      .sticky-cta-apply {
+        border-color: #3270ff;
+        background: #0b4dff;
+        box-shadow: 0 6px 18px #0b4dff35;
+      }
+
+      .sticky-cta-apply:hover {background: #164bd4}
+
+      .sticky-cta-consult {
+        background: #111827;
+        box-shadow: 0 6px 18px #11182726;
+      }
+
+      .sticky-cta-consult:hover {background: #253047}
+      .sticky-cta :is(a,button):focus-visible {outline: 3px solid #8db0ff;outline-offset: 3px}
+
       .sticky-enquiry-submit {
         min-height: 52px;
         padding: 12px 16px;
@@ -5841,28 +5979,27 @@
       .sticky-enquiry-submit:disabled {opacity: .65;cursor: wait}
       .sticky-enquiry-status {grid-column: 1 / -1;margin: 0;color: #b42318;font-size: 13px;line-height: 1.5}
       .sticky-enquiry-status[data-state="success"] {color: #145a37}
-      .sticky-cta :is(input,button):focus-visible {outline: 3px solid #8db0ff;outline-offset: 3px}
       body {padding-bottom: var(--sticky-cta-clearance, 108px)}
-      .mobile-cta {display: none !important}
-      .sticky-privacy-dialog {width: min(460px, calc(100% - 32px));max-height: 80svh;overflow-y: auto;padding: 28px;border: 1px solid #dfe6f0;border-radius: 20px;color: #10233f;background: #fff;box-shadow: 0 16px 50px #09182b33}
-      .sticky-privacy-dialog::backdrop {background: #09182b99}
-      .sticky-privacy-dialog h2 {margin: 0 0 18px;font-size: 21px;line-height: 1.4;letter-spacing: -.04em}
-      .sticky-privacy-dialog p {font-size: 14px;line-height: 1.7;color: #5d6b80}
-      .sticky-privacy-dialog a {color: #2563f2;text-decoration: underline}
-      .sticky-privacy-dialog button {display: block;margin: 22px 0 0 auto;padding: 10px 24px;border: 0;border-radius: 9px;background: #0b4dff;color: #fff;font: inherit;font-weight: 750}
+
       @media(max-width: 900px) {
-        .sticky-enquiry-form {grid-template-columns: repeat(2, minmax(0, 1fr))}
+        .sticky-cta-inner {gap: 16px}
+        .sticky-cta-message {font-size: 14px;gap: 8px}
+        .sticky-cta-phone {font-size: 21px}
+        .sticky-cta-button {min-width: 136px;padding-inline: 16px}
       }
+
       @media(max-width: 700px) {
-        .sticky-cta {bottom: 0;width: 100%;padding: 12px 16px calc(12px + env(safe-area-inset-bottom));border-radius: 16px 16px 0 0;border-width: 1px 0 0}
+        .sticky-cta {padding: 12px 16px calc(12px + env(safe-area-inset-bottom));border-width: 1px 0 0}
+        .sticky-cta-inner {flex-direction: column;align-items: stretch;gap: 12px}
+        .sticky-cta-message {justify-content: center;gap: 4px 10px;font-size: 13px}
+        .sticky-cta-phone {font-size: 20px}
+        .sticky-cta-actions {display: grid;grid-template-columns: repeat(2, minmax(0, 1fr));gap: 10px}
+        .sticky-cta-button {min-width: 0;font-size: 14px}
         .floating-quick-menu {bottom: calc(var(--sticky-cta-clearance, 150px) + 12px)}
       }
+
       @media(max-width: 560px) {
-        .sticky-enquiry-form {gap: 10px}
-        .sticky-enquiry-form > input {height: 46px;padding: 0 12px;font-size: 16px}
         .sticky-enquiry-submit {min-height: 46px;font-size: 14px;padding: 10px}
-        .sticky-enquiry-consent {gap: 7px}
-        .sticky-enquiry-consent label {font-size: 11px}
       }
     </style>
     <style id="index-20261030-revisions">
@@ -6954,58 +7091,97 @@
         <span>수강<br>신청하기</span>
       </a>
     </nav>
-    <div class="mobile-cta"><a href="https://www.miso.center/menu/register_new/register.course.asp?ch_start_date=&ch_course_name=&ch_app_type=5">나에게 맞는 과정 찾기 →</a></div>
-    <div class="sticky-cta" role="region" aria-label="교육 안내 신청">
-      <form class="sticky-enquiry-form" id="sticky-enquiry-form" data-endpoint="" aria-label="교육 안내받기">
-        <input id="sticky-enquiry-name" name="name" type="text" autocomplete="name" placeholder="이름" aria-label="이름" maxlength="40" required>
-        <input id="sticky-enquiry-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="연락처" aria-label="연락처" maxlength="13" required>
-        <div class="sticky-enquiry-consent">
-          <input id="sticky-enquiry-consent" name="privacyConsent" type="checkbox" required>
-          <label for="sticky-enquiry-consent"><button class="sticky-privacy-toggle" id="sticky-privacy-toggle" type="button" aria-haspopup="dialog" aria-controls="sticky-privacy-dialog">개인정보 수집 및 이용</button> 동의 (필수)</label>
+    <div class="sticky-cta" role="region" aria-label="수강 신청 및 교육 상담">
+      <div class="sticky-cta-inner">
+        <p class="sticky-cta-message">
+          <span>국비지원으로 지금 바로 시작하세요!</span>
+          <a class="sticky-cta-phone" href="tel:18998954" aria-label="미라클 평생교육원 1899-8954 전화 연결">1899-8954</a>
+        </p>
+        <div class="sticky-cta-actions">
+          <a class="sticky-cta-button sticky-cta-apply" data-school-apply href="https://www.miso.center/menu/register_new/register.course.asp?ch_app_type=5">수강 신청하기</a>
+          <button class="sticky-cta-button sticky-cta-consult" type="button" aria-haspopup="dialog" aria-controls="consultation-dialog">상담 신청하기</button>
         </div>
-        <button class="sticky-enquiry-submit" type="submit">교육 안내받기</button>
-        <p class="sticky-enquiry-status" id="sticky-enquiry-status" role="status" aria-live="polite" hidden></p>
-      </form>
+      </div>
     </div>
-    <dialog class="sticky-privacy-dialog" id="sticky-privacy-dialog" aria-labelledby="sticky-privacy-title">
-      <h2 id="sticky-privacy-title">개인정보 수집 및 이용 안내</h2>
-      <p>교육과정 안내 및 상담 연락을 위해 이름과 연락처를 수집합니다. 동의를 거부하실 수 있으며, 동의하지 않으시면 이 폼을 통한 안내 신청이 어렵습니다.</p>
-      <p>보유 기간 등 자세한 개인정보 수집·이용 안내는 미라클 평생교육원(<a href="tel:18998954">1899-8954</a>)으로 문의해 주세요.</p>
-      <button id="sticky-privacy-close" type="button">닫기</button>
-    </dialog>
     <dialog class="consultation-dialog" id="consultation-dialog" aria-labelledby="consultation-title" aria-describedby="consultation-description">
       <div class="consultation-head">
-        <h2 id="consultation-title">나에게 맞는 교육 상담</h2>
+        <h2 id="consultation-title">수강상담신청</h2>
         <button class="consultation-close" id="consultation-close" type="button" aria-label="상담 신청 닫기">✕</button>
       </div>
-      <p class="consultation-description" id="consultation-description">어떤 교육을 선택할지 고민되시나요?<br>이름과 연락처를 남겨주시면 담당자가 교육과정과 수강 신청 방법을 안내해 드립니다.</p>
       <form class="consultation-form" id="consultation-enquiry-form" method="post" data-endpoint="" aria-label="교육 상담 신청">
+        <div class="consultation-scroll">
+        <p class="consultation-description" id="consultation-description">아래의 항목을 기재해 주시면, 담당자가<br>연락드리겠습니다.</p>
         <div class="consultation-field">
-          <label for="consultation-name">이름 (필수)</label>
-          <input id="consultation-name" name="name" type="text" autocomplete="name" placeholder="이름을 입력해 주세요" maxlength="40" required autofocus>
+          <label for="consultation-name">성명</label>
+          <input id="consultation-name" name="name" type="text" autocomplete="name" placeholder="성명을 입력해 주세요." maxlength="40" required autofocus>
         </div>
         <div class="consultation-field">
-          <label for="consultation-phone">연락처 (필수)</label>
-          <input id="consultation-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="010-1234-5678" maxlength="13" required>
+          <label for="consultation-phone">휴대폰번호</label>
+          <div class="consultation-phone" role="group" aria-label="휴대폰번호">
+            <input id="consultation-phone" name="phonePrefix" type="tel" inputmode="numeric" autocomplete="tel-area-code" pattern="01[0-9]" minlength="3" maxlength="3" aria-label="휴대폰번호 앞 3자리" required>
+            <span aria-hidden="true">-</span>
+            <input id="consultation-phone-middle" name="phoneMiddle" type="tel" inputmode="numeric" autocomplete="tel-local-prefix" pattern="[0-9]{3,4}" minlength="3" maxlength="4" aria-label="휴대폰번호 중간 3~4자리" required>
+            <span aria-hidden="true">-</span>
+            <input id="consultation-phone-last" name="phoneLast" type="tel" inputmode="numeric" autocomplete="tel-local-suffix" pattern="[0-9]{4}" minlength="4" maxlength="4" aria-label="휴대폰번호 끝 4자리" required>
+          </div>
         </div>
+        <div class="consultation-field consultation-course-field" role="group" aria-labelledby="consultation-courses-title" aria-describedby="consultation-course-limit">
+          <span class="consultation-field-title" id="consultation-courses-title">수강희망과정</span>
+          <p class="consultation-course-limit" id="consultation-course-limit" aria-live="polite">최대 2개까지 선택할 수 있습니다. (0/2)</p>
+          <div class="consultation-choices consultation-courses">
+            <label><input name="courses" type="checkbox" value="미래모빌리티 자율주행의 이해와 실습"><span>미래모빌리티<br>자율주행의 이해와 실습</span></label>
+            <label><input name="courses" type="checkbox" value="3D프린팅 실무와 시제품제작"><span>3D프린팅 실무와<br>시제품제작</span></label>
+            <label><input name="courses" type="checkbox" value="AI 로봇팔로 배우는 협동로봇 제어 원리"><span>AI 로봇팔로 배우는<br>협동로봇 제어 원리</span></label>
+            <label><input name="courses" type="checkbox" value="AI로 완성하는 홈페이지"><span>AI로 완성하는<br>홈페이지</span></label>
+            <label><input name="courses" type="checkbox" value="AI로 쉽게 만드는 PPT 끝판왕"><span>AI로 쉽게 만드는<br>PPT 끝판왕</span></label>
+            <label><input name="courses" type="checkbox" value="파이썬으로 제어하는 AI드론"><span>파이썬으로 제어하는<br>AI드론</span></label>
+            <label><input name="courses" type="checkbox" value="파이썬으로 제어하는 자율주행 전기차"><span>파이썬으로 제어하는<br>자율주행 전기차</span></label>
+            <label><input name="courses" type="checkbox" value="누구나 쉽게 배우는 AI업무자동화 풀코스"><span>누구나 쉽게 배우는<br>AI업무자동화 풀코스</span></label>
+            <label><input name="courses" type="checkbox" value="파이썬으로 배우는 딥러닝 &amp; 인공지능 기초"><span>파이썬으로 배우는<br>딥러닝 &amp; 인공지능 기초</span></label>
+          </div>
+        </div>
+        <div class="consultation-field" role="group" aria-labelledby="consultation-card-title">
+          <span class="consultation-field-title" id="consultation-card-title">국민내일배움<br>카드 유무</span>
+          <div class="consultation-choices">
+            <label><input name="cardStatus" type="radio" value="발급완료">발급완료</label>
+            <label><input name="cardStatus" type="radio" value="신청예정">신청예정</label>
+          </div>
+        </div>
+        <div class="consultation-field" role="group" aria-labelledby="consultation-referral-title">
+          <span class="consultation-field-title" id="consultation-referral-title">알게된 경로</span>
+          <div class="consultation-choices">
+            <div class="consultation-referral-row">
+              <label><input name="referral" type="radio" value="HRD검색">HRD검색</label>
+              <label><input name="referral" type="radio" value="고용센터">고용센터</label>
+            </div>
+            <div class="consultation-referral-row">
+              <label><input name="referral" type="radio" value="SNS">SNS</label>
+              <label><input name="referral" type="radio" value="전단지">전단지</label>
+              <label><input name="referral" type="radio" value="박람회">박람회</label>
+              <label><input name="referral" type="radio" value="기타">기타</label>
+            </div>
+          </div>
+        </div>
+        <textarea class="consultation-message" name="message" rows="4" maxlength="2000" aria-label="문의사항" placeholder="문의사항을 입력해 주세요."></textarea>
         <div class="consultation-consent">
-          <input id="consultation-consent" name="privacyConsent" type="checkbox" required>
-          <label for="consultation-consent">개인정보 수집 및 이용에 동의합니다. (필수)</label>
+          <label for="consultation-consent"><input id="consultation-consent" name="privacyConsent" type="checkbox" required>개인정보 수집 및 이용에 대한 안내(필수)</label>
+          <details class="consultation-privacy">
+            <summary>전체보기</summary>
+            <p>수집 항목: 성명, 휴대폰번호, 선택한 수강희망과정·카드 유무·알게 된 경로, 작성한 문의사항<br>이용 목적: 수강 상담, 교육과정 안내 및 상담 연락</p>
+            <p>개인정보 수집·이용에 동의하지 않을 수 있으며, 동의하지 않으시면 이 폼을 통한 상담 신청이 어렵습니다.</p>
+            <p>보유 기간 등 자세한 사항은 미라클 평생교육원(<a href="tel:18998954">1899-8954</a>)으로 문의해 주세요.</p>
+          </details>
         </div>
-        <details class="consultation-privacy">
-          <summary>개인정보 수집 및 이용 안내 보기</summary>
-          <p>수집 항목: 이름, 연락처<br>이용 목적: 교육과정 안내 및 상담 연락</p>
-          <p>개인정보 수집·이용에 동의하지 않을 수 있으며, 동의하지 않으시면 이 폼을 통한 상담 신청이 어렵습니다.</p>
-          <p>보유 기간 등 자세한 사항은 미라클 평생교육원(<a href="tel:18998954">1899-8954</a>)으로 문의해 주세요.</p>
-        </details>
-        <button class="sticky-enquiry-submit consultation-submit" type="submit">교육 안내받기</button>
-        <p class="sticky-enquiry-status" id="consultation-enquiry-status" role="status" aria-live="polite" hidden></p>
+        </div>
+        <div class="consultation-footer">
+          <button class="consultation-submit" type="submit">상담문의 신청하기</button>
+          <p class="sticky-enquiry-status" id="consultation-enquiry-status" role="status" aria-live="polite" hidden></p>
+        </div>
       </form>
-      <p class="consultation-contact">전화 상담을 원하시면 <a href="tel:18998954">1899-8954</a>로 연락해 주세요.</p>
     </dialog>
     <script>
       (() => {
-        const stickyForm = document.getElementById('sticky-enquiry-form');
+        const stickyBar = document.querySelector('.sticky-cta');
         const consultation = document.getElementById('consultation-dialog');
         let consultationOrigin = null;
         document.querySelectorAll('button[aria-controls="consultation-dialog"]').forEach(trigger => {
@@ -7023,25 +7199,34 @@
           const rect = consultation.getBoundingClientRect();
           if (event.target === consultation && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) consultation.close();
         });
-        const privacy = document.getElementById('sticky-privacy-dialog');
-        const privacyToggle = document.getElementById('sticky-privacy-toggle');
-        privacyToggle.addEventListener('click', () => privacy.showModal());
-        document.getElementById('sticky-privacy-close').addEventListener('click', () => privacy.close());
-        privacy.addEventListener('close', () => privacyToggle.focus({preventScroll: true}));
-        privacy.addEventListener('click', event => {
-          const rect = privacy.getBoundingClientRect();
-          if (event.target === privacy && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) privacy.close();
-        });
-        document.querySelectorAll('#sticky-enquiry-form, #consultation-enquiry-form').forEach(form => {
+        document.querySelectorAll('#consultation-enquiry-form').forEach(form => {
           const name = form.elements.namedItem('name');
-          const phone = form.elements.namedItem('phone');
+          const phones = ['phonePrefix', 'phoneMiddle', 'phoneLast'].map(key => form.elements.namedItem(key));
           const consent = form.elements.namedItem('privacyConsent');
           const submit = form.querySelector('[type="submit"]');
           const status = form.querySelector('.sticky-enquiry-status');
+          const courseInputs = [...form.querySelectorAll('input[name="courses"]')];
+          const courseLimit = form.querySelector('#consultation-course-limit');
+          function updateCourseSelection() {
+            const count = courseInputs.filter(input => input.checked).length;
+            courseInputs.forEach(input => {input.disabled = count >= 2 && !input.checked;});
+            courseLimit.textContent = count >= 2
+              ? '2개를 선택했습니다. 다른 과목을 선택하려면 먼저 선택을 해제해 주세요. (2/2)'
+              : `최대 2개까지 선택할 수 있습니다. (${count}/2)`;
+          }
+          courseInputs.forEach(input => input.addEventListener('change', () => {
+            if (courseInputs.filter(course => course.checked).length > 2) input.checked = false;
+            updateCourseSelection();
+          }));
+          form.addEventListener('reset', () => queueMicrotask(updateCourseSelection));
+          updateCourseSelection();
           let submitting = false;
-          const digits = () => phone.value.replace(/[^0-9]/g, '');
+          const digits = () => phones.map(input => input.value).join('');
           name.addEventListener('input', () => name.setCustomValidity(''));
-          phone.addEventListener('input', () => phone.setCustomValidity(''));
+          phones.forEach(input => input.addEventListener('input', () => {
+            input.value = input.value.replace(/[^0-9]/g, '');
+            input.setCustomValidity('');
+          }));
           function showStatus(message, state) {
             status.textContent = message;
             status.dataset.state = state;
@@ -7052,10 +7237,13 @@
             if (submitting) return;
             name.value = name.value.trim();
             name.setCustomValidity(name.value ? '' : '이름을 입력해 주세요.');
-            phone.setCustomValidity(/^0[0-9]{8,10}$/.test(digits()) && /^[0-9\s-]+$/.test(phone.value) ? '' : '연락처를 확인해 주세요. 예: 010-1234-5678');
+            if (courseInputs.filter(input => input.checked).length > 2) {
+              showStatus('수강희망과정은 최대 2개까지 선택해 주세요.', 'error');
+              return;
+            }
             if (!form.reportValidity()) return;
             // Set data-endpoint to the education provider's lead collection API.
-            const endpoint = form.dataset.endpoint.trim() || stickyForm.dataset.endpoint.trim();
+            const endpoint = form.dataset.endpoint.trim();
             if (!endpoint) {
               showStatus('아직 신청이 접수되지 않았습니다. 교육 안내는 1899-8954로 문의해 주세요.', 'error');
               return;
@@ -7069,7 +7257,16 @@
               const response = await fetch(endpoint, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-                body: JSON.stringify({name: name.value, phone: digits(), privacyConsent: consent.checked, source: form === stickyForm ? 'kdigital-sticky-cta' : 'kdigital-consultation-modal'})
+                body: JSON.stringify({
+                  name: name.value,
+                  phone: digits(),
+                  courses: new FormData(form).getAll('courses'),
+                  cardStatus: form.elements.namedItem('cardStatus').value,
+                  referral: form.elements.namedItem('referral').value,
+                  message: form.elements.namedItem('message').value.trim(),
+                  privacyConsent: consent.checked,
+                  source: 'kdigital-consultation-modal'
+                })
               });
               if (!response.ok) throw new Error('Request failed');
               if (response.headers.get('content-type')?.includes('application/json')) {
@@ -7077,22 +7274,22 @@
                 if (result.success === false) throw new Error('Request rejected');
               }
               form.reset();
-              showStatus('교육 안내 신청이 접수되었습니다. 담당자가 연락드리겠습니다.', 'success');
+              showStatus('상담 신청이 접수되었습니다. 담당자가 연락드리겠습니다.', 'success');
             } catch {
               showStatus('신청을 접수하지 못했습니다. 잠시 후 다시 시도하거나 1899-8954로 문의해 주세요.', 'error');
             } finally {
               submitting = false;
               submit.disabled = false;
-              submit.textContent = '교육 안내받기';
+              submit.textContent = '상담문의 신청하기';
               form.removeAttribute('aria-busy');
             }
           });
         });
         function updateClearance() {
-          const rect = stickyForm.closest('.sticky-cta').getBoundingClientRect();
+          const rect = stickyBar.getBoundingClientRect();
           document.documentElement.style.setProperty('--sticky-cta-clearance', Math.ceil(innerHeight - rect.top + 12) + 'px');
         }
-        if ('ResizeObserver' in window) new ResizeObserver(updateClearance).observe(stickyForm.closest('.sticky-cta'));
+        if ('ResizeObserver' in window) new ResizeObserver(updateClearance).observe(stickyBar);
         addEventListener('resize', updateClearance, {passive: true});
         updateClearance();
       })();
@@ -8166,6 +8363,9 @@ syncFromScroll();
           cardGuide: 'https://www.miso.center/m/main/Guide/guide_branch3.html',
           receiveGuide: 'https://www.miso.center/m/main/Guide/guide_solpay.html'
         };
+        document.querySelectorAll('a[data-school-apply]').forEach(link => {
+          link.href = destinations.schoolApply;
+        });
         const data = {
           without: [
             {
