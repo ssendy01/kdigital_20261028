@@ -3109,7 +3109,8 @@
         margin: 0 0 4px;
         color: #24486c;
         font-size: 14px;
-        line-height: 1.5
+        line-height: 1.5;
+        text-align: center;
       }
 
       .consultation-form {
@@ -3195,28 +3196,44 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        gap: 6px 12px;
+        gap: 4px 8px;
         min-width: 0
       }
 
       .consultation-choices label {
         display: inline-flex;
         align-items: center;
-        gap: 4px;
-        min-height: 30px;
+        gap: 3px;
+        min-height: 22px;
         cursor: pointer
       }
 
-      .consultation-course-field {grid-template-columns: minmax(0, 1fr);gap: 6px}
+      .consultation-course-field {grid-template-columns: minmax(0, 1fr);gap: 4px}
       .consultation-course-limit {margin: 0;color: #65748b;font-size: 12px;line-height: 1.5}
-      .consultation-courses {display: grid;grid-template-columns: repeat(2, minmax(0, 1fr));gap: 6px 12px}
-      .consultation-courses label {align-items: flex-start;min-width: 0;min-height: 44px;padding-block: 4px;font-size: 12px;line-height: 1.5;letter-spacing: -.3px}
-      .consultation-courses label:last-child {grid-column: 1 / -1}
+      .consultation-courses {display: flex;flex-wrap: wrap;gap: 2px 10px}
+      .consultation-courses label {align-items: flex-start;max-width: 100%;min-width: 0;min-height: 25px;padding-block: 2px;font-size: 13px;line-height: 1.35;letter-spacing: -.3px}
+      .consultation-courses label span {min-width: 0;word-break: keep-all;overflow-wrap: anywhere}
       .consultation-courses input {margin-top: 3px}
       .consultation-courses label:has(input:disabled) {color: #8993a1;cursor: not-allowed}
-      .consultation-referral-row {display: flex;flex-wrap: wrap;gap: 6px 12px;width: 100%}
+      .consultation-referral-row {display: flex;flex-wrap: wrap;gap: 4px 8px;width: 100%}
       .consultation-choices input,
-      .consultation-consent input {width: 14px;height: 14px;margin: 0;flex: none;accent-color: #ff5a0a}
+      .consultation-consent input {
+        appearance: none;
+        width: 14px;
+        height: 14px;
+        margin: 0;
+        flex: none;
+        border: 2px solid #f69e74;
+        border-radius: 2px;
+        background: #fff;
+        cursor: pointer
+      }
+      .consultation-dialog input[type="checkbox"]:checked {
+        background: #ff5a0a url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M3 7l3 3 5-6' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 12px 12px no-repeat
+      }
+      .consultation-dialog input[type="radio"] {border-radius: 50%}
+      .consultation-dialog input[type="radio"]:checked {background: radial-gradient(circle, #ff5a0a 0 3px, #fff 3.5px)}
+      .consultation-dialog input:is([type="checkbox"], [type="radio"]):disabled {opacity: .45;cursor: not-allowed}
       .consultation-message {min-height: 84px;resize: vertical}
       .consultation-dialog :is(input, textarea, button, summary, a):focus-visible {
         outline: 3px solid #8db0ff;
@@ -6767,11 +6784,11 @@
 <footer class="spark-bottom"><button class="spark-stepnum spark-playback" id="spark-autoplay" type="button" aria-label="장면 자동 재생 일시정지" aria-pressed="false" title="장면 자동 재생 일시정지"><span id="stepNum">01 / 04</span><span class="spark-playback-icon" id="spark-autoplay-icon" aria-hidden="true">Ⅱ</span></button><div class="spark-steps" role="group" aria-label="혜택 장면 선택"><button class="spark-step spark-is-done" type="button" aria-label="1번 장면: 국비지원" aria-controls="spark-scene-0" aria-current="step"></button><button class="spark-step" type="button" aria-label="2번 장면: 100% 온라인" aria-controls="spark-scene-1"></button><button class="spark-step" type="button" aria-label="3번 장면: 교구 무상제공" aria-controls="spark-scene-2"></button><button class="spark-step" type="button" aria-label="4번 장면: 6개월 영상 지원" aria-controls="spark-scene-3"></button></div><span class="spark-scrollhint">SCROLL TO EXPLORE ↓</span></footer>
 </div></div>
       </section>
-      <section aria-label="AI 산업전망·정책·채용 뉴스" class="section policy-cinematic" id="policy">
+      <section aria-label="AI 뉴스" class="section policy-cinematic" id="policy">
         <div class="wrap">
-          <p class="kicker">AI 산업전망·정책·채용 뉴스</p>
+          <p class="kicker">AI 뉴스</p>
           <div class="policy-focus-layout">
-            <article class="news-tv" id="news-preview" aria-label="AI 산업전망·정책·채용 뉴스" aria-roledescription="캐러셀">
+            <article class="news-tv" id="news-preview" aria-label="AI 뉴스" aria-roledescription="캐러셀">
               <div class="news-tv-top">
                 <span class="news-tv-live"><i aria-hidden="true"></i> NEWS VIEW <span class="news-category">AI 산업전망</span></span>
                 <span class="news-tv-channel" id="news-screen-publisher">연합뉴스</span>
@@ -6999,7 +7016,7 @@
           </div>
           <div aria-labelledby="faq-title" class="faq mind-faq" id="faq">
             <div class="mind-wrap">
-              <p class="kicker">WORRIES, SOLVED</p>
+              <p class="kicker">자주 묻는 질문</p>
               <h3 class="faq-title" id="faq-title">아직 머릿속에 <span class="highlight">걱정이 남아 있나요?</span></h3>
               <p class="desc">마음에 걸리는 걱정 구름을 눌러보세요. 그 자리에서 답해드릴게요.</p>
               <div aria-label="걱정 구름을 선택하는 체험 공간" class="mind-scene">
@@ -7110,7 +7127,7 @@
       </div>
       <form class="consultation-form" id="consultation-enquiry-form" method="post" data-endpoint="" aria-label="교육 상담 신청">
         <div class="consultation-scroll">
-        <p class="consultation-description" id="consultation-description">아래의 항목을 기재해 주시면, 담당자가<br>연락드리겠습니다.</p>
+        <p class="consultation-description" id="consultation-description">아래의 항목을 기재해 주시면, 담당자가 연락드리겠습니다.</p>
         <div class="consultation-field">
           <label for="consultation-name">성명</label>
           <input id="consultation-name" name="name" type="text" autocomplete="name" placeholder="성명을 입력해 주세요." maxlength="40" required autofocus>
@@ -7129,15 +7146,15 @@
           <span class="consultation-field-title" id="consultation-courses-title">수강희망과정</span>
           <p class="consultation-course-limit" id="consultation-course-limit" aria-live="polite">최대 2개까지 선택할 수 있습니다. (0/2)</p>
           <div class="consultation-choices consultation-courses">
-            <label><input name="courses" type="checkbox" value="미래모빌리티 자율주행의 이해와 실습"><span>미래모빌리티<br>자율주행의 이해와 실습</span></label>
-            <label><input name="courses" type="checkbox" value="3D프린팅 실무와 시제품제작"><span>3D프린팅 실무와<br>시제품제작</span></label>
-            <label><input name="courses" type="checkbox" value="AI 로봇팔로 배우는 협동로봇 제어 원리"><span>AI 로봇팔로 배우는<br>협동로봇 제어 원리</span></label>
-            <label><input name="courses" type="checkbox" value="AI로 완성하는 홈페이지"><span>AI로 완성하는<br>홈페이지</span></label>
-            <label><input name="courses" type="checkbox" value="AI로 쉽게 만드는 PPT 끝판왕"><span>AI로 쉽게 만드는<br>PPT 끝판왕</span></label>
-            <label><input name="courses" type="checkbox" value="파이썬으로 제어하는 AI드론"><span>파이썬으로 제어하는<br>AI드론</span></label>
-            <label><input name="courses" type="checkbox" value="파이썬으로 제어하는 자율주행 전기차"><span>파이썬으로 제어하는<br>자율주행 전기차</span></label>
-            <label><input name="courses" type="checkbox" value="누구나 쉽게 배우는 AI업무자동화 풀코스"><span>누구나 쉽게 배우는<br>AI업무자동화 풀코스</span></label>
-            <label><input name="courses" type="checkbox" value="파이썬으로 배우는 딥러닝 &amp; 인공지능 기초"><span>파이썬으로 배우는<br>딥러닝 &amp; 인공지능 기초</span></label>
+            <label><input name="courses" type="checkbox" value="미래모빌리티 자율주행의 이해와 실습"><span>미래모빌리티 자율주행의 이해와 실습</span></label>
+            <label><input name="courses" type="checkbox" value="3D프린팅 실무와 시제품제작"><span>3D프린팅 실무와 시제품제작</span></label>
+            <label><input name="courses" type="checkbox" value="AI 로봇팔로 배우는 협동로봇 제어 원리"><span>AI 로봇팔로 배우는 협동로봇 제어 원리</span></label>
+            <label><input name="courses" type="checkbox" value="AI로 완성하는 홈페이지"><span>AI로 완성하는 홈페이지</span></label>
+            <label><input name="courses" type="checkbox" value="AI로 쉽게 만드는 PPT 끝판왕"><span>AI로 쉽게 만드는 PPT 끝판왕</span></label>
+            <label><input name="courses" type="checkbox" value="파이썬으로 제어하는 AI드론"><span>파이썬으로 제어하는 AI드론</span></label>
+            <label><input name="courses" type="checkbox" value="파이썬으로 제어하는 자율주행 전기차"><span>파이썬으로 제어하는 자율주행 전기차</span></label>
+            <label><input name="courses" type="checkbox" value="누구나 쉽게 배우는 AI업무자동화 풀코스"><span>누구나 쉽게 배우는 AI업무자동화 풀코스</span></label>
+            <label><input name="courses" type="checkbox" value="파이썬으로 배우는 딥러닝 &amp; 인공지능 기초"><span>파이썬으로 배우는 딥러닝 &amp; 인공지능 기초</span></label>
           </div>
         </div>
         <div class="consultation-field" role="group" aria-labelledby="consultation-card-title">
@@ -7183,6 +7200,12 @@
       (() => {
         const stickyBar = document.querySelector('.sticky-cta');
         const consultation = document.getElementById('consultation-dialog');
+        const privacyDetails = consultation.querySelector('.consultation-privacy');
+        const updatePrivacyLabel = () => {
+          privacyDetails.querySelector('summary').textContent = privacyDetails.open ? '전체보기 닫기' : '전체보기';
+        };
+        privacyDetails.addEventListener('toggle', updatePrivacyLabel);
+        updatePrivacyLabel();
         let consultationOrigin = null;
         document.querySelectorAll('button[aria-controls="consultation-dialog"]').forEach(trigger => {
           trigger.addEventListener('click', () => {
@@ -7718,7 +7741,7 @@ window.addEventListener('resize',fitViewport,{passive:true});
 if(stickyCta && 'ResizeObserver' in window) new ResizeObserver(fitViewport).observe(stickyCta);
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 let current=0, prev=0, rafPending=false, exitTimer=null, wheelLocked=false, wheelCooldown=null;
-const autoDelay=5000;
+const autoDelay=3000;
 let autoTimer=null, autoPaused=reduced;
 
 function updateAutoplayButton(){
@@ -8373,7 +8396,6 @@ syncFromScroll();
               desc: '고용24에서 지원 대상 여부를 확인하고 국민내일배움카드를 신청하세요. 실업 중이라면 먼저 구직 신청을 진행해 주세요.',
               actions: [
                 { label: '국민내일배움카드 발급 신청', href: destinations.cardApply },
-                { label: '실업 중이면 구직 신청', href: destinations.jobApply },
                 { label: '카드 발급 방법 보기', href: destinations.cardGuide }
               ],
               note: '카드 발급 신청과 구직 신청은 고용24 로그인 후 이용할 수 있습니다.'
