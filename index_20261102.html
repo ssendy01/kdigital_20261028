@@ -796,6 +796,26 @@
         background: #f1eaff
       }
 
+      .course-certificate {
+        display: flex;
+        align-items: center;
+        margin: 0 0 18px;
+        padding: 10px;
+        border: 1px solid #efdfb9;
+        border-radius: 10px;
+        background: linear-gradient(120deg, #fff7e5, #fffcf5);
+        color: #674919
+      }
+      .course-certificate > div {display: flex;align-items: center;gap: 6px;min-width: 0}
+      .course-certificate-label {flex: none;color: #8c6b36;font-size: 11px;font-weight: 750;line-height: 1.4;white-space: nowrap}
+      .course-certificate strong {font-size: 12px;line-height: 1.5;letter-spacing: -.3px;white-space: nowrap}
+      .course-certificate.is-pending {border-color: #e3e9f3;background: #f6f8fc;color: #718099}
+      .course-certificate.is-pending .course-certificate-label {color: #7b899e}
+      @media(max-width: 360px) {
+        .course-certificate-label {font-size: 10px}
+        .course-certificate strong {font-size: 11px}
+      }
+
       .nothing {
         background: #fff;
         border-radius: 12px;
@@ -1118,17 +1138,32 @@
       }
 
       .quiz-panel {
-        margin: 15px auto 24px;
-        padding: 25px;
+        width: min(800px, calc(100% - 32px));
+        max-height: calc(100vh - 32px);
+        max-height: calc(100dvh - 32px);
+        margin: auto;
+        padding: 0;
+        overflow: hidden;
+        overscroll-behavior: contain;
         border: 1px solid #b7cef8;
         background: #fff;
         border-radius: 22px;
         box-shadow: 0 12px 35px #123e7e0b;
         text-align: left;
-        max-width: 800px
+        color: var(--ink)
       }
 
-      .quiz-panel[hidden],
+      .quiz-panel[open] {display: flex;flex-direction: column}
+      .quiz-content {min-height: 0;padding: 0 25px 25px;overflow-y: auto;overscroll-behavior: contain;scrollbar-gutter: stable;scroll-padding-block: 12px}
+
+      .quiz-panel::backdrop {
+        background: #09182ba6;
+        backdrop-filter: blur(4px)
+      }
+
+      body:has(.quiz-panel[open]) {overflow: hidden}
+
+      .quiz-step[hidden],
       .quiz-result[hidden] {
         display: none
       }
@@ -1139,8 +1174,13 @@
         justify-content: space-between;
         color: #336bde;
         font-size: 14px;
-        font-weight: 900
+        font-weight: 900;
+        flex: none;
+        padding: 25px 25px 0
       }
+
+      .quiz-head h2 {margin: 0;font-size: 20px;line-height: 1.4;letter-spacing: -.5px}
+      #quiz-progress {display: block;margin-top: 16px;color: #336bde;font-size: 14px;font-weight: 800}
 
       .quiz-close {
         border: 0;
@@ -1177,7 +1217,7 @@
 
       .quiz-answers {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 10px
       }
 
@@ -1207,25 +1247,30 @@
         margin-bottom: 8px
       }
 
+      .quiz-panel :is(.quiz-step, .quiz-result) h3:focus {outline: none}
+
       .quiz-result p {
         color: #65748b;
         font-size: 14px;
         line-height: 1.6
       }
 
-      .quiz-suggestions {
-        display: grid;
-        gap: 9px;
-        margin: 18px 0
-      }
-
-      .quiz-suggestions>div {
-        padding: 14px 16px;
-        border: 1px solid #e0e9f7;
-        border-radius: 12px;
-        font-weight: 750;
-        font-size: 14px
-      }
+      .quiz-course-grid {display: grid;grid-template-columns: repeat(2, minmax(0, 1fr));gap: 14px;margin-top: 18px}
+      .quiz-result .course-card {min-width: 0;min-height: 0;padding: 18px;box-shadow: none}
+      .quiz-result .course-card h3 {margin: 12px 0 8px;font-size: 17px;line-height: 1.5;letter-spacing: -.5px}
+      .quiz-result .course-card > p {margin: 0 0 14px;font-size: 13px}
+      .quiz-result .course-card .course-benefit {font-size: 12px}
+      .quiz-result .course-certificate {margin-top: auto;margin-bottom: 12px}
+      .quiz-course-label {margin-bottom: 12px;color: #336bde;font-size: 12px;font-weight: 800}
+      .quiz-result .course-card .quiz-course-reason {margin: 0;padding-top: 12px;border-top: 1px solid #e3e9f3;color: #65748b;font-size: 12px;line-height: 1.6}
+      .quiz-result-actions[hidden] {display: none}
+      .quiz-result-actions {display: grid;flex: none;gap: 8px;padding: 16px 25px calc(12px + env(safe-area-inset-bottom));border-top: 1px solid #e3e9f3;background: #fff;box-shadow: 0 -4px 16px #12304d08}
+      .quiz-enrol-actions {display: grid;grid-template-columns: repeat(2, minmax(0, 1fr));gap: 10px}
+      .quiz-enrol-action {display: flex;align-items: center;justify-content: center;min-width: 0;min-height: 46px;padding: 12px 14px;border: 0;border-radius: 10px;background: var(--blue);color: #fff;font: inherit;font-size: 14px;font-weight: 800;text-align: center}
+      .quiz-enrol-action:hover {background: #164bd4}
+      .quiz-enrol-action.consult {background: var(--navy)}
+      .quiz-enrol-action.consult:hover {background: #254b87}
+      .quiz-retry {justify-self: center;padding: 6px 12px;border: 0;background: transparent;color: #65748b;font-size: 13px;text-decoration: underline;text-underline-offset: 3px}
 
       .quiz-actions {
         display: flex;
@@ -1321,9 +1366,10 @@
           font-size: 14px
         }
 
-        .quiz-panel {
-          padding: 19px
-        }
+        .quiz-content {padding: 0 19px 19px}
+        .quiz-head {padding: 19px 19px 0}
+        .quiz-result-actions {padding-inline: 19px}
+        .quiz-course-grid {grid-template-columns: minmax(0, 1fr)}
 
         .policy-news h2 {
           font-size: clamp(32px, 7.7vw, 52px)
@@ -6738,19 +6784,29 @@
           <div class="nothing" hidden="" id="no-results">해당하는 과정이 없습니다. 전체 과정을 선택해 주세요.</div>
           <div class="quiz-teaser">
             <div><span aria-hidden="true" class="quiz-emoji">✨</span><strong>어떤 과정부터 시작할지 고민이라면?</strong><span>간단한 테스트로 관심 분야에 맞는 과정을 찾아보세요.</span></div>
-            <button aria-controls="quiz-panel" aria-expanded="false" class="quiz-launch" id="quiz-launch" type="button">나에게 맞는 과정 찾기 ↗</button>
+            <button aria-controls="quiz-panel" aria-haspopup="dialog" aria-expanded="false" class="quiz-launch" id="quiz-launch" type="button">나에게 맞는 과정 찾기 ↗</button>
           </div>
-          <div class="quiz-panel" hidden="" id="quiz-panel">
+          <dialog class="quiz-panel" id="quiz-panel" aria-labelledby="quiz-title">
             <div class="quiz-head">
-              <span id="quiz-progress">질문 1 / 3</span>
+              <h2 id="quiz-title">나에게 맞는 과정 찾기</h2>
               <button aria-label="추천 설문 닫기" class="quiz-close" id="quiz-close" type="button">✕</button>
             </div>
+            <div class="quiz-content" id="quiz-content">
+            <span id="quiz-progress">질문 1 / 3</span>
             <div class="quiz-meter">
               <div id="quiz-meter-fill"></div>
             </div>
             <div aria-live="polite" class="quiz-step" id="quiz-step"></div>
             <div aria-live="polite" class="quiz-result" hidden="" id="quiz-result"></div>
-          </div>
+            </div>
+            <div class="quiz-result-actions" id="quiz-result-actions" hidden>
+              <div class="quiz-enrol-actions">
+                <a class="quiz-enrol-action" data-school-apply href="https://www.miso.center/menu/register_new/register.course.asp?ch_app_type=5">수강 신청하기 ↗</a>
+                <button class="quiz-enrol-action consult" id="quiz-consult" type="button" aria-haspopup="dialog">상담 신청하기</button>
+              </div>
+              <button class="quiz-retry" id="quiz-retry" type="button">다시 테스트하기</button>
+            </div>
+          </dialog>
           <p class="course-selection-note">교육과정은 <strong>최대 2개까지</strong> 선택 가능합니다.</p>
         </div>
       </section>
@@ -6779,7 +6835,7 @@
 <article class="spark-copy" id="spark-scene-3" data-copy="3" aria-hidden="true">
  <h2 class="spark-keyword" aria-label="6개월 영상 지원"><span class="spark-letter" aria-hidden="true">6</span><span class="spark-letter" aria-hidden="true">개</span><span class="spark-letter" aria-hidden="true">월</span><span class="spark-space" aria-hidden="true"> </span><span class="spark-letter" aria-hidden="true">영</span><span class="spark-letter" aria-hidden="true">상</span><span class="spark-space" aria-hidden="true"> </span><span class="spark-letter" aria-hidden="true">지</span><span class="spark-letter" aria-hidden="true">원</span></h2>
  <div class="spark-body-copy"><p class="spark-lead">한 번에 다 이해하지 못해도 괜찮아요.<strong>6개월 반복 학습으로 확실하게 익힐 수 있습니다.</strong></p></div>
- <div class="spark-ctas"><a class="spark-cta spark-primary" href="https://miso.center/" target="_blank" rel="noopener">교육과정 살펴보고 신청하기 <span aria-hidden="true">↗</span></a><button class="spark-cta spark-ghost" type="button" id="sparkReplay">처음부터 다시보기 ↺</button></div>
+ <div class="spark-ctas"><button class="spark-cta spark-ghost" type="button" id="sparkReplay">처음부터 다시보기 ↺</button></div>
  </article></div>
 <footer class="spark-bottom"><button class="spark-stepnum spark-playback" id="spark-autoplay" type="button" aria-label="장면 자동 재생 일시정지" aria-pressed="false" title="장면 자동 재생 일시정지"><span id="stepNum">01 / 04</span><span class="spark-playback-icon" id="spark-autoplay-icon" aria-hidden="true">Ⅱ</span></button><div class="spark-steps" role="group" aria-label="혜택 장면 선택"><button class="spark-step spark-is-done" type="button" aria-label="1번 장면: 국비지원" aria-controls="spark-scene-0" aria-current="step"></button><button class="spark-step" type="button" aria-label="2번 장면: 100% 온라인" aria-controls="spark-scene-1"></button><button class="spark-step" type="button" aria-label="3번 장면: 교구 무상제공" aria-controls="spark-scene-2"></button><button class="spark-step" type="button" aria-label="4번 장면: 6개월 영상 지원" aria-controls="spark-scene-3"></button></div><span class="spark-scrollhint">SCROLL TO EXPLORE ↓</span></footer>
 </div></div>
@@ -7146,15 +7202,15 @@
           <span class="consultation-field-title" id="consultation-courses-title">수강희망과정</span>
           <p class="consultation-course-limit" id="consultation-course-limit" aria-live="polite">최대 2개까지 선택할 수 있습니다. (0/2)</p>
           <div class="consultation-choices consultation-courses">
-            <label><input name="courses" type="checkbox" value="미래모빌리티 자율주행의 이해와 실습"><span>미래모빌리티 자율주행의 이해와 실습</span></label>
-            <label><input name="courses" type="checkbox" value="3D프린팅 실무와 시제품제작"><span>3D프린팅 실무와 시제품제작</span></label>
-            <label><input name="courses" type="checkbox" value="AI 로봇팔로 배우는 협동로봇 제어 원리"><span>AI 로봇팔로 배우는 협동로봇 제어 원리</span></label>
-            <label><input name="courses" type="checkbox" value="AI로 완성하는 홈페이지"><span>AI로 완성하는 홈페이지</span></label>
-            <label><input name="courses" type="checkbox" value="AI로 쉽게 만드는 PPT 끝판왕"><span>AI로 쉽게 만드는 PPT 끝판왕</span></label>
-            <label><input name="courses" type="checkbox" value="파이썬으로 제어하는 AI드론"><span>파이썬으로 제어하는 AI드론</span></label>
-            <label><input name="courses" type="checkbox" value="파이썬으로 제어하는 자율주행 전기차"><span>파이썬으로 제어하는 자율주행 전기차</span></label>
-            <label><input name="courses" type="checkbox" value="누구나 쉽게 배우는 AI업무자동화 풀코스"><span>누구나 쉽게 배우는 AI업무자동화 풀코스</span></label>
-            <label><input name="courses" type="checkbox" value="파이썬으로 배우는 딥러닝 &amp; 인공지능 기초"><span>파이썬으로 배우는 딥러닝 &amp; 인공지능 기초</span></label>
+            <label><input name="courses" type="checkbox" data-course-id="mobility" value="미래모빌리티 자율주행의 이해와 실습"><span>미래모빌리티 자율주행의 이해와 실습</span></label>
+            <label><input name="courses" type="checkbox" data-course-id="printing" value="3D프린팅 실무와 시제품제작"><span>3D프린팅 실무와 시제품제작</span></label>
+            <label><input name="courses" type="checkbox" data-course-id="robot" value="AI 로봇팔로 배우는 협동로봇 제어 원리"><span>AI 로봇팔로 배우는 협동로봇 제어 원리</span></label>
+            <label><input name="courses" type="checkbox" data-course-id="website" value="AI로 완성하는 홈페이지"><span>AI로 완성하는 홈페이지</span></label>
+            <label><input name="courses" type="checkbox" data-course-id="presentation" value="AI로 쉽게 만드는 PPT 끝판왕"><span>AI로 쉽게 만드는 PPT 끝판왕</span></label>
+            <label><input name="courses" type="checkbox" data-course-id="drone" value="파이썬으로 제어하는 AI드론"><span>파이썬으로 제어하는 AI드론</span></label>
+            <label><input name="courses" type="checkbox" data-course-id="python-car" value="파이썬으로 제어하는 자율주행 전기차"><span>파이썬으로 제어하는 자율주행 전기차</span></label>
+            <label><input name="courses" type="checkbox" data-course-id="automation" value="누구나 쉽게 배우는 AI업무자동화 풀코스"><span>누구나 쉽게 배우는 AI업무자동화 풀코스</span></label>
+            <label><input name="courses" type="checkbox" data-course-id="deep-learning" value="파이썬으로 배우는 딥러닝 &amp; 인공지능 기초"><span>파이썬으로 배우는 딥러닝 &amp; 인공지능 기초</span></label>
           </div>
         </div>
         <div class="consultation-field" role="group" aria-labelledby="consultation-card-title">
@@ -7237,6 +7293,12 @@
               ? '2개를 선택했습니다. 다른 과목을 선택하려면 먼저 선택을 해제해 주세요. (2/2)'
               : `최대 2개까지 선택할 수 있습니다. (${count}/2)`;
           }
+          form.addEventListener('consultation:select-courses', event => {
+            const requestedIds = new Set(event.detail.courseIds);
+            const selectedInputs = courseInputs.filter(input => requestedIds.has(input.dataset.courseId)).slice(0, 2);
+            courseInputs.forEach(input => {input.checked = selectedInputs.includes(input);});
+            updateCourseSelection();
+          });
           courseInputs.forEach(input => input.addEventListener('change', () => {
             if (courseInputs.filter(course => course.checked).length > 2) input.checked = false;
             updateCourseSelection();
@@ -7320,6 +7382,7 @@
     <script>
       const courses = [
         {
+          id: 'website',
           title: 'AI로 완성하는 홈페이지',
           type: 'work',
           desc: 'AI를 활용해 홈페이지를 기획하고 웹페이지 제작 과정까지 경험합니다.',
@@ -7330,6 +7393,7 @@
           kit: false
         },
         {
+          id: 'presentation',
           title: 'AI로 쉽게 만드는 PPT 끝판왕',
           type: 'work',
           desc: 'AI로 발표자료의 내용과 구성을 기획하고 슬라이드 제작까지 익힙니다.',
@@ -7340,6 +7404,7 @@
           kit: false
         },
         {
+          id: 'mobility',
           title: '미래모빌리티 자율주행의 이해와 실습',
           type: 'make',
           desc: '자율주행의 작동 원리를 배우고 실습 교구로 자동차의 움직임을 확인합니다.',
@@ -7350,6 +7415,7 @@
           kit: true
         },
         {
+          id: 'printing',
           title: '3D프린팅 실무와 시제품제작(Fusion)',
           type: 'make',
           desc: 'Fusion으로 3D 모델을 설계하고 아이디어를 실제 시제품으로 구현합니다.',
@@ -7360,6 +7426,7 @@
           kit: true
         },
         {
+          id: 'robot',
           title: 'AI 로봇팔로 배우는 협동로봇 제어 원리',
           type: 'make',
           desc: '협동로봇의 작동 원리를 이해하고 로봇팔 제어를 직접 실습합니다.',
@@ -7370,6 +7437,7 @@
           kit: true
         },
         {
+          id: 'automation',
           title: '누구나 쉽게 배우는 AI 업무자동화 풀코스',
           type: 'work',
           desc: 'Gemini·NotebookLM 등 AI 도구로 문서 분석부터 반복 업무 자동화까지 배웁니다.',
@@ -7384,6 +7452,7 @@
           kit: false
         },
         {
+          id: 'python-car',
           title: '파이썬으로 제어하는 자율주행 전기차',
           type: 'basic',
           desc: '파이썬 코딩과 음성인식으로 자동차를 제어하고 게임 제작도 경험합니다.',
@@ -7397,6 +7466,7 @@
           kit: true
         },
         {
+          id: 'drone',
           title: '파이썬으로 제어하는 AI드론',
           type: 'basic',
           desc: '드론 조종부터 파이썬 코딩, AI 자율비행과 목표물 자동추적 기술까지 배웁니다.',
@@ -7410,6 +7480,7 @@
           kit: true
         },
         {
+          id: 'deep-learning',
           title: '파이썬으로 배우는 딥러닝 & 인공지능 기초',
           type: 'basic',
           desc: 'AI·딥러닝의 기본 원리를 배우고 숫자와 이미지를 분류하는 AI 프로그램을 만들어 봅니다.',
@@ -7437,10 +7508,9 @@
         make: '직접 만드는 기술',
         basic: '코딩·디지털 기초'
       };
-      function render() {
-        const list = courses.filter(c => (type === 'all' || c.type === type) && (!kitOnly || c.kit));
-        grid.replaceChildren(...list.map((c, index) => {
+      function createCourseCard(c, index, {compact = false} = {}) {
           const art = document.createElement('article');
+          art.dataset.courseId = c.id;
           art.className = 'course-card';
           art.classList.add(c.status === 'planned' ? 'course-planned' : 'course-open');
           const thumbnail = document.createElement('div');
@@ -7449,7 +7519,7 @@
           const thumbnailLabel = document.createElement('span');
           thumbnailLabel.textContent = '교육과정 썸네일';
           thumbnail.append(thumbnailLabel);
-          art.append(thumbnail);
+          if (!compact) art.append(thumbnail);
           const badges = document.createElement('div');
           badges.className = 'course-badges';
           if (c.isNew) {
@@ -7491,6 +7561,17 @@
             benefits.append(label)
           }
           art.append(benefits);
+          const certificate = document.createElement('div');
+          certificate.className = 'course-certificate' + (c.certificate ? '' : ' is-pending');
+          const certificateText = document.createElement('div');
+          const certificateLabel = document.createElement('span');
+          certificateLabel.className = 'course-certificate-label';
+          certificateLabel.textContent = '연계 자격증';
+          const certificateName = document.createElement('strong');
+          certificateName.textContent = c.certificate || '안내 예정';
+          certificateText.append(certificateLabel, certificateName);
+          certificate.append(certificateText);
+          art.append(certificate);
           const foot = document.createElement('div');
           foot.className = 'foot course-detail-footer';
           const detail = document.createElement('button');
@@ -7505,9 +7586,12 @@
           note.textContent = '상세 페이지 준비 중';
           detail.setAttribute('aria-describedby', note.id);
           foot.append(detail, note);
-          art.append(foot);
+          if (!compact) art.append(foot);
           return art
-        }));
+      }
+      function render() {
+        const list = courses.filter(c => (type === 'all' || c.type === type) && (!kitOnly || c.kit));
+        grid.replaceChildren(...list.map((course, index) => createCourseCard(course, index)));
         if (filterName) filterName.textContent = kitOnly ? '실습 교구 소장 대상' : names[type];
         if (filterCount) filterCount.textContent = list.length + '개 과정 · 운영 중 ' + list.filter(c => c.status === 'open').length + '개 / 예정 ' + list.filter(c => c.status === 'planned').length + '개';
         document.getElementById('no-results').hidden = list.length > 0;
@@ -7526,67 +7610,85 @@
       document.querySelectorAll('[data-pick]').forEach(a => a.addEventListener('click', () => setFilter(a.dataset.pick)));
       document.getElementById('kit-filter')?.addEventListener('click', () => setFilter('all', true));
       setFilter('all');
-      // V6.2 3단계 관심사 탐색: 적성 판정이 아닌 관심 기반 추천
+      // Three choices per step: field -> specific interest -> next learning goal.
+      const quizInterests = {
+        work: [
+          ['나만의 홈페이지 만들기', 'website'],
+          ['발표자료·PPT 만들기', 'presentation'],
+          ['반복 업무 자동화하기', 'automation']
+        ],
+        make: [
+          ['자율주행 자동차 이해하기', 'mobility'],
+          ['3D 모델·시제품 만들기', 'printing'],
+          ['로봇팔을 직접 제어하기', 'robot']
+        ],
+        basic: [
+          ['파이썬으로 드론 날리기', 'drone'],
+          ['파이썬으로 전기차 움직이기', 'python-car'],
+          ['딥러닝·AI 원리 배우기', 'deep-learning']
+        ]
+      };
       const quizQuestions = [
         {
           title: '어떤 변화가 가장 기대되세요?',
           answers: [
-            [
-              '일에 AI를 활용하기',
-              'work'
-            ],
-            [
-              '직접 무언가 만들기',
-              'make'
-            ],
-            [
-              '기술의 원리 이해하기',
-              'basic'
-            ]
+            ['일에 AI를 활용하기', 'work'],
+            ['직접 무언가 만들기', 'make'],
+            ['파이썬·AI 원리 익히기', 'basic']
           ]
         },
         {
-          title: '더 끌리는 활동은 무엇인가요?',
-          answers: [
-            [
-              '홈페이지·자료 만들기',
-              'work'
-            ],
-            [
-              '로봇·자동차 조작하기',
-              'make'
-            ],
-            [
-              '코딩의 기초부터 익히기',
-              'basic'
-            ]
-          ]
+          title: '그중 가장 해보고 싶은 것은 무엇인가요?',
+          answers: selections => quizInterests[selections[0]]
         },
         {
-          title: '먼저 경험하고 싶은 것은?',
+          title: '관심 주제와 함께, 무엇을 더 배우고 싶으세요?',
           answers: [
-            [
-              'AI로 결과물 완성',
-              'work'
-            ],
-            [
-              '실물 실습과 작동 경험',
-              'make'
-            ],
-            [
-              '프로그래밍 학습',
-              'basic'
-            ]
+            ['업무·콘텐츠에 AI 활용하기', 'work'],
+            ['실물을 만들고 작동시키기', 'make'],
+            ['코딩·AI 원리 더 익히기', 'basic']
           ]
         }
       ];
+      // Related courses depend on both the chosen topic and the third answer.
+      const quizRelatedCourses = {
+        website: {work: 'presentation', make: 'printing', basic: 'deep-learning'},
+        presentation: {work: 'website', make: 'printing', basic: 'deep-learning'},
+        automation: {work: 'presentation', make: 'robot', basic: 'deep-learning'},
+        mobility: {work: 'automation', make: 'robot', basic: 'python-car'},
+        printing: {work: 'website', make: 'robot', basic: 'deep-learning'},
+        robot: {work: 'automation', make: 'mobility', basic: 'python-car'},
+        drone: {work: 'automation', make: 'robot', basic: 'python-car'},
+        'python-car': {work: 'automation', make: 'mobility', basic: 'drone'},
+        'deep-learning': {work: 'automation', make: 'robot', basic: 'python-car'}
+      };
+      function getQuizRecommendations(selections) {
+        const [field, interest, goal] = selections;
+        if (selections.length !== 3 || !quizInterests[field]?.some(([, id]) => id === interest)) return [];
+        const relatedId = quizRelatedCourses[interest]?.[goal];
+        const primary = courses.find(course => course.id === interest);
+        const related = courses.find(course => course.id === relatedId);
+        if (!primary || !related || primary.id === related.id) return [];
+        const goalLabel = quizQuestions[2].answers.find(([, key]) => key === goal)[0];
+        return [
+          {course: primary, reason: '가장 해보고 싶다고 선택한 주제입니다. ' + primary.outcome},
+          {course: related, reason: '함께 선택한 ‘' + goalLabel + '’ 관심을 이어갈 수 있습니다. ' + related.outcome}
+        ];
+      }
       let quizStep = 0,
         quizSelections = [];
       const quizPanel = document.getElementById('quiz-panel'),
+        quizLaunch = document.getElementById('quiz-launch'),
+        quizContent = document.getElementById('quiz-content'),
+        quizResultActions = document.getElementById('quiz-result-actions'),
         quizStepEl = document.getElementById('quiz-step'),
         quizResultEl = document.getElementById('quiz-result'),
         quizMeter = document.getElementById('quiz-meter-fill');
+      let quizReturnFocus = quizLaunch;
+      let quizAfterClose = null;
+      let quizRecommendedIds = [];
       function showQuestion() {
+        quizResultActions.hidden = true;
         quizResultEl.hidden = true;
         quizStepEl.hidden = false;
         document.getElementById('quiz-progress').textContent = '질문 ' + (quizStep + 1) + ' / 3';
@@ -7598,9 +7700,11 @@
         quizStepEl.classList.add('quiz-appear');
         const h = document.createElement('h3');
         h.textContent = q.title;
+        h.tabIndex = -1;
         const answers = document.createElement('div');
         answers.className = 'quiz-answers';
-        q.answers.forEach(([
+        const answersForStep = typeof q.answers === 'function' ? q.answers(quizSelections) : q.answers;
+        answersForStep.forEach(([
           label,
           key
         ]) => {
@@ -7611,87 +7715,82 @@
           b.addEventListener('click', () => {
             quizSelections.push(key);
             quizStep++;
-            if (quizStep === 3) showResult();
+            if (quizStep === quizQuestions.length) showResult();
             else showQuestion()
           });
           answers.append(b)
         });
-        quizStepEl.append(h, answers)
+        quizStepEl.append(h, answers);
+        quizContent.scrollTop = 0;
+        if (quizPanel.open) h.focus({preventScroll: true})
       }
       function showResult() {
         quizStepEl.hidden = true;
         quizResultEl.hidden = false;
         document.getElementById('quiz-progress').textContent = '추천 완료';
         quizMeter.style.width = '100%';
-        const order = [
-          'work',
-          'make',
-          'basic'
-        ];
-        const score = Object.fromEntries(order.map(k => [
-          k,
-          quizSelections.filter(x => x === k).length
-        ]));
-        const chosen = order.reduce((best, k) => score[k] > score[best] ? k : best, 'work');
-        const labels = {
-          work: 'AI 업무 활용',
-          make: '직접 만드는 기술',
-          basic: '코딩·디지털 기초'
-        };
-        const candidates = courses.filter(c => c.type === chosen && c.status === 'open').concat(courses.filter(c => c.type === chosen && c.status === 'planned')).slice(0, 3);
+        const recommendations = getQuizRecommendations(quizSelections);
+        quizRecommendedIds = recommendations.map(({course}) => course.id);
         quizResultEl.replaceChildren();
         const h = document.createElement('h3');
-        h.textContent = '이런 과정이 잘 맞을 것 같아요 ✨';
+        h.textContent = '내 답변으로 고른 추천 과정 2개';
+        h.tabIndex = -1;
         const p = document.createElement('p');
-        p.textContent = '선택한 관심사에는 ' + labels[chosen] + ' 분야가 가까워요. 가볍게 추천한 결과이며, 수강 조건은 과정별로 확인해 주세요.';
+        p.textContent = '선택한 세부 관심 주제와 추가 학습 목표에 맞춰 2개 과정을 골랐어요. 관심을 바탕으로 한 추천이며, 수강 조건은 과정별로 확인해 주세요.';
         const picks = document.createElement('div');
-        picks.className = 'quiz-suggestions';
-        candidates.forEach(c => {
-          const r = document.createElement('div');
-          r.textContent = (c.status === 'open' ? '✓ 운영 중 · ' : '◌ 개설 예정 · ') + c.title;
+        picks.className = 'quiz-course-grid';
+        recommendations.forEach(({course: c, reason}, index) => {
+          const r = createCourseCard(c, index, {compact: true});
+          const rank = document.createElement('span');
+          rank.className = 'quiz-course-label';
+          rank.textContent = index === 0 ? '01 · 관심 주제 추천' : '02 · 함께 배우면 좋은 과정';
+          const explanation = document.createElement('p');
+          explanation.className = 'quiz-course-reason';
+          explanation.textContent = reason;
+          r.prepend(rank);
+          r.append(explanation);
           picks.append(r)
         });
-        const actions = document.createElement('div');
-        actions.className = 'quiz-actions';
-        const see = document.createElement('button');
-        see.type = 'button';
-        see.className = 'primary';
-        see.textContent = '이 과정들 바로 보기 ↓';
-        see.addEventListener('click', () => {
-          setFilter(chosen);
-          quizPanel.hidden = true;
-          document.getElementById('quiz-launch').setAttribute('aria-expanded', 'false');
-          document.querySelector('.course-status').scrollIntoView({
-            behavior: window.matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth',
-            block: 'start'
-          })
-        });
-        const retry = document.createElement('button');
-        retry.type = 'button';
-        retry.textContent = '다시 선택하기';
-        retry.addEventListener('click', () => {
-          quizStep = 0;
-          quizSelections = [];
-          showQuestion()
-        });
-        actions.append(see, retry);
-        quizResultEl.append(h, p, picks, actions)
+        quizResultEl.append(h, p, picks);
+        quizResultActions.hidden = false;
+        quizContent.scrollTop = 0;
+        h.focus({preventScroll: true})
       }
-      document.getElementById('quiz-launch').addEventListener('click', () => {
-        quizPanel.hidden = false;
-        document.getElementById('quiz-launch').setAttribute('aria-expanded', 'true');
+      quizLaunch.addEventListener('click', () => {
+        quizReturnFocus = quizLaunch;
         quizStep = 0;
         quizSelections = [];
         showQuestion();
-        quizPanel.scrollIntoView({
-          behavior: 'smooth',
-          block: 'nearest'
-        })
+        quizPanel.showModal();
+        quizLaunch.setAttribute('aria-expanded', 'true');
+        quizStepEl.querySelector('h3').focus({preventScroll: true})
+      });
+      document.getElementById('quiz-retry').addEventListener('click', () => {
+        quizStep = 0;
+        quizSelections = [];
+        showQuestion()
+      });
+      document.getElementById('quiz-consult').addEventListener('click', () => {
+        const courseIds = quizRecommendedIds.slice(0, 2);
+        quizAfterClose = () => {
+          document.querySelector('.sticky-cta-consult').click();
+          document.getElementById('consultation-enquiry-form').dispatchEvent(new CustomEvent('consultation:select-courses', {detail: {courseIds}}));
+        };
+        quizPanel.close();
       });
       document.getElementById('quiz-close').addEventListener('click', () => {
-        quizPanel.hidden = true;
-        document.getElementById('quiz-launch').setAttribute('aria-expanded', 'false');
-        document.getElementById('quiz-launch').focus()
+        quizPanel.close()
+      });
+      quizPanel.addEventListener('close', () => {
+        quizLaunch.setAttribute('aria-expanded', 'false');
+        const afterClose = quizAfterClose;
+        quizAfterClose = null;
+        if (afterClose) afterClose();
+        else quizReturnFocus?.focus({preventScroll: true})
+      });
+      quizPanel.addEventListener('click', event => {
+        const rect = quizPanel.getBoundingClientRect();
+        if (event.target === quizPanel && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) quizPanel.close();
       });
     </script>
     <script>
