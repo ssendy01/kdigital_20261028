@@ -7045,15 +7045,15 @@
                 </div>
                 <div class="ag-switch-wrap">
                   <div class="ag-switch-label">카드 보유 여부 선택</div>
-                  <div class="ag-switch" role="group" aria-label="국민내일배움카드 보유 여부"><button type="button" id="ag-without" aria-pressed="true" class="active"><span class="ag-choice-icon" aria-hidden="true">✓</span><span><span class="ag-label-main">카드 없어요</span><span class="ag-label-sub">발급부터
-                          시작</span></span></button><button type="button" id="ag-with" aria-pressed="false"><span class="ag-choice-icon" aria-hidden="true">✓</span><span><span class="ag-label-main">카드 있어요</span><span class="ag-label-sub">과정
+                  <div class="ag-switch" role="group" aria-label="국민내일배움카드 보유 여부"><button type="button" id="ag-without" aria-pressed="false"><span class="ag-choice-icon" aria-hidden="true">✓</span><span><span class="ag-label-main">카드 없어요</span><span class="ag-label-sub">발급부터
+                          시작</span></span></button><button type="button" id="ag-with" aria-pressed="true" class="active"><span class="ag-choice-icon" aria-hidden="true">✓</span><span><span class="ag-label-main">카드 있어요</span><span class="ag-label-sub">과정
                           선택부터</span></span></button></div>
                 </div>
               </div>
               <div class="ag-steps" aria-label="수강 신청 절차">
                 <div class="ag-track" aria-hidden="true">
                   <div class="ag-progress" id="ag-progress"></div>
-                </div><button type="button" class="ag-step active" data-step="0" aria-current="step"><span class="ag-num">01</span><span class="ag-step-title">카드 신청</span></button><button type="button" class="ag-step" data-step="1"><span class="ag-num">02</span><span class="ag-step-title">발급 확인</span></button><button type="button" class="ag-step" data-step="2"><span class="ag-num">03</span><span class="ag-step-title">수강 신청</span></button>
+                </div><button type="button" class="ag-step active" data-step="0" aria-current="step"><span class="ag-num">01</span><span class="ag-step-title">과정 찾기</span></button><button type="button" class="ag-step" data-step="1"><span class="ag-num">02</span><span class="ag-step-title">수강 신청</span></button><button type="button" class="ag-step" data-step="2"><span class="ag-num">03</span><span class="ag-step-title">등록 확인</span></button>
               </div>
               <div class="ag-detail" aria-live="polite">
                 <div class="ag-detail-content" id="ag-detail-content"></div>
@@ -8557,7 +8557,7 @@ syncFromScroll();
           back = $('#ag-back'),
           content = $('#ag-detail-content');
         const arrow = ' <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>';
-        let mode = 'without',
+        let mode = 'with',
           index = 0;
         function render() {
           const steps = data[mode];
